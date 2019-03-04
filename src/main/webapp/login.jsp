@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
@@ -23,10 +22,10 @@
 <body class="login-bg">
 
 <div class="login">
-    <div class="message">小白学习前台登录</div>
+    <div class="message">小白学习平台</div>
     <div id="darkbannerwrap"></div>
     <form method="post" class="layui-form" action="" id="login">
-        <input name="account" id="account"  placeholder="账号"  type="text" lay-verify="required|account" class="layui-input" autocomplete="off" >
+        <input name="account" id="account"  placeholder="手机号或邮箱"  type="text" lay-verify="required|account" class="layui-input" autocomplete="off" >
         <hr class="hr15">
         <input name="pwd" id="pwd" placeholder="密码"  lay-verify="required|pwd" type="password" class="layui-input" autocomplete="off">
         <hr class="hr15">
@@ -37,24 +36,13 @@
     </form>
 </div>
 
-
-<%--
-<form action="<%=basePath%>user/login" method="post">
-    用户名:<input type="text" name="account" /><br/>
-    密码:<input type="password" name="pwd" ><br/>
-    <input type="submit" value="login"/><br>
-    <font color="red">${errorMsg }</font>
-</form>
---%>
-
-
 </body>
 </html>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
 <script type="text/javascript">
-        let  account=$('#account'),
-             pwd=$('#pwd');
+        let  account=$('#account'),pwd=$('#pwd');
+
         layui.use(['layer','laydate','form'],function() {
             let layer = layui.layer,
                 form = layui.form;
