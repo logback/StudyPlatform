@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.PersonalMapper">
+    <!--开启缓存设置-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true"/>
+
+
+    <!--更新管理员-->
+    <!--
+     <update id="updateName" parameterType="com.aldrich.model.User" >
+         update member
+         set name=#{name}
+         where id=15
+     </update>
+     -->
+
+    <update id="updateAll" parameterType="com.aldrich.model.User" >
+         update member
+         set name=#{name},email=#{email}
+         where account=#{account}
+     </update>
+
+    <update id="updatePassword" parameterType="com.aldrich.model.User" >
+         update member
+         set password=#{newPassword}
+         where account=#{account}
+     </update>
+
+    <select id="verifyPassword" resultType="integer" >
+        select count(*) from member where account=#{account} and password=#{password}
+    </select>
+
+    <select id="selectNameByAccount" parameterType="java.lang.String" resultType="com.aldrich.model.User">
+        select * from member where account=#{account}
+    </select>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.VideoMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true">
+        <property name="timeToIdleSeconds" value="3600"/>
+        <property name="timeToLiveSeconds" value="3600"/>
+        <property name="maxEntriesLocalHeap" value="1000"/>
+        <property name="maxEntriesLocalDisk" value="10000000"/>
+        <property name="memoryStoreEvictionPolicy" value="LRU"/>
+    </cache>
+
+    <insert id="addVideo"  parameterType="com.aldrich.model.Video" >
+        insert into video(name,url,vtitle,imgUrl,imgName)
+        values (#{name},#{url},#{vtitle},#{imgUrl},#{imgName})
+    </insert>
+
+    <select id="selectVideo"  resultType="com.aldrich.model.Video">
+        select * from video;
+    </select>
+
+    <!--获取所有的用户记录-->
+    <select id="getTotalVideo" resultType="int">
+        select count(*) from video
+    </select>
+</mapper>

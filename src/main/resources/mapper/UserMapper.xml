@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.UserMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true">
+        <property name="timeToIdleSeconds" value="3600"/>
+        <property name="timeToLiveSeconds" value="3600"/>
+        <property name="maxEntriesLocalHeap" value="1000"/>
+        <property name="maxEntriesLocalDisk" value="10000000"/>
+        <property name="memoryStoreEvictionPolicy" value="LRU"/>
+    </cache>
+
+    <resultMap id="userItem" type="com.aldrich.model.User">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
+        <result column="image" property="image"/>
+        <result column="time" property="time"/>
+        <result column="role_id" property="role"/>
+        <result column="email" property="email"/>
+        <result column="lock"  property="lock"/>
+    </resultMap>
+    <!--注意sql语句没有分号结尾  -->
+    <!--保存用户-->
+    <insert id="saveUser" parameterType="com.aldrich.model.User">
+        insert into member(account, name, password, image,time, role, email)
+       VALUE (#{account},#{name},#{password},#{imaparameterType="com.aldrich.model.User"ge},#{time},#{role},#{email})
+    </insert>
+
+
+    <!--注意这里的参数类型是parameterType而不是parameterMap，因为返回的是单个类型  -->
+	<!--验证用户登录-->
+    <select id="login"  resultMap="userItem" parameterType="map" >
+         SELECT * FROM member where account=#{account} and password=#{password}
+    </select>
+
+    <!--获取所有的用户-->
+    <select id="getAllUsers" resultMap="userItem">
+        select * from member
+    </select>
+
+    <!--获取所有的用户记录-->
+    <select id="getTotalUsers" resultType="int">
+        select count(*) from member
+    </select>
+
+
+    <!--获取分页用户-->
+    <select id="getLimitUsers" resultMap="userItem" parameterType="map">
+        select * from member limit #{pageIndex},#{pageSize}
+    </select>
+
+    <!--依据id删除用户-->
+    <delete id="deleteById" parameterType="java.lang.String">
+        delete  from  member  where  account=#{account}
+    </delete>
+
+    <!--依据账号查找用户-->
+    <select id="searchById" parameterType="java.lang.String" resultMap="userItem">
+        select * from member where account=#{account}
+    </select>
+
+    <!--依据昵称查找用户-->
+    <select id="searchByName" parameterType="java.lang.String" resultMap="userItem">
+        select * from member where name=#{name}
+    </select>
+
+    <!--依据邮箱查找用户-->
+    <select id="searchByEmail" parameterType="java.lang.String" resultMap="userItem">
+        select * from member where email=#{email}
+    </select>
+
+    <!--依据时间查询一周之内的数据-->
+    <select id="searchByTime" parameterType="java.lang.String" resultMap="userItem">
+        select  * from member where date_sub(CURDATE(),INTERVAL 7 DAY) &lt;=  DATE(#{time})
+    </select>
+
+    <!--更新用户-->
+    <update id="updateInfo" parameterType="com.aldrich.model.User" >
+        update member
+        set name=#{name} , password=#{password} , image=#{image},
+            role=#{role} , email=#{email}
+        where account=#{account}
+    </update>
+
+    <!--依据姓名查询角色-->
+    <select id="findRole" parameterType="String" resultType="String">
+        SELECT  role.role_name
+        FROM member,role
+        WHERE  member.role_id=role.role_type
+          and member.account=#{account}
+    </select>
+
+
+    <!--依据姓名查询权限-->
+    <select id="findPermissions" parameterType="String" resultType="String">
+        SELECT DISTINCT permission.permission
+        FROM member,role,role_permission,permission
+        WHERE  member.role_id=role.role_type and role.id=role_permission.rid
+          and member.account=#{account}
+    </select>
+
+</mapper>

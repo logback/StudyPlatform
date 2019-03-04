@@ -1,0 +1,117 @@
+
+body{
+    height: 120%;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+}
+
+
+.content{
+    width: 1364px;
+    height: 680px;
+}
+
+.header{
+    float: initial;
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 78.5%;
+    height: 13%;
+}
+
+.center{
+    float: initial;
+    width: 100%;
+    height: 60%;
+    margin-left: 1%;
+    margin-top: 0px;
+}
+
+.layui-inline{
+    margin-left: 1%;
+}
+img{
+    height:100%;
+    width:100%;
+}
+
+/*管理员注册界面*/
+
+.register{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    background-color:#FFFFFF;
+    margin-left: 5%;
+}
+
+#img_url{
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+}
+
+
+.description{
+    width: 90%;
+    margin-left: 4.2%;
+    height: 88%;
+    position: absolute;
+    background-color: #505050;
+}
+
+
+.detail{
+    width: 90%;
+    margin-left: 5%;
+    height: 88%;
+    position: absolute;
+    background-color:#302E2F;
+    margin-top: 4%;
+}
+
+.detail-left{
+    float: left;
+    margin-top: 10%;
+    width: 60%;
+    height: 70%;
+}
+
+.detail-right{
+    float: left;
+    margin-top: 19%;
+    margin-left: 10%;
+    width: 22%;
+    height: 40%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+h3{
+    color: cyan;
+    font-size: 18px;
+    padding-left: 20%;
+}
+
+.desc{
+    padding-left: 20%;
+    font-size: 18px;
+    line-height: 50px;
+    color: aqua;
+}
+
+.spans{
+    font-size: 15px;
+    color: aqua;
+    padding-left: 8%
+}
+
+hr{
+    width: 90%;
+    margin-left: 3%;
+    margin-top: 3%;
+}

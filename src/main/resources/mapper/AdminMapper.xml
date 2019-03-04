@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.AdminMapper">
+    <!--开启缓存设置-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true"/>
+
+    <resultMap id="adminItem" type="com.aldrich.model.Admin">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="name" property="name"/>
+        <result column="password" property="password"/>
+        <result column="image" property="image"/>
+        <result column="time" property="time"/>
+        <result column="state" property="state"/>
+        <result column="role" property="role"/>
+        <result column="email" property="email"/>
+    </resultMap>
+
+    <!--保存管理员-->
+    <insert id="saveAdmin" parameterType="com.aldrich.model.Admin">
+       insert into adapter(account, name, password, image, state, time, role, email)
+           VALUE (#{account},#{name},#{password},#{imaparameterType="com.aldrich.model.Admin"ge},#{state},#{time},#{role},#{email})
+    </insert>
+
+
+
+    <!--验证管理员登录-->
+    <select id="login" parameterType="map" resultType="com.aldrich.model.Admin">
+        select * from adapter where account=#{account} and password=#{pwd}
+    </select>
+
+
+    <!--获取所有的管理员-->
+    <select id="getAllAdmins" resultMap="adminItem">
+        select * from adapter
+    </select>
+
+    <!--获取所有的管理员记录-->
+    <select id="getTotalAdmins" resultType="int">
+        select count(*) from adapter
+    </select>
+
+
+    <!--获取分页管理员-->
+    <select id="getLimitAdmins" resultMap="adminItem" parameterType="map">
+         select * from adapter  limit #{pageIndex},#{pageSize}
+    </select>
+
+    <!--依据id删除管理员-->
+    <delete id="deleteById" parameterType="java.lang.String">
+        delete  from  adapter  where  account=#{account}
+    </delete>
+
+    <!--依据账号查找管理员-->
+    <select id="searchById" parameterType="java.lang.String" resultMap="adminItem">
+        select * from adapter where account=#{account}
+    </select>
+
+    <!--依据昵称查找管理员-->
+    <select id="searchByName" parameterType="java.lang.String" resultMap="adminItem">
+        select * from adapter where name=#{name}
+    </select>
+
+    <!--依据昵称查找管理员-->
+    <select id="searchByEmail" parameterType="java.lang.String" resultMap="adminItem">
+        select * from adapter where email=#{email}
+    </select>
+
+    <!--依据时间查询一周之内的数据-->
+     <select id="searchByTime" parameterType="java.lang.String" resultMap="adminItem">
+         select  * from adapter where date_sub(CURDATE(),INTERVAL 7 DAY) &lt;=  DATE(#{time})
+     </select>
+
+    <!--更新管理员-->
+     <update id="updateInfo" parameterType="com.aldrich.model.Admin" >
+         update adapter
+         set name=#{name} , password=#{password} , image=#{image},
+             role=#{role} , email=#{email}
+         where account=#{account}
+     </update>
+
+    <!--设置权限-->
+     <update id="updateAuthor" parameterType="map">
+         update adapter
+         set state=#{state}
+         where account=#{account}
+     </update>
+
+
+
+</mapper>

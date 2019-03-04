@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aldrich.mapper.WordPojoMapper">
+
+    <!--开启缓存设置-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true"/>
+
+    <resultMap id="wordItem" type="com.aldrich.model.WordPojo">
+        <result column="name"   property="name"/>
+        <result column="e_sound"  property="eSound"/>
+        <result column="e_symbol" property="eSymbol"/>
+        <result column="a_sound"  property="aSound"/>
+        <result column="a_symbol" property="aSymbol"/>
+        <result column="type_name"  property="type"/>
+        <result column="level_name"  property="level"/>
+        <result column="meaning"  property="meaning"/>
+    </resultMap>
+
+
+    <!--依据name获取单词信息-->
+    <select id="getWordPojo" resultMap="wordItem" parameterType="java.lang.String">
+        SELECT DISTINCT
+            word.`name`,word.e_symbol,word.e_sound,type.type_name,`level`.level_name,
+            word_type .meaning,word.a_sound,word.a_symbol
+        from word,type,`level`,word_type,word_level
+        WHERE  word.`name`=#{name} and
+            word_type.word_id=word.id and word_type.type_id=type.id
+            and word_level.word_id=word.id and word_level.level_id=`level`.id
+    </select>
+
+    <!--获取所有单词信息-->
+    <select id="getWordPojos" resultMap="wordItem">
+        select * from word_detail
+    </select>
+
+    <!--获取所有单词记录-->
+    <select id="getWordTotal" resultType="int">
+        select count(*) from word_detail
+    </select>
+
+    <!--获取分页单词-->
+    <select id="getLimitWords" resultMap="wordItem" parameterType="map">
+        select * from word_detail  limit #{pageIndex},#{pageSize}
+    </select>
+
+</mapper>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       ">
+
+
+    <!-- 扫描service包下所有使用注解的类型 -->
+    <context:component-scan base-package="com.aldrich.service"/>
+    <context:component-scan base-package="com.aldrich.utils"/>
+    <context:component-scan base-package="com.aldrich.model"/>
+
+
+    <!-- 配置数据库相关参数properties的属性：${url} -->
+    <context:property-placeholder location="classpath:druid.properties"/>
+
+
+    <!-- 配置druid数据源 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <!-- 数据库连接基础信息 -->
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+
+
+        <!-- 监控数据库,密码加密-->
+     <property name="filters" value="${druid.filters}" />
+               <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${publicKey}" />
+      <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${druid.initialSize}" />
+        <!-- 连接池最大使用连接数量 -->
+        <property name="maxActive" value="${druid.maxActive}" />
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${druid.minIdle}" />
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${druid.maxWait}" />
+
+        <!-- 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。 -->
+       <!--  <property name="poolPreparedStatements" value="true" /> <property
+            name="maxPoolPreparedStatementPerConnectionSize" value="20" />-->
+        <!-- 验证数据库连接有效性，要求查询语句 -->
+        <property name="validationQuery" value="${druid.validationQuery}" />
+        <!-- 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
+        <property name="testWhileIdle" value="${druid.testWhileIdle}" />
+        <!-- 申请连接时执行validationQuery检测连接是否有效，配置true会降低性能。 -->
+        <property name="testOnBorrow" value="${druid.testOnBorrow}" />
+        <!-- 归还连接时执行validationQuery检测连接是否有效，配置true会降低性能 -->
+        <property name="testOnReturn" value="${druid.testOnReturn}" />
+
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}" />
+
+        <!-- 对于长时间不使用的连接强制关闭 -->
+        <property name="removeAbandoned" value="${druid.removeAbandoned}" />
+        <!-- 关闭超过30分钟的空闲连接，1800秒，也就是30分钟 -->
+        <property name="removeAbandonedTimeout" value="${druid.removeAbandonedTimeout}" />
+        <!-- 关闭abanded连接时输出错误日志 -->
+        <property name="logAbandoned" value="${druid.logAbandoned}" />
+
+    </bean>
+
+
+    <!-- MP 提供的 MybatisSqlSessionFactoryBean -->
+    <bean name="sqlSessionFactory"
+          class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- mybatis 全局配置文件 -->
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+        <!-- 别名处理 -->
+        <property name="typeAliasesPackage" value="com.aldrich.model"/>
+        <!-- 注入全局MP策略配置 -->
+        <property name="globalConfig" ref="globalConfiguration"/>
+        <!--扫描sql配置文件:mapper需要的xml文件-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!-- 插件注册 -->
+        <property name="plugins">
+            <list>
+                <!-- 注册分页插件 -->
+                <bean class="com.baomidou.mybatisplus.plugins.PaginationInterceptor" />
+                <!-- 注入 SQL 性能分析插件，建议在开发环境中使用，可以在控制台查看 SQL 执行日志 -->
+                <bean class="com.baomidou.mybatisplus.plugins.PerformanceInterceptor">
+                    <property name="maxTime" value="1000" />
+                    <!--SQL 是否格式化 默认false-->
+                    <property name="format" value="true" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- 定义 MybatisPlus 的全局策略配置-->
+    <bean id ="globalConfiguration" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+        <property name="sqlInjector" ref="logicSqlInjector"/>
+        <property name="logicDeleteValue" value="-1"/>
+        <property name="logicNotDeleteValue" value="1"/>
+        <!-- 全局ID类型： 0, "数据库ID自增"， 1, "用户输入ID", 2, "全局唯一ID", 3, "全局唯一ID"-->
+        <property name="idType" value="0"/>
+        <!-- 2.1-gamma+ 数据库自动识别，无需配置数据库类型-->
+        <property name="dbType" value="postgresql" />
+    </bean>
+
+
+    <!-- 逻辑删除Sql注入器-->
+    <bean id="logicSqlInjector" class="com.baomidou.mybatisplus.mapper.LogicSqlInjector"/>
+
+
+    <!-- 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入sqlSessionFactory -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!-- 给出需要扫描Dao接口包 -->
+        <property name="basePackage" value="com.aldrich.mapper"/>
+    </bean>
+
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!-- 配置基于注解的声明式事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+    <!--druid Spring 监控 -->
+    <bean id="druid-stat-interceptor"
+          class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+    </bean>
+
+
+    <!-- druid Spring 关联监控 ： 切面-->
+    <bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
+          scope="prototype">
+        <property name="patterns">
+            <list>
+                <!-- 这里配置需要拦截的bean id列表 -->
+                <value>com.aldrich.service.impl.*</value>
+                <value>com.aldrich.mapper.*</value>
+            </list>
+        </property>
+    </bean>
+
+    <aop:config>
+        <aop:advisor advice-ref="druid-stat-interceptor"
+                     pointcut-ref="druid-stat-pointcut"/>
+    </aop:config>
+
+
+   <!-- &lt;!&ndash; 配置启用Shiro的注解功能 cglib&ndash;&gt;
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <aop:config >
+        &lt;!&ndash;定义切面&ndash;&gt;
+        <aop:aspect id="log" ref="logging" >
+
+            &lt;!&ndash; 第3步：定义切入点,指定切入点表达式 &ndash;&gt;
+            <aop:pointcut id="allMethod"
+                          expression="execution(* com.aldrich.service.impl.*.*(..))"/>
+
+            &lt;!&ndash; 第4步：应用前置通知 &ndash;&gt;
+            <aop:before method="before" pointcut-ref="allMethod" />
+            &lt;!&ndash; 第4步：应用后置通知 &ndash;&gt;
+            <aop:after-returning method="afterReturn" pointcut-ref="allMethod"/>
+            &lt;!&ndash; 第4步：应用最终通知 &ndash;&gt;
+            <aop:after method="after" pointcut-ref="allMethod"/>
+            &lt;!&ndash; 第4步：应用抛出异常后通知 &ndash;&gt;
+            <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod"/>
+
+            &lt;!&ndash; 第4步：应用环绕通知 &ndash;&gt;
+            &lt;!&ndash;
+                    <aop:around method="doAround" pointcut-ref="allMethod" />
+            &ndash;&gt;
+        </aop:aspect>
+
+    </aop:config>-->
+</beans>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 扫描web相关的bean -->
+    <context:component-scan base-package="com.aldrich.*"/>
+
+
+    <!-- 开启SpringMVC注解模式 -->
+    <context:annotation-config />
+    <mvc:annotation-driven />
+
+    <!-- 静态资源默认servlet配置 -->
+    <mvc:default-servlet-handler/>
+    <mvc:resources mapping="/assets/font/**"              location="/assets/font/"/>
+    <mvc:resources mapping="/assets/layui/**"              location="/assets/layui/"/>
+    <mvc:resources mapping="/assets/style/**"              location="/assets/style/"/>
+    <mvc:resources mapping="/assets/js/**"                 location="/assets/js/"/>
+    <mvc:resources mapping="/assets/jquery/**"             location="/assets/jquery/"/>
+    <mvc:resources mapping="/assets/images/**"             location="/assets/images/"/>
+    <mvc:resources mapping="/assets/sound/**"             location="/assets/sound/"/>
+
+    <mvc:resources mapping="/assets/alone/css/**" location="/assets/alone/css/"/>
+    <mvc:resources mapping="/assets/alone/js/**" location="/assets/alone/js/"/>
+    <mvc:resources mapping="/assets/alone/img/**" location="/assets/alone/img/"/>
+    <mvc:resources mapping="/assets/alone/sound/**" location="/assets/alone/sound/"/>
+
+    <mvc:resources mapping="/assets/Trahald/css/**" location="/assets/Trahald/css/"/>
+    <mvc:resources mapping="/assets/Trahald/js/**" location="/assets/Trahald/js/"/>
+    <mvc:resources mapping="/assets/Trahald/images/**" location="/assets/Trahald/images/"/>
+    <mvc:resources mapping="/assets/Trahald/video/**" location="/assets/Trahald/video/"/>
+
+    <mvc:resources mapping="/assets/graceful/css/**" location="/assets/graceful/css/"/>
+    <mvc:resources mapping="/assets/graceful/js/**" location="/assets/graceful/js/"/>
+    <mvc:resources mapping="/assets/graceful/images/**" location="/assets/graceful/images/"/>
+
+    <mvc:resources mapping="/assets/LiWei/css/**" location="/assets/LiWei/css/"/>
+    <mvc:resources mapping="/assets/LiWei/js/**" location="/assets/LiWei/js/"/>
+    <mvc:resources mapping="/assets/LiWei/images/**" location="/assets/LiWei/images/"/>
+    <!--ViewResolver 视图解析器-->
+    <!--用于支持Servlet、JSP视图解析-->
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 文件上传 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为5MB -->
+        <property name="maxUploadSize" value="102400000"/>
+    </bean>
+
+    <!-- 配置启用Shiro的注解功能 cglib-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- 启用shrio授权注解拦截方式 -->
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+         <property name="securityManager" ref="securityManager"/>
+     </bean>
+
+    <!--aop日志-->
+    <aop:config >
+        <!--定义切面-->
+        <aop:aspect id="log" ref="logging" >
+
+            <!-- 第3步：定义切入点,指定切入点表达式 -->
+            <aop:pointcut id="allMethod"
+                          expression="execution(* com.aldrich.service.impl.*.*(..))"/>
+
+            <!-- 第4步：应用前置通知 -->
+            <aop:before method="before" pointcut-ref="allMethod" />
+            <!-- 第4步：应用后置通知 -->
+            <aop:after-returning method="afterReturn" pointcut-ref="allMethod"/>
+            <!-- 第4步：应用最终通知 -->
+            <aop:after method="after" pointcut-ref="allMethod"/>
+            <!-- 第4步：应用抛出异常后通知 -->
+            <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod"/>
+
+            <!-- 第4步：应用环绕通知 -->
+            <!--
+                    <aop:around method="doAround" pointcut-ref="allMethod" />
+            -->
+        </aop:aspect>
+
+    </aop:config>
+</beans>

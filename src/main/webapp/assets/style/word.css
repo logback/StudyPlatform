@@ -1,0 +1,230 @@
+
+/*公共样式*/
+.main_body{ min-width:320px; }
+.layui-elem-quote.title{ padding:10px 15px; margin-bottom:0; }
+.layui-tab-more{ position: relative; z-index: 99; background:#fff; }
+.layui-layer-tab .layui-layer-title span.layui-layer-tabnow{ height:42px !important; }
+.layui-layer-tab .layui-layer-title span{ min-width:45px !important; }
+/*模拟加载层图标样式*/
+.layui-layer-dialog .layui-layer-content .layui-layer-ico16{ background-size:100% 100% !important; }
+
+/*样式改变的过渡*/
+.logo,.top_menu .layui-nav-item[pc],.component,.top_menu .layui-nav-item[mobile],.layui-nav,.layui-layout-admin .layui-main,.site-mobile .layui-side,.layui-layout-admin .layui-side,.site-mobile .site-tree-mobile,.layui-body,.layui-layout-admin .layui-footer,.layui-layout-admin .layui-side,.panel,.panel .panel_icon i{ transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out; }
+
+
+.logo{ color: #fff; float: left; line-height:60px; font-size:20px; padding:0 25px; text-align: center; margin-right: 15px; }
+.weather{ color:#fff; float:left; margin:15px 0 0 50px;}
+.component{ float: left; width:200px; height:30px; margin-top: 15px; position: relative;}
+.component .layui-input{ height:30px; line-height: 30px; font-size:12px; border:none; transition: all 0.3s; }
+.component .layui-input:focus{ background:#fff; color:#000; }
+.component .layui-form-select dl{ top:33px; background:#fff; }
+.component .layui-form-select .layui-edge,.top_menu .layui-nav-item[mobile]{ display:none; }
+.component .layui-icon{ position: absolute; right:8px; top:8px; color:#000; }
+
+/*顶部右侧导航*/
+.top_menu{ position:absolute; right:0; background:none }
+.top_menu.layui-nav .layui-this:after{ width:0px; }
+.top_menu.layui-nav .layui-this{ background-color:transparent; }
+.top_menu.layui-nav .layui-this a{ color:#c2c2c2; }
+.top_menu.layui-nav dd.layui-this a{ color:#333; }
+.top_menu.layui-nav .layui-nav-item a:hover{ color:#fff; }
+.top_menu.layui-nav .layui-nav-child a:hover{ color:#fff; background-color:#5FB878; }
+.top_menu .iconfont{ font-size: 14px !important; }
+.top_menu .layui-nav-bar{ top:60px !important; background-color:rgba(0,0,0,0.7) }
+
+/*左侧用户头像*/
+.layui-layout-admin .layui-side{ left:0; }
+.user-photo{width: 200px; height: 120px; padding-top: 15px; padding-bottom: 5px;}
+.user-photo a.img{ display: block; width: 76px; height: 76px; margin: 0 auto; margin-bottom: 15px;}
+.user-photo a.img img{ display: block; border: none; width: 100%; height: 100%; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; border: 4px solid #44576b;}
+.user-photo p{ display: block; width: 100%; height: 35px; color:#009688; text-align: center; font-size: 12px; white-space: nowrap;line-height: 25px; overflow: hidden;}
+
+
+
+.second select {
+    width:  56.4%;
+    height: 200px;
+    outline: none;
+    border: 2px solid #75C2D4;
+    margin-left: 15.6%;
+    margin-top: -3px;
+
+}
+.second input {
+    width: 56.4%;
+    outline: none;
+    position: absolute;
+    line-height: 30px;
+    left: 8px;
+    height: 45px;
+    border: 4px solid #009688;
+    margin-left: 15%;
+    background-image: url(https://static.runoob.com/images/mix/searchicon.png);
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    padding: 0px 0px 0px 40px;
+    font-family: 'Merriweather', serif;
+    margin-top: 0.5%;
+}
+.second option {
+    margin-top: -2.5px;
+    margin-bottom: -2.4px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    font-family: 'Merriweather', serif;
+    border-bottom:2.4px dotted  #75C2D4;
+}
+
+.second option:hover{
+    background-color: #75C2D4;
+}
+
+.second option:active{
+    background-color: #5FB878;
+}
+
+.submit{
+    font-size: 28px;
+}
+
+
+
+
+.header{
+    height: 9%;
+    width: 100%;
+    float: initial;
+}
+
+.bottom{
+    height: 88%;
+    width: 100%;
+    float: initial;
+}
+
+
+.nav{
+    height: 100%;
+    width: 12%;
+    float: left;
+    border: 1px solid #dddddd;
+}
+
+.page{
+    height: 100%;
+    width: 67%;
+    float: left;
+    border: 1px solid #dddddd;
+}
+
+.right{
+    height: 100%;
+    width: 20%;
+    float: left;
+    border: 1px solid #dddddd;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: #2f4146;
+}
+
+.layui-btn {
+    display: inline-block;
+    height: 45px;
+    width: 80px;
+    line-height: 38px;
+    padding: 0 18px;
+    background-color: #009688;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 74%;
+    margin-top: 0.5%;
+    font-size: 28px;
+}
+
+i{
+    padding: 7px;
+}
+
+.title{
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    color: #009944;
+    font-weight: bolder;
+}
+
+ul{
+    font-size: 20px;
+    margin-left: 30%;
+}
+
+.li_sty{
+    margin-left: 10%;
+    color: #009944;
+    line-height: 25px;
+}
+
+label{
+    font-size: 16px;
+}
+
+.common{
+    margin-left: 3%;
+    margin-bottom: 2%;
+    line-height: 40px;
+}
+
+.type{
+    color: #009944;
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 2%;
+}
+
+.font{
+    font-family: 'Merriweather', serif;
+    font-weight:600;
+}
+
+.symbol{
+    color:#AAAAAA;
+    margin-right:1%;
+}
+
+li:active{
+    color:#FF5722;
+}
+
+li:hover{
+    background-color: #d2d2d2;
+}
+
+.picture{
+    width: 100%;
+    float: initial;
+    height: 40%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.label{
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+h2{
+    margin-left: 30%;
+    margin-top: 3%;
+}

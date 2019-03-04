@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.RoleMapper">
+    <!--开启缓存设置-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true"/>
+
+    <resultMap id="roleItem" type="com.aldrich.model.Role">
+        <id column="id" property="id"/>
+        <result column="role_type" property="roleType"/>
+        <result column="role_name" property="roleName"/>
+    </resultMap>
+
+
+
+    <resultMap id="roleItems" type="com.aldrich.model.Role">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="name" property="name"/>
+        <result column="image" property="image"/>
+        <result column="time" property="time"/>
+        <result column="lock" property="lock"/>
+        <result column="email" property="email"/>
+        <result column="role_name" property="roleName"/>
+    </resultMap>
+
+
+    <!---->
+    <select id="selectRole" resultMap="roleItem">
+        SELECT * from role
+    </select>
+
+    <select id="roleTotal" resultType="int">
+        select count(*) from role
+    </select>
+
+    <select id="limitRole" resultMap="roleItem" parameterType="map">
+        SELECT * from role limit #{pageIndex},#{pageSize}
+    </select>
+
+    <!---->
+    <select id="selectRoles" resultMap="roleItems">
+        SELECT adapter.account,adapter.`name`,adapter.image,adapter.time,adapter.email,
+               adapter.`lock`,  role.role_name
+        FROM adapter,role
+        WHERE  adapter.role=role.role_type
+    </select>
+
+    <select id="roleTotals" resultType="int">
+        select count(*)
+        FROM adapter,role
+        WHERE  adapter.role=role.role_type
+    </select>
+
+    <select id="limitRoles" resultMap="roleItems" parameterType="map">
+        SELECT adapter.account,adapter.`name`,adapter.image,adapter.time,adapter.email
+               ,adapter.`lock`,  role.role_name
+        FROM adapter,role
+        WHERE  adapter.role=role.role_type
+        limit #{pageIndex},#{pageSize}
+    </select>
+
+</mapper>

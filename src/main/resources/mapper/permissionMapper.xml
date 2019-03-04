@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aldrich.mapper.PermissionMapper">
+    <!--开启缓存设置-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true"/>
+
+    <resultMap id="permissionItem" type="com.aldrich.model.Permission">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="name" property="name"/>
+        <result column="permission" property="permissionType"/>
+        <result column="description" property="permissionName"/>
+    </resultMap>
+
+
+
+    <select id="selectPermission" resultMap="permissionItem">
+        SELECT * from permission
+    </select>
+
+    <select id="permissionTotal" resultType="int">
+        select count(*) from permission
+    </select>
+
+    <select id="limitPermission" resultMap="permissionItem" parameterType="map">
+        SELECT * from permission limit #{pageIndex},#{pageSize}
+    </select>
+
+
+    <select id="selectPermissions" resultMap="permissionItem">
+        SELECT DISTINCT   adapter.account,adapter.`name`,
+                          permission.permission,permission.description
+        FROM adapter,role,role_permission,permission
+        WHERE  adapter.role=role.role_type and role.id=role_permission.rid
+    </select>
+
+    <select id="permissionTotals" resultType="int">
+        select count(*)
+        FROM adapter,role
+        WHERE  adapter.role=role.role_type
+    </select>
+
+    <select id="limitPermissions" resultMap="permissionItem" parameterType="map">
+        SELECT DISTINCT adapter.id,adapter.account,adapter.`name`,
+                          permission.permission,permission.description
+        FROM adapter,role,role_permission,permission
+        WHERE  adapter.role=role.role_type and role.id=role_permission.rid
+            limit #{pageIndex},#{pageSize}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,78 @@
+.title_search{
+    width: 50%;
+    height: 8%;
+    position: absolute;
+    margin-left: 23%;
+    margin-top: 10%;
+    font-family: "Hiragino Sans GB" ;
+}
+
+.container{
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    margin-left:15%;
+    margin-top: 15%;
+}
+
+h1{
+    font-size: 36px;
+    margin-left: 33%;
+    letter-spacing: 5px;
+    font-weight: 500;
+    color: #008EDD;
+}
+
+.second select {
+    width: 56.4%;
+    height: 200px;
+    margin-top: 4.4%;
+    outline: none;
+    border: 2px solid #75C2D4;
+    margin-left: 10.7%;
+
+}
+
+.second input {
+    width: 56.4%;
+    outline: none;
+    position: absolute;
+    line-height: 30px;
+    left: 8px;
+    height: 45px;
+    border: 4px solid #009688;
+    margin-left: 10%;
+    background-image: url(https://static.runoob.com/images/mix/searchicon.png);
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    padding: 0px 0px 0px 40px;
+    font-family: 'Merriweather', serif;
+}
+
+
+.second option {
+    margin-top: -2.5px;
+    margin-bottom: -2.4px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    font-family: 'Merriweather', serif;
+    border-bottom:2.4px dotted  #75C2D4;
+}
+
+.second option:hover{
+    background-color: #75C2D4;
+}
+
+.second option:active{
+    background-color: #5FB878;
+}
+
+.submit{
+    position: absolute;
+    height: 43px;
+    margin-left: 69%;
+    font-size: 20px;
+}
