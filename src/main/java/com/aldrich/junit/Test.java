@@ -89,6 +89,7 @@ public class Test {
         System.out.println(adminService.decideLogin(map));
     }
 
+
     @org.junit.Test
     public void test4()
     {
@@ -174,7 +175,9 @@ public class Test {
 
     @org.junit.Test
     public void test11() {
+        System.out.println("aldrich");
+        System.out.println("aldrich");
+        System.out.println("aldrich");
+    }
 
-
-     }
 }
