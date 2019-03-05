@@ -175,9 +175,8 @@ public class Test {
 
     @org.junit.Test
     public void test11() {
-        System.out.println("aldrich");
-        System.out.println("aldrich");
-        System.out.println("aldrich");
+       Integer se=new Integer("dffdfd");
+        System.out.println(se);
     }
 
 }

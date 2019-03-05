@@ -2,7 +2,7 @@
 let path = (window.location+'').split('/');
 let basePath = path[0]+'//'+path[2]+'/'+path[3];
 let url;
-let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
 /*url=basePath+"/start/backstage/getAdmin";*/
 url=basePath+"/admin/getAdmin";
 

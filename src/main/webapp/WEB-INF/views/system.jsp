@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="<%=basePath%>assets/graceful/css/reset.css">
     <link rel="stylesheet" href="<%=basePath%>assets/graceful/css/index.css">
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
-
 </head>
 
 <body>

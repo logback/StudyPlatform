@@ -10,7 +10,7 @@ $('#register').click(function () {
         skin:'layui-layer-molv',
         type: 2,
         area: ['550px', '650px'],
-        content: 'http://localhost:8080/EnglishSystem/start/backstage/register'
+        content: 'http://localhost:8080/StudyPlatform/start/backstage/register'
     });
 });
 
