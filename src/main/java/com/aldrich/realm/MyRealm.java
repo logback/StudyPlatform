@@ -24,6 +24,7 @@ import java.util.Set;
 @Component
 public class MyRealm extends AuthorizingRealm {
 
+    @Override
     @Autowired //注入父类的属性，注入加密算法匹配密码时使用
     public void setCredentialsMatcher(CredentialsMatcher credentialsMatcher){
         super.setCredentialsMatcher(credentialsMatcher);

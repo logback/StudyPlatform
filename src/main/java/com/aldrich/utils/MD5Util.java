@@ -46,7 +46,7 @@ public class MD5Util {
         //密码原值
         Object crdentials = "123456";
         //盐值
-        Object salt = "18756076151";
+        Object salt = "12345678999";
         //加密1024次
         int hashIterations = 1024;
         String pwd=null;

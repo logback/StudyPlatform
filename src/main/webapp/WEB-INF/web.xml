@@ -16,6 +16,7 @@
   </context-param>
 
 
+
   <!--shiro过滤器-->
   <filter>
     <filter-name>shiroFilter</filter-name>
@@ -77,7 +78,7 @@
 
 
   <welcome-file-list>
-    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>logins.jsp</welcome-file>
   </welcome-file-list>
 
   <!-- Session超时时间 -->

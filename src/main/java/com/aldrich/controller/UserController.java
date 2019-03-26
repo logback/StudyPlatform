@@ -228,36 +228,6 @@ public class UserController {
 
 
 
-//    /**
-//     * 用户主页面
-//     * */
-//    @GetMapping("/backstage/show")
-//    public ModelAndView viewShow()
-//    {
-//        String mv="aldrich/backstage/user";
-//        return ModelView.createView(mv);
-//    }
-//    //注入Service
-//    @Autowired
-//    private UserService userService;
-//    private User user;
-//
-//    @RequestMapping(value = "/regist", method = RequestMethod.POST)
-//    @ResponseBody
-//    public String saveUser(@RequestParam("account") String account,
-//                           @RequestParam("name") String name,
-//                           @RequestParam("password") String password,
-//                           @RequestParam("email") String email,
-//                           HttpServletResponse response) throws ParseException {
-//        int rs = userService.saveUser(account, name, password, email);
-//        JSONObject decide = new JSONObject();
-//        decide.put("code", rs);
-//        ResponseUtil.writeResp(response, decide.toJSONString());
-//        return null;
-//    }
-//
-
-
     /**
      * 登录验证
      */
