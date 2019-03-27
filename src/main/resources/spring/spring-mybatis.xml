@@ -37,7 +37,9 @@
 
         <!-- 监控数据库,密码加密-->
      <property name="filters" value="${druid.filters}" />
+<!--
                <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${publicKey}" />
+-->
       <!-- 初始化连接大小 -->
         <property name="initialSize" value="${druid.initialSize}" />
         <!-- 连接池最大使用连接数量 -->
@@ -157,10 +159,10 @@
         </property>
     </bean>
 
-    <aop:config>
+   <!-- <aop:config>
         <aop:advisor advice-ref="druid-stat-interceptor"
                      pointcut-ref="druid-stat-pointcut"/>
-    </aop:config>
+    </aop:config>-->
 
 
    <!-- &lt;!&ndash; 配置启用Shiro的注解功能 cglib&ndash;&gt;

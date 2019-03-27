@@ -21,7 +21,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>我的首页面</title>
+    <title>小白首页</title>
 
 
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
@@ -223,9 +223,9 @@
                     </div>
                     <div class="table-body">
 
-                        <a><img src="<%=basePath%>assets/index/img/logo/cheks.png" alt=""></a>
+                        <a href="<%=basePath%>start/reception/search"><img src="<%=basePath%>assets/index/img/logo/cheks.png" alt=""> </a>
 
-                        <a class="button banner-btn" href="#" data-text="get start"><span>get start</span></a>
+                        <a class="button banner-btn" href="<%=basePath%>start/reception/search" data-text="get start"><span>get start</span></a>
                     </div>
                 </div>
             </div>
@@ -237,8 +237,8 @@
                         <h4>Special practice</h4>
                     </div>
                     <div class="table-body">
-                        <a><img src="<%=basePath%>assets/index/img/logo/exercise.png" alt=""></a>
-                        <a class="button banner-btn" href="#" data-text="get start"><span>get start</span></a>
+                        <a href="<%=basePath%>start/test/HomePage"><img src="<%=basePath%>assets/index/img/logo/exercise.png" alt=""></a>
+                        <a class="button banner-btn" href="<%=basePath%>start/test/HomePage" data-text="get start"><span>get start</span></a>
                     </div>
                 </div>
             </div>
@@ -250,8 +250,8 @@
                         <h4>Word game</h4>
                     </div>
                     <div class="table-body">
-                        <a><img alt="" src="<%=basePath%>assets/index/img/logo/game.png"></a>
-                        <a class="button banner-btn" href="#" data-text="get start"><span>get start</span></a>
+                        <a href="<%=basePath%>game/gamestart"><img alt="" src="<%=basePath%>assets/index/img/logo/game.png"></a>
+                        <a class="button banner-btn" href="<%=basePath%>game/gamestart" data-text="get start"><span>get start</span></a>
                     </div>
                 </div>
             </div>
@@ -290,6 +290,7 @@
                     <div class="single-testimonial">
                         <div class="client-info">
                             <div class="client-img">
+                                <!-- 修改图片 人员头像-->
                                 <img src="<%=basePath%>assets/index/img/testimonial/test1.jpg" alt="client">
                             </div>
                             <div class="client-title">
@@ -306,6 +307,7 @@
                     <div class="single-testimonial">
                         <div class="client-info">
                             <div class="client-img">
+                                <!-- 修改图片 人员头像 95*95-->
                                 <img src="<%=basePath%>assets/index/img/testimonial/test2.jpg" alt="client">
                             </div>
                             <div class="client-title">
@@ -342,6 +344,9 @@
             <div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="single-mentor">
                     <div class="mentor-img">
+                        <!-- 修改图片 演讲人员头像 269*360
+                      奥巴马 安东尼·罗宾 博恩崔西
+                        -->
                         <a href="#"><img src="<%=basePath%>assets/index/img/team/member1.jpg" alt="member"></a>
                         <div class="mentor-hover">
                             <h5>Jackline Milorina</h5>
@@ -414,7 +419,8 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-article">
                     <div class="article-img">
-                        <a href=""><img src="<%=basePath%>assets/index/img/article/ariticle1.jpg" alt="article"></a>
+                        <!-- 修改图片 最新演讲图片370*240-->
+                        <a href=""><img src="<%=basePath%>assets/index/img/article/article1.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
