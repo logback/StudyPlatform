@@ -37,9 +37,7 @@
 
         <!-- 监控数据库,密码加密-->
      <property name="filters" value="${druid.filters}" />
-<!--
                <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${publicKey}" />
--->
       <!-- 初始化连接大小 -->
         <property name="initialSize" value="${druid.initialSize}" />
         <!-- 连接池最大使用连接数量 -->

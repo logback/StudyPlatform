@@ -14,15 +14,13 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-<html>
+<html class="no-js" lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>小白首页</title>
-
 
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
     <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
@@ -40,6 +38,8 @@
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/responsive.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/imgs.css">
+    <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
+
 
 </head>
 <body>
@@ -169,6 +169,8 @@
 
 <!-- Background Area End -->
 
+
+
 <!-- Cowork Start -->
 <section class="cowork-area pt-120 pb-120">
     <div class="container">
@@ -294,12 +296,12 @@
                                 <img src="<%=basePath%>assets/index/img/testimonial/test1.jpg" alt="client">
                             </div>
                             <div class="client-title">
-                                <h4>Jackline Milorina</h4>
+                                <h4>Aldrich  Milorina</h4>
                                 <h5>HasTech</h5>
                             </div>
                         </div>
                         <div class="client-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit se do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, </p>
+                            <p>Don't be too obsessed with the present or worry about the future. When you experience something, the scenery is different from the past.</p>
                         </div>
                     </div>
                 </div>
@@ -308,15 +310,15 @@
                         <div class="client-info">
                             <div class="client-img">
                                 <!-- 修改图片 人员头像 95*95-->
-                                <img src="<%=basePath%>assets/index/img/testimonial/test2.jpg" alt="client">
+                                <img src="<%=basePath%>assets/index/img/testimonial/face1.jpg" alt="client">
                             </div>
                             <div class="client-title">
-                                <h4>Jackline Milorina</h4>
+                                <h4>Alexander Milorina</h4>
                                 <h5>HasTech</h5>
                             </div>
                         </div>
                         <div class="client-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit se do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam, </p>
+                            <p>No one in this world has the obligation to be good to you, so you should think, those cold and mean is taken for granted, those gentle treatment should be more cherished. </p>
                         </div>
                     </div>
                 </div>
@@ -411,7 +413,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="ccle section-title text-center">
-                    <h2>latest articles</h2>
+                    <h2>latest videos</h2>
                 </div>
             </div>
         </div>
@@ -420,28 +422,29 @@
                 <div class="single-article">
                     <div class="article-img">
                         <!-- 修改图片 最新演讲图片370*240-->
-                        <a href=""><img src="<%=basePath%>assets/index/img/article/article1.jpg" alt="article"></a>
+                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article5.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
                             </div>
                             <div class="article-right">
-                                <p><a href="#">Lorem ipsum dolor sit amet ami consectetur adipisicing. </a></p>
+                                <p><a href="#">There are only the pursued, the pursuing, the busy and the tired.</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-article">
                     <div class="article-img">
-                        <a href=""><img src="<%=basePath%>assets/index/img/article/article2.jpg" alt="article"></a>
+                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article2.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
                             </div>
                             <div class="article-right">
-                                <p><a href="#">Lorem ipsum dolor sit amet ami consectetur adipisicing. </a></p>
+                                <p><a href="#">There are only the pursued, the pursuing, the busy and the tired.</a></p>
                             </div>
                         </div>
                     </div>
@@ -451,13 +454,13 @@
             <div class="col-md-4 hidden-sm col-xs-12">
                 <div class="single-article">
                     <div class="article-img">
-                        <a href=""><img src="<%=basePath%>assets/index/img/article/article3.jpg" alt="article"></a>
+                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article3.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
                             </div>
                             <div class="article-right">
-                                <p><a href="#">Lorem ipsum dolor sit amet ami consectetur adipisicing. </a></p>
+                                <p><a href="#">There are only the pursued, the pursuing, the busy and the tired. </a></p>
                             </div>
                         </div>
                     </div>
@@ -519,7 +522,7 @@
         <div class="footer-bottom text-center">
             <div class="row">
                 <div class="col-xs-12">
-                    <p>Wisdom in the mind is better than money in the hand.<a target="_blank" href=""></a></p>
+                    <p><a target="_blank" href="<%=basePath%>start/backstage/login">Wisdom in the mind is better than money in the hand.</a></p>
                 </div>
             </div>
         </div>
@@ -530,7 +533,6 @@
 </body>
 </html>
 
-<script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="<%=basePath%>assets/index/js/vendor/jquery-1.12.0.min.js"></script>
 <script src="<%=basePath%>assets/index/js/bootstrap.min.js"></script>
 <script src="<%=basePath%>assets/index/js/jquery.meanmenu.js"></script>

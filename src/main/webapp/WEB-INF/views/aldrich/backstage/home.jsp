@@ -70,7 +70,7 @@
                 <li class="layui-nav-item" pc>
                     <a href="javascript:;">
                         <img src="<%=basePath%>assets/images/face.jpg" class="layui-circle" width="35" height="35">
-                        <cite id="title">请叫我杰哥</cite>
+                        <cite id="title">请叫我意哥</cite>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
@@ -89,7 +89,7 @@
 
         <!--左边头像栏-->
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img id="photo" src="<%=basePath%>assets/images/userface2.jpg"></a>
+            <a class="img" title="我的头像" ><img id="photo" src="<%=basePath%>assets/images/face.jpg"></a>
             <div class="description">
                 <ul class="ul_sty" id="loop">
                     <li class="li_sty">你好!请叫我信工马云, 欢迎登录!!!!</li>
@@ -165,7 +165,45 @@
 
 <!--初始化-->
 <script type="text/javascript">
+
+    let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+
+    function getAdmin(){
+
+        $.ajax({
+            url:'getAdmin',
+            type:"get",
+            dataType:"json",
+            success:function (data) {
+                let info;
+                let title;
+                let path=data['image'];
+                let name=data['name'];
+                let url=imaUrl+path;
+                info="您好！"+name+"欢迎登录系统!!!";
+                title="请叫我"+name.substring(0, 1)+"哥";
+                if(name==="aldrich"){
+                    info="欢迎意哥登录学习平台!!!";
+                    title="请叫我意哥";
+                }
+                $(".layui-circle").attr("src",url);
+                $('#title').text(title);
+                $("#photo").attr("src",url);
+                $(".li_sty").text(info);
+            },
+            error:function (data) {
+                console.log(data);
+                layer.msg("登录失败",{icon:5,time:1000});
+            }
+        });
+    }
+
+
+
+
     $(document).ready(function () {
+
+        getAdmin();
 
         let tab;
         layui.config({

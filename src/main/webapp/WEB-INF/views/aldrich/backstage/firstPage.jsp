@@ -99,10 +99,10 @@
     </div>
    </div>
 
-  <blockquote class="layui-elem-quote">
-    <p>本模板基于Layui实现，支持除LayIM外所有的Layui组件。<a href="http://layim.layui.com/" target="_blank" class="layui-btn layui-btn-mini">前往获取LayIM授权</a>　　<span style="color:#1E9FFF;">郑重提示：网站所有数据均为静态数据，无数据库，除打开的窗口和部分小改动外所有操作刷新后无效，关闭窗口或清除缓存后，所有操作无效，请知悉</span></p>
+ <%-- <blockquote class="layui-elem-quote">
+    <p>本后台界面基于Layui实现，支持所有的Layui组件。<a href="http://layim.layui.com/" target="_blank" class="layui-btn layui-btn-mini">前往获取LayIM授权</a>　　<span style="color:#1E9FFF;">郑重提示：网站所有数据均为静态数据，无数据库，除打开的窗口和部分小改动外所有操作刷新后无效，关闭窗口或清除缓存后，所有操作无效，请知悉</span></p>
     <p style="margin-top:5px;">开发文档地址：<a class="layui-btn layui-btn-mini" target="_blank" href="http://www.layui.com/doc">点此跳转</a> <a class="layui-btn layui-btn-mini layui-btn-danger" target="_blank" href="http://fly.layui.com/case/u/3198216">我要点赞</a>　　技术交流QQ群：<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=8b7dd3ea73528c1e46c5d4e522426d60deed355caefdf481c1eacdd1b7b73bfd"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="layui后台管理模版" title="layui后台管理模版"></a>（添加时请注明来自本框架） <span style="color:#f00;"> 注：本框架未引入任何第三方组件（天气信息除外），单纯的layui+js实现的各种功能【本框架仅作为学习交流使用，如需用作商业用途，请联系作者授权，谢谢】</span></p>
-  </blockquote>
+  </blockquote>--%>
 
  <div class="row">
     <div class="sysNotice col">
@@ -139,42 +139,42 @@
             <tbody>
             <tr>
                 <td>当前版本</td>
-                <td class="version"></td>
+                <td class="version">version3.20</td>
             </tr>
             <tr>
                 <td>开发作者</td>
-                <td class="author"></td>
+                <td class="author">Aldrich</td>
             </tr>
             <tr>
                 <td>网站首页</td>
-                <td class="homePage"></td>
+                <td class="homePage">www.cyxxn.top</td>
             </tr>
             <tr>
                 <td>服务器环境</td>
-                <td class="server"></td>
+                <td class="server">nginx+Mysql+Tomcat</td>
             </tr>
             <tr>
                 <td>数据库版本</td>
-                <td class="dataBase"></td>
+                <td class="dataBase">Mysql5.17</td>
             </tr>
             <tr>
                 <td>最大上传限制</td>
-                <td class="maxUpload"></td>
+                <td class="maxUpload">99MB</td>
             </tr>
             <tr>
                 <td>当前用户权限</td>
-                <td class="userRights"></td>
+                <td class="userRights">root</td>
             </tr>
             </tbody>
         </table>
-        <blockquote class="layui-elem-quote title">最新文章<i class="iconfont icon-new1"></i></blockquote>
+        <%--<blockquote class="layui-elem-quote title">最新文章<i class="iconfont icon-new1"></i></blockquote>
         <col width="110">
         <table class="layui-table" lay-skin="line">
             <colgroup>
                 <col>
             </colgroup>
             <tbody class="hot_news"></tbody>
-        </table>
+        </table>--%>
     </div>
  </div>
 </body>

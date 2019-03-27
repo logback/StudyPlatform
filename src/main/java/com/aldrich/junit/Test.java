@@ -109,6 +109,8 @@ public class Test {
         System.out.println(adminService.saveAdmin(account,name,role,time,pwd,img,email));
     }
 
+
+
     @org.junit.Test
     public void test6()
     {

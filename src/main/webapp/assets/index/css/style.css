@@ -2183,7 +2183,7 @@ textarea {
 }
 .grid-pagination ul li:hover a{
     color: #fff;
-    background: #471A72;
+    background: #006064;
 }
 /*----------------------------------------*/ 
 /*  15. Gallery CSS
@@ -2246,9 +2246,9 @@ textarea {
     padding-bottom: 15px;
 }
 #contact-form a{
-    background: #471A72;
+    background: #006064;
     color: #fff;
-    border: 1px solid #471A72;
+    border: 1px solid #006064;
     margin-top: 10px;
     padding: 0 55px
 }

@@ -23,11 +23,17 @@
 
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <title>单词展示</title>
+
+    <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
+    <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
+    <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
 
 <!--头部导航-->
-<div class="layui-layout layui-layout-admin">
+<%--<div class="layui-layout layui-layout-admin">
     <!-- 顶部 -->
     <div class="layui-header header" >
         <div class="layui-main">
@@ -55,34 +61,34 @@
             <!-- 顶部右侧菜单 -->
             <ul class="layui-nav top_menu" >
 
-                <%--主页--%>
+                &lt;%&ndash;主页&ndash;%&gt;
                 <li class="layui-nav-item showNotice" id="showNotice" pc>
                     <a href="<%=basePath%>index.jsp"><i class="fa fa-telegram" aria-hidden="true"></i><cite>主页</cite></a>
                 </li>
 
-                <%--查询--%>
+                &lt;%&ndash;查询&ndash;%&gt;
                 <li class="layui-nav-item" >
                     <a href="<%=basePath%>start/reception/search" data-url="page/user/changePwd.html"><i class="fa fa-search" aria-hidden="true"></i><cite>查词</cite></a>
                 </li>
 
-                <%--练习--%>
+                &lt;%&ndash;练习&ndash;%&gt;
                 <li class="layui-nav-item" >
                     <a href="<%=basePath%>start/test/HomePage"><i class="fa fa-check-square" aria-hidden="true"></i> <cite>练习</cite></a>
                 </li>
 
-                <%--游戏--%>
+                &lt;%&ndash;游戏&ndash;%&gt;
                 <li class="layui-nav-item" >
                     <a href="<%=basePath%>game/gamehome"> <i class="fa fa-check-square" aria-hidden="true"></i><cite>游戏</cite></a>
                 </li>
 
-                <%--资源--%>
+                &lt;%&ndash;资源&ndash;%&gt;
                 <li class="layui-nav-item lockcms" pc>
                     <a href="<%=basePath%>start/test"><i class="fa fa-play-circle-o" aria-hidden="true"></i><cite>资源</cite></a>
                 </li>
 
                 <li class="layui-nav-item" pc>
                     <a href="javascript:;">
-                        <img src="<%=basePath%>assets/images/face.jpg" class="layui-circle" width="35" height="35">
+                        <img src="<%=basePath%>assets/images/face1.jpg" class="layui-circle" width="35" height="35">
                         <cite>大顺发</cite>
                     </a>
                     <dl class="layui-nav-child">
@@ -95,89 +101,197 @@
         </div>
     </div>
 
-</div>
+</div>--%>
 
-<!--页面-->
-<div style="width: 100%;height: 92%;position: absolute;">
+        <!--头部导航栏-->
+        <!-- Header Area Start -->
+        <header class="top">
+            <div class="header-area header-sticky">
+                <div class="container">
+                    <div class="row">
 
-    <!--搜素-->
-    <div class="header">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="logo">
+                                <a href="index.html"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
+                            </div>
+                        </div>
 
-        <!--按钮-->
-        <button id="submit" class="submit layui-btn" onclick="submitWord()">Go</button>
+                        <div style="margin-left: 6%" class="col-md-8 col-sm-10 col-xs-12">
+                            <div class="content-wrapper">
+                                <!-- Main Menu Start -->
+                                <div class="main-menu text-right">
+                                    <nav style="margin-left: 10%">
+                                        <ul>
+                                            <li><a class="title" href="<%=basePath%>start/index">Home</a></li>
+                                            <li><a href="<%=basePath%>start/reception/search">Word query</a></li>
+                                            <li><a href="<%=basePath%>start/test/HomePage">Special practice</a></li>
+                                            <li><a href="<%=basePath%>game/gamehome">Word game</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="mobile-menu hidden-lg hidden-md"></div>
+                                <!-- Main Menu End -->
+                            </div>
+                        </div>
 
-        <!--搜索框-->
-        <span class="second ">
-              <input type="text" name="word" id="word" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词">
+                        <div style="width: 10.66666667%" class="col-md-2 hidden-sm hidden-xs" >
 
-              <select name="wordList" id="wordOptions" onchange="changeFocus(this)" size="10" style="display:none; ">
-                 <option value="">abandon</option>
-
-              </select>
-        </span>
-
-    </div>
-
-    <!--展示-->
-    <div class="bottom">
-
-        <!--左侧导航-->
-        <div class="nav">
-            <ul>
-                <li style="font-size: 25px;">目录</li>
-                <li class="li_sty" onclick="test()">释义</li>
-                <li class="li_sty" onclick="test()">例句</li>
-            </ul>
-        </div>
-
-        <!--中间释义页面-->
-        <div class="page" id="meaning">
-            <h1 class="title"><%=word%></h1>
-            <label class=" common">英</label>
-
-            <label id="eSymbol" class="symbol">[ə'bændən]</label>
-            <i class="fa fa-volume-off fa-lg" aria-hidden="true" onclick="ePlay()" ></i>
-            <audio id="ePlayer" src="<%=basePath%>assets/sound/abandon--_gb_1.mp3"></audio>
-
-            <label class=" common">美</label>
-            <label id="aSymbol" class="symbol">[ə'bændən]</label>
-            <i class="fa fa-volume-off fa-lg" aria-hidden="true" onclick="aPlay()" ></i>
-            <audio id="aPlayer" src="<%=basePath%>assets/sound/abandon--_gb_1.mp3"></audio>
-
-            <br>
-            <label class=" common type" style="margin-right: 2%">lel.</label>
-            <label id="level">四级</label>
-            <br>
-        </div>
-
-
-        <!--右侧展示-->
-        <div class="right" id="sentence">
-            <h2>每日一句</h2>
-            <div class="picture">
-              <img class="img" src="<%=basePath%>assets/images/english.jpg" alt="">
+                            <div class="header-social text-center">
+                                <ul>
+                                    <li><a style="font-weight: 600;font-size: 20px" href="">WELCOME!</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <label class="label">Though life is hard, I want it to be boiling.</label>
-            <br>
-            <label style="font-size: 20px">虽然辛苦，我还是会选择那种滚烫的人生。</label>
-            <br>
-            <div class="picture">
-                <img class="img" src="<%=basePath%>assets/images/english2.jpg" alt="">
-            </div>
-            <label class="label">We may talk of beautiful things, but beauty itself is abstract.</label>
-            <br>
-            <label style="font-size: 20px">我们尽可谈论美的事物，然而美本身却是抽象的。</label>
+        </header>
+        <!-- Header Area End -->
 
+
+        <!--页面-->
+        <div style="width: 100%;height:1250px; background-color:#f2f2f2">
+
+            <!--搜素-->
+            <div class="header">
+
+                <!--按钮-->
+                <button id="submit" class="submit layui-btn" style="margin-top: 2.2%" onclick="submitWord()">Go</button>
+
+                <!--搜索框-->
+                <span class="second ">
+                      <input type="text" name="word" id="word"  style="margin-top: 2.2%" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词">
+
+                      <select name="wordList" id="wordOptions" onchange="changeFocus(this)" size="10" style="display:none; ">
+                         <option value="">abandon</option>
+
+                      </select>
+                </span>
+
+            </div>
+
+            <!--展示-->
+            <div class="bottom">
+
+                <!--左侧导航-->
+                <div class="nav">
+                    <ul>
+                        <li style="font-size: 25px;">目录</li>
+                        <li class="li_sty" onclick="test()">释义</li>
+                        <li class="li_sty" onclick="test()">例句</li>
+                    </ul>
+                </div>
+
+                <!--中间释义页面-->
+                <div class="page" id="meaning">
+                    <h1 class="title"><%=word%></h1>
+                    <label class=" common">英</label>
+
+                    <label id="eSymbol" class="symbol">[ə'bændən]</label>
+                    <i class="fa fa-volume-off fa-lg" aria-hidden="true" onclick="ePlay()" ></i>
+                    <audio id="ePlayer" src="<%=basePath%>assets/sound/abandon--_gb_1.mp3"></audio>
+
+                    <label class=" common">美</label>
+                    <label id="aSymbol" class="symbol">[ə'bændən]</label>
+                    <i class="fa fa-volume-off fa-lg" aria-hidden="true" onclick="aPlay()" ></i>
+                    <audio id="aPlayer" src="<%=basePath%>assets/sound/abandon--_gb_1.mp3"></audio>
+
+                    <br>
+                    <label class=" common type" style="margin-right: 2%">lel.</label>
+                    <label id="level">四级</label>
+                    <br>
+                </div>
+
+
+                <!--右侧展示-->
+                <div class="right" id="sentence">
+                    <h2 style="margin-left: 26%;">每日一句</h2>
+                    <div class="picture">
+                      <img class="img" src="<%=basePath%>assets/images/english.jpg" alt="">
+                    </div>
+                    <label class="label">Though life is hard, I want it to be boiling.</label>
+                    <br>
+                    <label style="font-size: 20px">虽然辛苦，我还是会选择那种滚烫的人生。</label>
+                    <br>
+                    <div class="picture">
+                        <img class="img" src="<%=basePath%>assets/images/english2.jpg" alt="">
+                    </div>
+                    <label class="label">We may talk of beautiful things, but beauty itself is abstract.</label>
+                    <br>
+                    <label style="font-size: 20px">我们尽可谈论美的事物，然而美本身却是抽象的。</label>
+
+                </div>
+
+            </div>
         </div>
 
-    </div>
-</div>
 
+        <!--脚部-->
+        <!-- Footer Start -->
+        <footer class="footer-area">
+            <div class="container">
+                <div class="main-footer">
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-widget mr-50">
+                                <h3>about us</h3>
+                                <p>Ben Parker：If you could do good things for other people you had a moral obligation to do those things.That's what's at stake here.Not choice.Responsibility. </p>
+                                <ul>
+
+                                    <!--微信-->
+                                    <li><a href="#"><i class="layui-icon layui-icon-login-wechat"></i> </a></li>
+
+                                    <!--QQ-->
+                                    <li><a href="#"><i class="layui-icon layui-icon-login-qq"></i></a></li>
+
+                                    <!--微博-->
+                                    <li><a href="#"><i class="layui-icon layui-icon-login-weibo"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                            <div class="single-widget ml-100">
+                                <h3>contact us</h3>
+                                <p>2020 Aldrich Glen,<br>
+                                    Gmail : 201076171@qq.com<br>
+                                    Phone : +00 111 222 333	<br>
+                                    address : Anhui Institute of                                       Information Engineering
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-5 col-xs-12">
+                            <div class="single-widget ml-85">
+                                <h3>QR code</h3>
+                                <div class="footer-img">
+                                    <a><img src="<%=basePath%>assets/index/img/logo/white.PNG"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom text-center">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p><a target="_blank" href="<%=basePath%>start/backstage/login">Wisdom in the mind is better than money in the hand.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
 
 </body>
 </html>
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
+
+<script type="text/javascript" src="<%=basePath%>assets/index/js/vendor/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
 
 <%--头部导航--%>
 <script  type="text/javascript">
