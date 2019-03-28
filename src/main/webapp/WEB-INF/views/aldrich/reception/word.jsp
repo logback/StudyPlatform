@@ -32,77 +32,6 @@
 </head>
 <body>
 
-<!--头部导航-->
-<%--<div class="layui-layout layui-layout-admin">
-    <!-- 顶部 -->
-    <div class="layui-header header" >
-        <div class="layui-main">
-            <a href="#" class="logo" style="line-height: 64px;" >小白学习平台</a>
-            <!-- 天气信息 -->
-            <div class="weather" pc>
-                <div id="tp-weather-widget"></div>
-                <script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
-                <script>tpwidget("init", {
-                    "flavor": "slim",
-                    "location": "WX4FBXXFKE4F",
-                    "geolocation": "disabled",
-                    "language": "zh-chs",
-                    "unit": "c",
-                    "theme": "chameleon",
-                    "container": "tp-weather-widget",
-                    "bubble": "disabled",
-                    "alarmType": "badge",
-                    "color": "#FFFFFF",
-                    "uid": "U9EC08A15F",
-                    "hash": "14dff75e7253d3a8b9727522759f3455"
-                });
-                tpwidget("show");</script>
-            </div>
-            <!-- 顶部右侧菜单 -->
-            <ul class="layui-nav top_menu" >
-
-                &lt;%&ndash;主页&ndash;%&gt;
-                <li class="layui-nav-item showNotice" id="showNotice" pc>
-                    <a href="<%=basePath%>index.jsp"><i class="fa fa-telegram" aria-hidden="true"></i><cite>主页</cite></a>
-                </li>
-
-                &lt;%&ndash;查询&ndash;%&gt;
-                <li class="layui-nav-item" >
-                    <a href="<%=basePath%>start/reception/search" data-url="page/user/changePwd.html"><i class="fa fa-search" aria-hidden="true"></i><cite>查词</cite></a>
-                </li>
-
-                &lt;%&ndash;练习&ndash;%&gt;
-                <li class="layui-nav-item" >
-                    <a href="<%=basePath%>start/test/HomePage"><i class="fa fa-check-square" aria-hidden="true"></i> <cite>练习</cite></a>
-                </li>
-
-                &lt;%&ndash;游戏&ndash;%&gt;
-                <li class="layui-nav-item" >
-                    <a href="<%=basePath%>game/gamehome"> <i class="fa fa-check-square" aria-hidden="true"></i><cite>游戏</cite></a>
-                </li>
-
-                &lt;%&ndash;资源&ndash;%&gt;
-                <li class="layui-nav-item lockcms" pc>
-                    <a href="<%=basePath%>start/test"><i class="fa fa-play-circle-o" aria-hidden="true"></i><cite>资源</cite></a>
-                </li>
-
-                <li class="layui-nav-item" pc>
-                    <a href="javascript:;">
-                        <img src="<%=basePath%>assets/images/face1.jpg" class="layui-circle" width="35" height="35">
-                        <cite>大顺发</cite>
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" data-url="page/user/userInfo.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人主页</cite></a></dd>
-                        <dd><a href="javascript:;" data-url="page/user/changePwd.html"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
-                        <dd><a href="javascript:;"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
-                    </dl>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</div>--%>
-
         <!--头部导航栏-->
         <!-- Header Area Start -->
         <header class="top">
@@ -125,7 +54,7 @@
                                             <li><a class="title" href="<%=basePath%>start/index">Home</a></li>
                                             <li><a href="<%=basePath%>start/reception/search">Word query</a></li>
                                             <li><a href="<%=basePath%>start/test/HomePage">Special practice</a></li>
-                                            <li><a href="<%=basePath%>game/gamehome">Word game</a></li>
+                                            <li><a href="<%=basePath%>game/gamestart">Word game</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -138,7 +67,7 @@
 
                             <div class="header-social text-center">
                                 <ul>
-                                    <li><a style="font-weight: 600;font-size: 20px" href="">WELCOME!</a></li>
+                                    <li><a style="font-weight: 600;font-size: 20px;" href="">WELCOME!</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -267,7 +196,7 @@
                             <div class="single-widget ml-85">
                                 <h3>QR code</h3>
                                 <div class="footer-img">
-                                    <a><img src="<%=basePath%>assets/index/img/logo/white.PNG"></a>
+                                    <a><img src="<%=basePath%>assets/index/img/logo/white2.jpg"></a>
                                 </div>
                             </div>
                         </div>

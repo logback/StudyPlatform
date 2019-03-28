@@ -20,27 +20,19 @@
 <head>
     <meta charset="UTF-8">
     <title>game</title>
+
     <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
+    <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
+
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
 
 
     <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/reset.css">
     <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/index1.css">
-
-    <script src="<%=basePath%>assets/LiWei/js/jquery.js"></script>
-    <script type="text/javascript" src="<%=basePath%>assets/index/jsendor/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
-
-    <!-- CSS公共部分 开始 -->
- <%--   <link href="<%=basePath%>assets/LiWei/css/style.css" rel="stylesheet">--%>
-    <!-- CSS公共部分 结束 -->
-
-<%--    <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/header.css">--%>
     <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/liwei.css">
-    <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+
     <style>
         body {
             text-align: center
@@ -50,8 +42,8 @@
             margin: 0 auto;
             margin-top: 10px;
             border: 0px solid;
-            width: 1100px;
-            height: 1020px;
+            width: 100%;
+            height: 700px;
         }
 
         .word1 {
@@ -63,8 +55,16 @@
 
         .mag {
             width: 1100px;
-            height: 100%;
-            margin-top: 0px;
+            height: 60%;
+            margin-top: 30px;
+        }
+        .btn{
+            width: 300px;
+            height: 50px;
+            margin-top: 100px;
+            float: left;
+            margin-right: 10%;
+            margin-left: 40%;
         }
     </style>
 </head>
@@ -115,11 +115,11 @@
 <!-- Header Area End -->
 
 
-<div class="big">
+<div class="big" style="background-color: #F2F2F2;float: initial">
     <div class="word">
         <div class="word1"><b>请选出正确选项</b></div>
     </div>
-    <div class="mag" style="background-color: #F2F2F2">
+    <div class="mag"  >
         <div id="topic">
             <!--题干序号打印在b标签中-->
 
@@ -178,11 +178,12 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="btn">
         <button id="tijiao" class="layui-btn"><span class="btn-span">下一题</span></button>
     </div>
 </div>
 <br><br><br><br>
+
 <!--脚部-->
 <!-- Footer Start -->
 <footer class="footer-area">
@@ -224,7 +225,7 @@
                     <div class="single-widget ml-85">
                         <h3>QR code</h3>
                         <div class="footer-img">
-                            <a><img src="<%=basePath%>assets/index/img/logo/white.PNG" alt=""></a>
+                            <a><img src="<%=basePath%>assets/index/img/logo/white2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -241,11 +242,18 @@
     </div>
 </footer>
 <!-- Footer End -->
+
+
 </body>
 </html>
 
+<script type="text/javascript" src="<%=basePath%>assets/index/js/vendor/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
 
-<script type="text/javascript" language="javascript">
+<script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+
+<script type="text/javascript">
     var grade = 0;
     var count = 0;
     load();

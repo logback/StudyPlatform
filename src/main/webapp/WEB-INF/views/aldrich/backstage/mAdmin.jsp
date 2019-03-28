@@ -264,7 +264,7 @@
 <script type="text/javascript">
 
     let url;
-    let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
     let sign ="${sessionScope.sign}";
     let part;
     console.log(sign);

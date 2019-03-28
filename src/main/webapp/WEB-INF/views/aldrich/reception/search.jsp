@@ -54,10 +54,10 @@
                             <div class="main-menu text-right">
                                 <nav style="margin-left: 10%">
                                     <ul>
-                                        <li><a class="title" href="<%=basePath%>start/index">Home</a></li>
+                                        <li><a href="<%=basePath%>start/index">Home</a></li>
                                         <li><a href="<%=basePath%>start/reception/search">Word query</a></li>
                                         <li><a href="<%=basePath%>start/test/HomePage">Special practice</a></li>
-                                        <li><a href="<%=basePath%>game/gamehome">Word game</a></li>
+                                        <li><a href="<%=basePath%>game/gamestart">Word game</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -70,7 +70,7 @@
 
                         <div class="header-social text-center">
                             <ul>
-                                <li><a style="font-weight: 600;font-size: 20px" href="">WELCOME!</a></li>
+                                <li><a style="font-weight: 600;font-size: 20px;" href="">WELCOME!</a></li>
                             </ul>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                         <div class="single-widget ml-85">
                             <h3>QR code</h3>
                             <div class="footer-img">
-                                <a><img src="<%=basePath%>assets/index/img/logo/white.PNG"></a>
+                                <a><img src="<%=basePath%>assets/index/img/logo/white2.jpg"></a>
                             </div>
                         </div>
                     </div>

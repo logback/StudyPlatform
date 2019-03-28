@@ -69,7 +69,7 @@
                 </li>
                 <li class="layui-nav-item" pc>
                     <a href="javascript:;">
-                        <img src="<%=basePath%>assets/images/face.jpg" class="layui-circle" width="35" height="35">
+                        <img src="<%=basePath%>assets/images/face.jpg" class="layui-circle" width="35" height="35" alt="">
                         <cite id="title">请叫我意哥</cite>
                     </a>
                     <dl class="layui-nav-child">
@@ -89,7 +89,7 @@
 
         <!--左边头像栏-->
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img id="photo" src="<%=basePath%>assets/images/face.jpg"></a>
+            <a class="img" title="我的头像" ><img id="photo" src="<%=basePath%>assets/images/face.jpg" alt=""></a>
             <div class="description">
                 <ul class="ul_sty" id="loop">
                     <li class="li_sty">你好!请叫我信工马云, 欢迎登录!!!!</li>
@@ -166,7 +166,9 @@
 <!--初始化-->
 <script type="text/javascript">
 
-    let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
+    $(".layui-circle").empty();
+    $("#photo").empty();
 
     function getAdmin(){
 
@@ -203,12 +205,14 @@
 
     $(document).ready(function () {
 
-        getAdmin();
-
         let tab;
         layui.config({
             base : "<%=basePath%>assets/js/"
         }).use(['bodyTab','form','element','layer','jquery'],function(){
+
+
+            getAdmin();
+
             tab = layui.bodyTab();
             // 添加新窗口
             $(".layui-nav .layui-nav-item a").on("click",function(){

@@ -326,6 +326,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Testimonial Area End -->
 
 
@@ -336,7 +338,7 @@
             <div class="col-md-6 col-md-offset-3 col-xs-12">
                 <div class="mentor section-title">
                     <h2>our mentors</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiust tempor incidi ut labore et dolore magna aliqua. Ut enim ad mini veniam quis </p>
+                    <p>A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other.</p>
                 </div>
             </div>
         </div>
@@ -353,7 +355,6 @@
                         <div class="mentor-hover">
                             <h5>Jackline Milorina</h5>
                             <h6>HasTech</h6>
-
                         </div>
                     </div>
                 </div>
@@ -512,7 +513,7 @@
                     <div class="single-widget ml-85">
                         <h3>QR code</h3>
                         <div class="footer-img">
-                            <a><img src="<%=basePath%>assets/index/img/logo/white.PNG" alt=""></a>
+                            <a><img src="<%=basePath%>assets/index/img/logo/white2.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -534,16 +535,11 @@
 </html>
 
 <script src="<%=basePath%>assets/index/js/vendor/jquery-1.12.0.min.js"></script>
-<script src="<%=basePath%>assets/index/js/bootstrap.min.js"></script>
 <script src="<%=basePath%>assets/index/js/jquery.meanmenu.js"></script>
 <script src="<%=basePath%>assets/index/js/jquery.magnific-popup.min.js"></script>
 <script src="<%=basePath%>assets/index/js/isotope.pkgd.min.js"></script>
 <script src="<%=basePath%>assets/index/js/imagesloaded.pkgd.min.js"></script>
 <script src="<%=basePath%>assets/index/js/jquery.counterup.min.js"></script>
 <script src="<%=basePath%>assets/index/js/waypoints.min.js"></script>
-<script src="<%=basePath%>assets/index/js/ajax-mail.js"></script>
 <script src="<%=basePath%>assets/index/js/owl.carousel.min.js"></script>
-<script src="<%=basePath%>assets/index/js/animate-heading.js"></script>
-<script src="<%=basePath%>assets/index/js/jquery.mb.YTPlayer.js"></script>
-<script src="<%=basePath%>assets/index/js/plugins.js"></script>
 <script src="<%=basePath%>assets/index/js/main.js"></script>

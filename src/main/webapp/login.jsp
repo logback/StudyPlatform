@@ -36,6 +36,10 @@
     </form>
 </div>
 
+
+2018121418245707.jpg:1 GET http://localhost:8080/EnglishSystem/assets/images/2018/12/2018121418245707.jpg 404
+
+http://localhost:8080/StudyPlatform/assets/images/2018/12/2018121418245707.jpg
 </body>
 </html>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
