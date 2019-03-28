@@ -19,10 +19,25 @@
     <title></title>
     <link rel="stylesheet" href="<%=basePath%>assets/alone/css/example.css">
     <script src="<%=basePath%>assets/alone/js/sHover.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
+    <style>
+        html {
+            -ms-overflow-style:none;
+            overflow:-moz-scrollbars-none;
+        }
+        html::-webkit-scrollbar{width:0px}
+
+    </style>
     <script>
         function cs1(){
             window.location.href="<%=basePath%>start/test/Cloze";
         }
+        $(function () {
+            $("#but").bind("click",function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width":"100%","left":"0px"});
+            })
+        });
         window.onload=function(){
             var downLoadBtn=document.getElementById('headBtn');
             downLoadBtn.onclick=function(){
@@ -98,7 +113,7 @@
             <img id="img1" src="<%=basePath%>assets/alone/img/ting.jpg">
             <span id="intro1" class="sIntro">
                 <p>第一篇</p>
-				<input type="button" onclick="cs1()" value="开始练习" style="margin-top:80px;background-color: #f5f5f5">
+				<input id="but" type="button" onclick="cs1()" value="开始练习" style="margin-top:80px;background-color: #f5f5f5">
 				</span>
         </div>
     </div>

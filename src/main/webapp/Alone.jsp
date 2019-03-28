@@ -47,6 +47,7 @@
 <a href="<%=basePath%>start/test/ListeningPractice" class="layui-btn">听力练习</a>
 
 <a href="<%=basePath%>start/test/Cloze" class="layui-btn">完型填空</a>
+<a href="<%=basePath%>personal/home" class="layui-btn">个人中心</a>
 
 </body>
 </html>

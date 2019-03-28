@@ -30,6 +30,14 @@
     <script type="text/javascript" src="<%=basePath%>assets/alone/js/highlighter.js"></script>
     <script type="text/javascript" src="<%=basePath%>assets/alone/js/questionUtil.js"></script>
     <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
+    <style>
+        html {
+            -ms-overflow-style:none;
+            overflow:-moz-scrollbars-none;
+        }
+        html::-webkit-scrollbar{width:0px}
+
+    </style>
 </head>
 <body>
 <div class="nk-container with-validate" >
@@ -135,7 +143,7 @@
 </div>
 </body>
 </html>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script >
     var pageIndex = 1;
     locaDato(pageIndex);
