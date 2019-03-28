@@ -50,7 +50,7 @@
                 <a href="<%=basePath%>start/test/HomePage"><img src="assets/graceful/images/conts/main-list__img1.jpg" alt="#"><span>练习</span></a>
                 <a href="<%=basePath%>start/reception/search"><img src="assets/graceful/images/conts/main-list__img2.jpg" alt="#"><span>查词</span></a>
                 <a href="<%=basePath%>start/test"><img src="assets/graceful/images/conts/main-list__img3.jpg" alt="#"><span>资源</span></a>
-                <a href="<%=basePath%>game/gamehome"><img src="assets/graceful/images/conts/main-list__img4.jpg" alt="#"><span>游戏</span></a>
+                <a href="<%=basePath%>game/gamestart"><img src="assets/graceful/images/conts/main-list__img4.jpg" alt="#"><span>游戏</span></a>
 
 
             </div>

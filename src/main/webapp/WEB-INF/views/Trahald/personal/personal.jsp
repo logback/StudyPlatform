@@ -103,7 +103,7 @@
 
                 <!-- <%--游戏--%>-->
                 <li class="layui-nav-item">
-                    <a href="<%=basePath%>start/first"><i class="fa fa-check-square"
+                    <a href="<%=basePath%>game/gamestart"><i class="fa fa-check-square"
                                                           aria-hidden="true"></i><cite>游戏</cite></a>
                 </li>
 
