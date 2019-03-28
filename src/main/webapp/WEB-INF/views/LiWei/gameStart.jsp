@@ -5,6 +5,7 @@
   Time: 9:54
   To change this template use File | Settings | File Templates.
 --%>
+<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -176,11 +177,13 @@
                 <input type="radio" id="test" value="" style="display:none;">
                 <!--题目答案打印循环结束-->
             </div>
+
         </div>
+
     </div>
-    <div class="btn">
-        <button id="tijiao" class="layui-btn"><span class="btn-span">下一题</span></button>
-    </div>
+    <button id="tijiao" class="layui-btn">下一题</button>
+
+
 </div>
 <br><br><br><br>
 
@@ -251,7 +254,7 @@
 <script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
 
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 
 <script type="text/javascript">
     var grade = 0;
@@ -298,21 +301,28 @@
         });
     }
 
+
     $("#tijiao").click(function () {
         var test = $('#test').val();
         var v = $('input:radio[name="sex"]:checked').val();
-        if(v!=null){
-            count++;
-            if(test == v){
-                grade += 20;
-            }
+        layui.use('layer', function() {
+            var layer = layui.layer;
+            if(v!=null){
+                count++;
+                if(test == v){
+                    grade += 20;
+                }
 
-            $('input:radio[name=sex]').prop('checked',false);
-            load();
-        }else if(v==null){
-           //alert("请选择");
-            layer.alert('请选择', {icon: 6});
-        //   layer.msg("请选择");
-        }
+                $('input:radio[name=sex]').prop('checked',false);
+                load();
+            }else if(v==null) {
+                //alert("璇烽€夋嫨");
+                /* layer.msg('璇烽€夋嫨绛旀', {icon: 0});*/
+                layer.alert('请选择答案', {icon: 6});
+                //   layer.msg("璇烽€夋嫨");
+            }
+        });
+
     });
+
 </script>

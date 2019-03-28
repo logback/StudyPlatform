@@ -423,7 +423,7 @@
                 <div class="single-article">
                     <div class="article-img">
                         <!-- 修改图片 最新演讲图片370*240-->
-                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article5.jpg" alt="article"></a>
+                        <a href="<%=basePath%>start/playback?id=s1"><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article5.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
@@ -439,13 +439,13 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="single-article">
                     <div class="article-img">
-                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article2.jpg" alt="article"></a>
+                        <a href="<%=basePath%>start/playback?id=s1"><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article2.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>
                             </div>
                             <div class="article-right">
-                                <p><a href="#">There are only the pursued, the pursuing, the busy and the tired.</a></p>
+                                <p><a href="">There are only the pursued, the pursuing, the busy and the tired.</a></p>
                             </div>
                         </div>
                     </div>
@@ -455,7 +455,7 @@
             <div class="col-md-4 hidden-sm col-xs-12">
                 <div class="single-article">
                     <div class="article-img">
-                        <a href=""><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article3.jpg" alt="article"></a>
+                        <a href="<%=basePath%>start/playback?id=s1"><img style="width: 370px; height: 240px;" src="<%=basePath%>assets/index/img/article/article3.jpg" alt="article"></a>
                         <div class="article-content">
                             <div class="article-left">
                                 <h3><a href="#">14<br> July</a></h3>

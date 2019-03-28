@@ -30,11 +30,6 @@
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <title>视频页面</title>
 
-
-
-       <script type="text/javascript" src="<%=basePath%>assets/index/jsendor/jquery-1.12.0.min.js"></script>
-       <script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
-
        <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
        <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
        <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
