@@ -23,23 +23,24 @@
     <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
-    <%-- <link rel="stylesheet" href="css/styles.css">--%>
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
 
 
     <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/reset.css">
-<%--    <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/index1.css">--%>
+    <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/index1.css">
 
     <script src="<%=basePath%>assets/LiWei/js/jquery.js"></script>
+    <script type="text/javascript" src="<%=basePath%>assets/index/jsendor/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
+
     <!-- CSS公共部分 开始 -->
-    <link href="<%=basePath%>assets/LiWei/css/style.css" rel="stylesheet">
+ <%--   <link href="<%=basePath%>assets/LiWei/css/style.css" rel="stylesheet">--%>
     <!-- CSS公共部分 结束 -->
 
-   <%-- <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">--%>
 <%--    <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/header.css">--%>
     <link rel="stylesheet" href="<%=basePath%>assets/LiWei/css/liwei.css">
     <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-<%-- <script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>---%>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
     <style>
         body {
             text-align: center
@@ -50,8 +51,7 @@
             margin-top: 10px;
             border: 0px solid;
             width: 1100px;
-            height: 620px;
-
+            height: 1020px;
         }
 
         .word1 {
@@ -63,7 +63,7 @@
 
         .mag {
             width: 1100px;
-            height: 620px;
+            height: 100%;
             margin-top: 0px;
         }
     </style>
@@ -119,7 +119,7 @@
     <div class="word">
         <div class="word1"><b>请选出正确选项</b></div>
     </div>
-    <div class="mag" style="background: url(<%=basePath%>assets/LiWei/images/tupian.jpg);">
+    <div class="mag" style="background-color: #F2F2F2">
         <div id="topic">
             <!--题干序号打印在b标签中-->
 
@@ -182,7 +182,7 @@
         <button id="tijiao" class="layui-btn"><span class="btn-span">下一题</span></button>
     </div>
 </div>
-
+<br><br><br><br>
 <!--脚部-->
 <!-- Footer Start -->
 <footer class="footer-area">

@@ -1,4 +1,4 @@
-.header {
+/*.header {
   position: relative;
   width: 100%;
   height: 80px;
@@ -52,7 +52,6 @@
   margin-left: 7px;
   margin-bottom: 4px;
   vertical-align: middle;
-  background: url(../images/header_new.svg) no-repeat;
 }
 .header-nav .nav-more__hover {
   display: none;
@@ -228,12 +227,8 @@
 }
 .header-top__fixed .search {
   display: block;
-}
-#tu
-{
-  height: 530px;
-  background:url(../images/beijing.png);
-}
+}*/
+
 #siji
 {
   width: 300px;
@@ -257,10 +252,9 @@ html {
 
 body {
   display: grid;
-  background-image: url(../images/tupian.jpg);
  background-attachment: fixed;
 }
-
+/*
 .container {
   position: absolute;
   margin: auto;
@@ -280,7 +274,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #F6F4F3;
-}
+}*/
 
 #timer {
   color: #F6F4F3;
@@ -322,28 +316,6 @@ h1 {
   font-size: 5em;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  text-transform: uppercase;
-  padding: 10px;
-  font-family: "Lato", sans-serif;
-  font-size: 0.7em;
-}
-footer p {
-  letter-spacing: 3px;
-  color: #EF2F3C;
-}
-footer a {
-  color: #F6F4F3;
-  text-decoration: none;
-}
-footer a:hover {
-  color: #276FBF;
-}
-
-
 .box{width:800px;
      height:280px;
      margin:50px auto;
@@ -371,9 +343,6 @@ footer a:hover {
 
 .mission-link .icon{background:url(../images/mission.png) no-repeat center 0;}
 
-.play-link .icon{background:url(../images/play.png) no-repeat center 0;}
-
-.touch-link .icon{background:url(../images/touch.png) no-repeat center 0;}
 
 .button{display:block;
 	      width:180px;
