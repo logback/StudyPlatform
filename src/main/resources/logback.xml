@@ -201,6 +201,11 @@
     </root>
 
 </configuration>-->
+
+<!--druid的SQL日志输出-->
+<!--ehcache缓存命中输出-->
+<!--对方法通知输出-->
+
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
     <!--配置变量-->

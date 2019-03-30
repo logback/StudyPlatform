@@ -118,15 +118,15 @@
     <div class="nav" id="top">
         <ul>
             <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="ID">听力</span><i
+                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="ID">Hearing</span><i
                         class="my-icon "></i></a>
             </li>
             <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="cent">阅读理解</span><i
+                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="cent">Reading</span><i
                         class="my-icon "></i></a>
             </li>
             <li class="nav-item">
-                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="sent">完型填空</span><i
+                <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="sent">translation</span><i
                         class="my-icon "></i></a>
             </li>
         </ul>

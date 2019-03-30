@@ -185,8 +185,8 @@
                 info="您好！"+name+"欢迎登录系统!!!";
                 title="请叫我"+name.substring(0, 1)+"哥";
                 if(name==="aldrich"){
-                    info="欢迎意哥登录学习平台!!!";
-                    title="请叫我意哥";
+                    info="欢迎Aldrich登录学习平台!!!";
+                    title="Aldrich";
                 }
                 $(".layui-circle").attr("src",url);
                 $('#title').text(title);

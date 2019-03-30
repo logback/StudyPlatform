@@ -118,7 +118,7 @@
 
 <div class="big" style="background-color: #F2F2F2;float: initial">
     <div class="word">
-        <div class="word1"><b>请选出正确选项</b></div>
+        <div class="word1"><b></b></div>
     </div>
     <div class="mag"  >
         <div id="topic">

@@ -2,9 +2,23 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false"
           >
+
     <!-- java.io.tmpdir：Java临时目录。指定一个文件目录，当EhCache把数据写到硬盘上或者系统jvm内存时，将把数据写到这个文件目录下 -->
     <!-- 磁盘缓存位置 -->
     <diskStore path="java.io.tmpdir"/>
+
+
+
+    <!--shiro每次授权都会通过realm获取权限信息，为了提高访问速度需要添加缓存，第一次从realm中读取权限数据，之后不再读取。-->
+    <!--缓存是提供性能的重要手段。缓存适合那些经常不变动的数据，比如系统中用户的信息和权限不会经常改变，特别适合缓存起来供下次使用。这样减少了系统查询数据库的次数，提升了性能。shiro自身不实现缓存，而是提供缓存接口，让其他第三方实现，经常EHcache缓存。-->
+
+    <!--ehcache直接在jvm虚拟机中缓存，速度快，效率高；但是缓存共享麻烦，集群分布式应用不方便。
+        redis是通过socket访问到缓存服务，效率比ecache低，比数据库要快很多，
+        处理集群和分布式缓存方便，有成熟的方案。如果是单个应用或者对缓存访问要求很高的应用，用ehcache。如果是大型系统，存在缓存共享、分布式部署、缓存内容很大的，建议用redis。
+    -->
+    <!--EhCache是Hibernate的二级缓存技术之一，可以把查询出来的数据存储在内存或者磁盘，节省下次同样查询语句再次查询数据库，大幅减轻数据库压力；
+      -->
+    <!--这个对象是应用层的缓存组件;你可以理解为,持久层从数据库查询出来的对象,交给ehcache保管,下次持久层再需要的时候ehcache直接返回给持久层,不查询数据库;当持久层需要改变某数据时,会让ehcache更新直接的备份并且保存到数据库...-->
 
     <!-- maxElementsInMemory：设置基于内存的缓存可存放对象的最大数目。  -->
     <!-- eternal：如果为true，表示对象永远不会过期，此时会忽略timeToIdleSeconds和timeToLiveSeconds属性，默认为false; -->
@@ -13,6 +27,7 @@
     <!-- 如果该属性值为0，则表示对象可以无限期地处于空闲状态。  -->
     <!-- timeToLiveSeconds：设定对象允许存在于缓存中的最长时间，以秒为单位。当对象自从被存放到缓存中后，如果处于缓存中的时间超过了 timeToLiveSeconds属性值，这个对象就会过期。当对象过期，EHCache将把它从缓存中清除。只有当eternal属性为false，该属性才有效。如果该属性值为0，则表示对象可以无限期地存在于缓存中。timeToLiveSeconds必须大于timeToIdleSeconds属性，才有意义。  -->
     <!-- overflowToDisk：如果为true,表示当基于内存的缓存中的对象数目达到了maxElementsInMemory界限后，会把益出的对象写到基于硬盘的缓存中。 -->
+
 
     <!-- 默认缓存 -->
     <defaultCache maxElementsInMemory="10000"
@@ -32,6 +47,8 @@
            overflowToDisk="false"
            statistics="true">
     </cache>
+
+    <!-- 授权缓存 -->
     <cache name="authorizationCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
@@ -40,6 +57,8 @@
            overflowToDisk="false"
            statistics="true">
     </cache>
+
+    <!-- 认证缓存 -->
     <cache name="authenticationCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
@@ -48,6 +67,8 @@
            overflowToDisk="false"
            statistics="true">
     </cache>
+
+
     <cache name="shiro-activeSessionCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
@@ -56,6 +77,8 @@
            overflowToDisk="false"
            statistics="true">
     </cache>
+
+
     <cache name="shiro_cache"
            maxElementsInMemory="2000"
            maxEntriesLocalHeap="2000"
