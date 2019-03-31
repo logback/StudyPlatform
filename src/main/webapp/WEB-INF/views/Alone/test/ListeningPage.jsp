@@ -13,7 +13,7 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 %>
-<html >
+<html>
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -21,16 +21,18 @@
     <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
     <style>
         html {
-            -ms-overflow-style:none;
-            overflow:-moz-scrollbars-none;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
         }
-        html::-webkit-scrollbar{width:0px}
 
+        html::-webkit-scrollbar {
+            width: 0px
+        }
     </style>
 </head>
 <body id="body">
 
-<div >
+<div>
 
       <span class="headIntro">
 			<a href="#" id="headBtn"></a>
@@ -41,11 +43,9 @@
 
     <div class="container">
         <div id="item1" class="sHoverItem">
-            <img id="img1" src="<%=basePath%>assets/alone/img/timg.jpg">
-            <span id="intro1" class="sIntro">
-                <p>第一篇</p>
-				<input  id="but" type="button" onclick="cs1()" value="开始练习" style="margin-top:80px;background-color: #f5f5f5">
-				</span>
+            <a href="javascript:void(0)" onclick="cs1()">
+              <img id="img1" src="<%=basePath%>assets/alone/img/timg.jpg">
+            </a>
         </div>
     </div>
 </div>
@@ -53,69 +53,71 @@
 </html>
 <script src="<%=basePath%>assets/alone/js/sHover.min.js"></script>
 <script>
-    function cs1(){
-        window.location.href="<%=basePath%>start/test/ListeningPractice";
+    function cs1() {
+        window.location.href = "<%=basePath%>start/test/ListeningPractice";
     }
+
     $(function () {
-        $("#but").bind("click",function () {
-           parent.$(window.parent.document).find("#top").hide();
-           parent.$(window.parent.document).find(".right").css({"width":"100%","left":"0px"});
+        $("#but").bind("click", function () {
+            parent.$(window.parent.document).find("#top").hide();
+            parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
         })
     });
-    window.onload=function(){
-        var downLoadBtn=document.getElementById('headBtn');
-        downLoadBtn.onclick=function(){
+    window.onload = function () {
+        var downLoadBtn = document.getElementById('headBtn');
+        downLoadBtn.onclick = function () {
             scrollToBottom(downLoadBtn);
         }
 
-        var b=new sHover('head','headIntro');
+        var b = new sHover('head', 'headIntro');
 
-        var a=new sHover("sHoverItem","sIntro");
+        var a = new sHover("sHoverItem", "sIntro");
         a.set({
-            slideSpeed:5,
-            opacityChange:true,
-            opacity:80
+            slideSpeed: 5,
+            opacityChange: true,
+            opacity: 80
         });
 
 
-        var example1Btn=document.getElementById('example1Btn');
-        var part1arrow=document.getElementById('part1arrow');
-        var example1=document.getElementById('example1');
-        example1Btn.onclick=function(){
-            part1arrow.style.display='block';
-            var example1=new sHover("example1","intro1");
+        var example1Btn = document.getElementById('example1Btn');
+        var part1arrow = document.getElementById('part1arrow');
+        var example1 = document.getElementById('example1');
+        example1Btn.onclick = function () {
+            part1arrow.style.display = 'block';
+            var example1 = new sHover("example1", "intro1");
         }
 
-        var example2=new sHover('example2','intro2');
+        var example2 = new sHover('example2', 'intro2');
         example2.set({
-            slideSpeed:7,
-            opacity:80,
-            opacityChange:true
+            slideSpeed: 7,
+            opacity: 80,
+            opacityChange: true
         });
-        var example2prev=new sHover('example2prev','intro2prev');
-        example2prev.set({
-        });
+        var example2prev = new sHover('example2prev', 'intro2prev');
+        example2prev.set({});
 
     }
-    function scrollToBottom(a){
-        if(windowHeight()){
+
+    function scrollToBottom(a) {
+        if (windowHeight()) {
             clearInterval(a.scrollTimer);
-            var scrollSpeed=100;
-            a.scrollTimer=setInterval(function(){
-                document.documentElement.scrollTop+=scrollSpeed;
-                document.body.scrollTop+=scrollSpeed;
-                if((document.documentElement.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))||(document.body.scrollTop>=(document.documentElement.scrollHeight-windowHeight()))){
+            var scrollSpeed = 100;
+            a.scrollTimer = setInterval(function () {
+                document.documentElement.scrollTop += scrollSpeed;
+                document.body.scrollTop += scrollSpeed;
+                if ((document.documentElement.scrollTop >= (document.documentElement.scrollHeight - windowHeight())) || (document.body.scrollTop >= (document.documentElement.scrollHeight - windowHeight()))) {
                     clearInterval(a.scrollTimer);
                 }
-            },13);
-        }else{
+            }, 13);
+        } else {
 
         }
     }
-    function windowHeight(){
-        if(document.documentElement){
+
+    function windowHeight() {
+        if (document.documentElement) {
             return document.documentElement.clientHeight;
-        }else{
+        } else {
             return document.body.clientHeight;
         }
     }
