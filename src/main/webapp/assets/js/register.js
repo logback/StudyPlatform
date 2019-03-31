@@ -2,7 +2,7 @@
 let path = (window.location+'').split('/');
 let basePath = path[0]+'//'+path[2]+'/'+path[3];
 let url;
-let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
+let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
 /*url=basePath+"/start/backstage/getAdmin";*/
 url=basePath+"/admin/getAdmin";
 
@@ -206,6 +206,7 @@ $(document).ready(function () {
                     if(decide===0)
                     {
                         layer.msg('账号已存在', {icon: 2, time: 3000});
+                        layer.close();
                     }
                     if(decide===-1)
                     {
@@ -226,6 +227,7 @@ $(document).ready(function () {
             });
             return false;
         });
+
 
         /*
         * 修改数据

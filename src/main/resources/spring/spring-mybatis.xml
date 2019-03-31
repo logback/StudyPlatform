@@ -157,14 +157,14 @@
         </property>
     </bean>
 
-   <!-- <aop:config>
+  <!--  <aop:config>
         <aop:advisor advice-ref="druid-stat-interceptor"
                      pointcut-ref="druid-stat-pointcut"/>
     </aop:config>-->
 
 
-   <!-- &lt;!&ndash; 配置启用Shiro的注解功能 cglib&ndash;&gt;
-    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- 配置启用Shiro的注解功能 cglib-->
+   <!-- <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <aop:config >
         &lt;!&ndash;定义切面&ndash;&gt;

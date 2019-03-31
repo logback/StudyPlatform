@@ -14,8 +14,8 @@ public class TimeUtil {
 
 
     public static Date timeUtil(String time) throws ParseException {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd ");
-        Date date = df.parse(time);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = (Date) df.parseObject(time);
         return date;
     }
 

@@ -14,8 +14,6 @@ import java.util.Date;
  * @author aldrich
  * @date 2018/12/10 14:48
  */
-@Setter
-@Getter
 @Component("admin")
 public class Admin implements Serializable {
 
@@ -27,6 +25,7 @@ public class Admin implements Serializable {
 
     @JSONField(format="yyyy-MM-dd")
     private Date time;
+
     private String state;
     private String role;
     private String email;

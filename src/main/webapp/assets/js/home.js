@@ -33,13 +33,12 @@ function carousel()
 /*
 * 获得管理员的身份信息，更换管理员的头像昵称
 * */
-/*let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
 
 function getAdmin(){
-
     $.ajax({
         url:'getAdmin',
-        type:"post",
+        type:"get",
         dataType:"json",
         success:function (data) {
             let info;
@@ -63,9 +62,7 @@ function getAdmin(){
             layer.msg("登录失败",{icon:5,time:1000});
         }
     });
-}*/
-
-
+}
 
 
 $(document).ready(function () {
@@ -74,7 +71,7 @@ $(document).ready(function () {
     carousel();
 
     /*获取管理员信息*/
-   /* getAdmin();*/
+    getAdmin();
 
     /*锁屏*/
     function lockPage(){
@@ -204,7 +201,7 @@ $(".showNotice").on("click",function(){
 
 
 //公告层
-/*function showNotice()
+function showNotice()
 {
     layer.open({
         type: 1,
@@ -217,8 +214,8 @@ $(".showNotice").on("click",function(){
         id: 'LAY_layuipro', //设定一个id，防止重复弹出
         btn: ['火速围观','残忍拒绝'],
         moveType: 1, //拖拽模式，0或者1
-        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;background-color: #393D49;" ><p style="color: floralwhite;font-size: 16px">。\n'
-             +''+
+        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;background-color: #393D49;" ><p style="color: floralwhite;font-size: 16px">\n'
+             +'小白四立级英语学习平台在2018年12月12日正式立项。项目成员主要有五人，组长：Aldrich，组员：；Bond、Alice、Jack、Mark，项目主要作用是为大学生提供学习四，六级的辅助。传统的课程功能不全面，只有较为单一的功能。我们项目的优势在于具用学习、练习以及提高自身英语素质的综合功能，可以为用户提供更舒适和全面的体验。'+
             '</p></div>',
         success: function(layero){
             let btn = layero.find('.layui-layer-btn0');
@@ -242,9 +239,7 @@ $(".showNotice").on("click",function(){
             }
         }
     });
-}*/
-
-
+}
 
 
 //捐赠弹窗

@@ -65,8 +65,7 @@ public class MyRealm extends AuthorizingRealm {
      * @throws AuthenticationException
      */
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
-            throws AuthenticationException {
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
         //获取用户账号
         String account = (String) token.getPrincipal();
         System.out.println("账号"+account);
@@ -98,7 +97,7 @@ public class MyRealm extends AuthorizingRealm {
 }
 
 
-    @Override
+   /* @Override
     public void clearCachedAuthorizationInfo(PrincipalCollection principals) {
         super.clearCachedAuthorizationInfo(principals);
     }
@@ -124,7 +123,7 @@ public class MyRealm extends AuthorizingRealm {
     public void clearAllCache() {
         clearAllCachedAuthenticationInfo();
         clearAllCachedAuthorizationInfo();
-    }
+    }*/
 
 
 }

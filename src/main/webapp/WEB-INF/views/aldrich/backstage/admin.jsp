@@ -14,7 +14,7 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 
-    String imagePath=basePath+"assets/images/2018/12/";
+    String imagePath=basePath+"assets/images/avatar/";
 %>
 <html>
 <head>

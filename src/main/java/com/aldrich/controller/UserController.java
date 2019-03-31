@@ -244,7 +244,7 @@ public class UserController {
         try {
             subject.login(token);
             //记录用户
-            token.setRememberMe(true);
+           // token.setRememberMe(true);
             resObj.put("code",0);
             resObj.put("message","成功");
         }catch (UnknownAccountException ex){

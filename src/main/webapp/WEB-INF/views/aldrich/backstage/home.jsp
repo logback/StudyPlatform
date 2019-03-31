@@ -166,41 +166,9 @@
 <!--初始化-->
 <script type="text/javascript">
 
-    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
+    //let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
     $(".layui-circle").empty();
     $("#photo").empty();
-
-    function getAdmin(){
-
-        $.ajax({
-            url:'getAdmin',
-            type:"get",
-            dataType:"json",
-            success:function (data) {
-                let info;
-                let title;
-                let path=data['image'];
-                let name=data['name'];
-                let url=imaUrl+path;
-                info="您好！"+name+"欢迎登录系统!!!";
-                title="请叫我"+name.substring(0, 1)+"哥";
-                if(name==="aldrich"){
-                    info="欢迎Aldrich登录学习平台!!!";
-                    title="Aldrich";
-                }
-                $(".layui-circle").attr("src",url);
-                $('#title').text(title);
-                $("#photo").attr("src",url);
-                $(".li_sty").text(info);
-            },
-            error:function (data) {
-                console.log(data);
-                layer.msg("登录失败",{icon:5,time:1000});
-            }
-        });
-    }
-
-
 
 
     $(document).ready(function () {
@@ -209,10 +177,6 @@
         layui.config({
             base : "<%=basePath%>assets/js/"
         }).use(['bodyTab','form','element','layer','jquery'],function(){
-
-
-            getAdmin();
-
             tab = layui.bodyTab();
             // 添加新窗口
             $(".layui-nav .layui-nav-item a").on("click",function(){

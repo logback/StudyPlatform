@@ -401,9 +401,9 @@
     </logger>
 
     <!--配置druid的监控日志输出-->
-    <!--<logger name="com.company.project.support.druid.MyDruidDataSourceStatLoggerAdapter" level="DEBUG" additivity="false">-->
-    <!--<appender-ref ref="druidMonitorRollingFile" />-->
-    <!--</logger>-->
+    <logger name="com.company.project.support.druid.MyDruidDataSourceStatLoggerAdapter" level="DEBUG" additivity="false">
+    <appender-ref ref="druidMonitorRollingFile" />
+    </logger>
 
     <!--配置定时任务DruidLogTask的监控日志输出-->
     <logger name="com.company.project.timetask.DruidLogTask" level="DEBUG" additivity="false">

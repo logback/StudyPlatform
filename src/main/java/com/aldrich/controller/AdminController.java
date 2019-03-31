@@ -114,8 +114,7 @@ public class AdminController {
     /**
      * 保存管理员
      * */
-    @PostMapping(value = "submit/data")
-    @ResponseBody
+    @PostMapping(value = "submit/data",produces = "application/json ;charset=UTF-8")
     public String saveAdmin(@RequestParam("account") String account,
                             @RequestParam("name") String name,
                             @RequestParam("pwd") String pwd,

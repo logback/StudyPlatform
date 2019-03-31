@@ -86,26 +86,29 @@ layui.use(['layer','upload','form'], function() {
             url:basePath+'/admin/submit/data',
             dataType:"json",
             data: $(data.form).serialize(),
-            beforeSend:function(XMLHttpRequest)
-            {
-                layer.load(1,{
-                    icon: 1, // 0~2 ,0比较好看
-                    // 黑色透明度0.5背景
-                });
-            },
+            // beforeSend:function(XMLHttpRequest)
+            // {
+            //     layer.load(1,{
+            //         icon: 1, // 0~2 ,0比较好看
+            //         // 黑色透明度0.5背景
+            //     });
+            // },
             success: function (result) {
                 let decide = result.code;
                 if(decide===0)
                 {
                     layer.msg('账号已存在', {icon: 2, time: 3000});
+                    layer.close();
                 }
                 if(decide===-1)
                 {
                     layer.msg('昵称已存在', {icon: 2, time: 3000});
+                    layer.close();
                 }
                 if(decide===2)
                 {
                     layer.msg('邮箱已存在', {icon: 2, time: 3000});
+                    layer.close();
                 }
                 if(decide===1)
                 {

@@ -357,8 +357,8 @@
                             <h6>HasTech</h6>
                         </div>
                     </div>
-                </div>
-            </div>
+    </div>
+</div>
 
             <!--second-->
             <div class="col-md-3 col-sm-4 col-xs-12">

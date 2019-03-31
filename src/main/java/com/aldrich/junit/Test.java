@@ -125,13 +125,7 @@ public class Test {
     @org.junit.Test
     public void test7()
     {
-        String pwd=GetMD5.getMD5("234329");
-        String account="21214343";
-        String name ="大d萨达";
-        String role="1003";
-        String img="20181214112311247.jpg";
-        String email="233276171@qq.com";
-        System.out.println(adminService.updateInfo(account,name,role,pwd,img,email));
+
     }
 
     @org.junit.Test
@@ -150,7 +144,7 @@ public class Test {
     @org.junit.Test
     public void  test9()
     {
-        System.out.println( wordService.getWords());
+        System.out.println(wordService.getWords());
     }
 
     @Resource
@@ -176,9 +170,17 @@ public class Test {
 
 
     @org.junit.Test
-    public void test11() {
-       Integer se=new Integer("dffdfd");
-        System.out.println(se);
+    public void test11() throws ParseException {
+       /* Admin user = adminService.searchByEmail("32434354@QQ.com") ;
+        System.out.println(user);*/
+        String pwd="232432434";
+        String account="12345252569";
+        String name ="测试001";
+        String time ="2018-12-13";
+        String role="1003";
+        String img="20181214112311247.jpg";
+        String email="233276171@qq.com";
+        System.out.println(adminService.saveAdmin(account,name,role,time,pwd,img,email));
     }
 
 }

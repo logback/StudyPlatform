@@ -178,7 +178,7 @@ public class AdminServiceImpl implements AdminService {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSS");
         String res = sdf.format(new Date());
 
-        String   rootPath = "D:\\IDEA-SSM\\EnglishSystem\\src\\main\\webapp\\assets\\images";
+        String   rootPath = "D:\\IDEA-SSM\\StudyPlatform\\src\\main\\webapp\\assets\\images\\avatar";
         //原始名称
         String originalFilename = file.getOriginalFilename();
         //新的文件名称
@@ -187,23 +187,24 @@ public class AdminServiceImpl implements AdminService {
         System.out.println(newFileName);
         //创建年月文件夹
         Calendar date = Calendar.getInstance();
-       // File dateDirs = new File(date.get(Calendar.YEAR)
-            //    + File.separator + (date.get(Calendar.MONTH) + 1));
 
         File dateDirs = new File("2018"
                 + File.separator + "12");
+
         //新文件
-        File newFile = new File(rootPath + File.separator + dateDirs + File.separator + newFileName);
-        //判断目标文件所在的目录是否存在
+        File newFile = new File(rootPath + File.separator /*+ dateDirs*/ + File.separator + newFileName);
+        System.out.println("新文件"+newFile);
+       /* //判断目标文件所在的目录是否存在
         if (!newFile.getParentFile().exists()) {
             //如果目标文件所在的目录不存在，则创建父目录
             newFile.getParentFile().mkdirs();
-        }
+        }*/
 
         //将内存中的数据写入磁盘
         file.transferTo(newFile);
         //完整的url
-        String fileUrl = rootPath + date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/"+ (date.get(Calendar.DAY_OF_MONTH)) + "/"+ newFileName;
+      //  String fileUrl = rootPath + date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/"+ (date.get(Calendar.DAY_OF_MONTH)) + "/"+ newFileName;
+        String fileUrl = rootPath + "\\"+ newFileName;
         System.out.println(fileUrl);
         Map<String, Object> map2 = new HashMap<String, Object>();
 
@@ -213,6 +214,7 @@ public class AdminServiceImpl implements AdminService {
         resObj.put("data",map2);
         map2.put("src", fileUrl);
         map2.put("title", newFileName);
+        System.out.println(map2.toString());
         return resObj.toJSONString();
     }
 
@@ -227,6 +229,7 @@ public class AdminServiceImpl implements AdminService {
         return this.adminMapper.searchById(account);
     }
 
+
     /**
      * 依据昵称查找管理员
      * @param name
@@ -234,8 +237,17 @@ public class AdminServiceImpl implements AdminService {
      * */
     @Override
     public Admin searchByName(String name) {
-        return this.adminMapper.searchByName(name);
+        Admin aldrich = new Admin();
+        try {
+             aldrich=this.adminMapper.searchByName(name) ;
+        }catch (NullPointerException e)
+        {
+            System.out.println("dsfsfsd");
+            return null;
+        }
+        return aldrich;
     }
+
 
     /**
      * 依据邮件查找管理员
@@ -247,6 +259,7 @@ public class AdminServiceImpl implements AdminService {
         return this.adminMapper.searchByEmail(email);
     }
 
+
     /**
      * 依据时间查找管理员
      * @param time
@@ -256,6 +269,8 @@ public class AdminServiceImpl implements AdminService {
     public List<Admin> searchByTime(String time) {
         return this.adminMapper.searchByTime(time);
     }
+
+
 
     /**
      * 依据昵称查找管理员
