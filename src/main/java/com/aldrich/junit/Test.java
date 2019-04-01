@@ -55,7 +55,6 @@ public class Test {
     @Resource
     private WordPojoServiceImpl wordPojoService;
 
-
     @Resource
     private RoleServiceImpl roleService;
 
@@ -67,6 +66,8 @@ public class Test {
     {
         System.out.println(studentService.selectStudents());
     }
+
+
 
     @org.junit.Test
     public void test2()
@@ -80,6 +81,8 @@ public class Test {
         System.out.println(admins);
     }
 
+
+
     @org.junit.Test
     public void test3()
     {
@@ -90,11 +93,14 @@ public class Test {
     }
 
 
+
     @org.junit.Test
     public void test4()
     {
         System.out.println(adminService.deleteById("2342343"));
     }
+
+
 
     @org.junit.Test
     public void test5() throws ParseException {
