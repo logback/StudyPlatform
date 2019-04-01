@@ -178,34 +178,33 @@ public class AdminServiceImpl implements AdminService {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSS");
         String res = sdf.format(new Date());
 
-        String   rootPath = "D:\\IDEA-SSM\\StudyPlatform\\src\\main\\webapp\\assets\\images\\avatar";
+        String   rootPath = "D:\\JetBrains\\idea-workspace\\StudyPlatform\\src\\main\\webapp\\assets\\images";
         //原始名称
         String originalFilename = file.getOriginalFilename();
         //新的文件名称
         String newFileName = res + originalFilename.substring(originalFilename.lastIndexOf("."));
 
-        System.out.println(newFileName);
+        System.out.println("新的文件名称"+newFileName);
         //创建年月文件夹
         Calendar date = Calendar.getInstance();
-
-        File dateDirs = new File("2018"
-                + File.separator + "12");
+        File dateDirs = new File("avatar");
 
         //新文件
-        File newFile = new File(rootPath + File.separator /*+ dateDirs*/ + File.separator + newFileName);
-        System.out.println("新文件"+newFile);
-       /* //判断目标文件所在的目录是否存在
+        File newFile = new File(rootPath + File.separator + dateDirs + File.separator + newFileName);
+        System.out.println("路径"+rootPath + File.separator + dateDirs + File.separator + newFileName);
+        //判断目标文件所在的目录是否存在
         if (!newFile.getParentFile().exists()) {
             //如果目标文件所在的目录不存在，则创建父目录
             newFile.getParentFile().mkdirs();
-        }*/
+        }
 
         //将内存中的数据写入磁盘
         file.transferTo(newFile);
         //完整的url
-      //  String fileUrl = rootPath + date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/"+ (date.get(Calendar.DAY_OF_MONTH)) + "/"+ newFileName;
-        String fileUrl = rootPath + "\\"+ newFileName;
-        System.out.println(fileUrl);
+        String fileUrl = rootPath + date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/"+ (date.get(Calendar.DAY_OF_MONTH)) + "/"+ newFileName;
+        System.out.println("完整的url"+fileUrl);
+
+
         Map<String, Object> map2 = new HashMap<String, Object>();
 
         JSONObject resObj = new JSONObject();
