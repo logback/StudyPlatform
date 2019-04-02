@@ -157,9 +157,6 @@
 </html>
 
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-<%--
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
---%>
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/nav.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/leftNavs.js"></script>
