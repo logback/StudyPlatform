@@ -179,16 +179,19 @@
         layui.config({
             base : "<%=basePath%>assets/js/"
         }).use(['bodyTab','form','element','layer','jquery'],function(){
-            tab = layui.bodyTab(),
             form = layui.form,
-            eleme63nt = layui.element,
+            element = layui.element,
             layer = layui.layer,
-            jquery = layui.jquery;
+            jquery = layui.jquery,
+            tab = layui.bodyTab();
+
             // 添加新窗口
             $(".layui-nav .layui-nav-item a").on("click",function(){
                 addTab($(this));
                 $(this).parent("li").siblings().removeClass("layui-nav-itemed");
             });
+
+
         });
 
         //打开新窗口

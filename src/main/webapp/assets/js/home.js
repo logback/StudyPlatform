@@ -4,6 +4,7 @@ let $ul = $("#loop");
 //获得ul长度
 let ulWidth = $("#loop").width();
 
+let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
 
 //给li定位 起始位置
 function positionLi()
@@ -33,8 +34,6 @@ function carousel()
 /*
 * 获得管理员的身份信息，更换管理员的头像昵称
 * */
-let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
-
 function getAdmin(){
     $.ajax({
         url:'getAdmin',
@@ -48,10 +47,10 @@ function getAdmin(){
             let url=imaUrl+path;
             info="您好！"+name+"欢迎登录系统!!!";
             title="请叫我"+name.substring(0, 1)+"哥";
-             if(name==="aldrich"){
-                 info="欢迎意哥登录学习平台!!!";
-                 title="请叫我意哥";
-             }
+            if(name==="aldrich"){
+                info="欢迎意哥登录学习平台!!!";
+                title="请叫我意哥";
+            }
             $(".layui-circle").attr("src",url);
             $('#title').text(title);
             $("#photo").attr("src",url);
@@ -110,6 +109,7 @@ $(document).ready(function () {
         }
     });
 
+
     $(document).on('keydown', function() {
         if(event.keyCode === 13) {
             $("#unlock").click();
@@ -129,21 +129,14 @@ $(document).ready(function () {
         $('body').removeClass('site-mobile');
     });
 
-    // 添加新窗口
-    $(".layui-nav .layui-nav-item a").on("click",function(){
-        addTab($(this));
-        $(this).parent("li").siblings().removeClass("layui-nav-itemed");
-    });
 
     //判断是否处于锁屏状态(如果关闭以后则未关闭浏览器之前不再显示)
     if(window.sessionStorage.getItem("lockcms") !== "true" && window.sessionStorage.getItem("showNotice") !== "true"){
         showNotice();
     }
 
-
-
-
     //刷新后还原打开的窗口
+/*
     if(window.sessionStorage.getItem("menu") != null){
         menu = JSON.parse(window.sessionStorage.getItem("menu"));
         curmenu = window.sessionStorage.getItem("curmenu");
@@ -174,6 +167,7 @@ $(document).ready(function () {
             }
         }
     }
+*/
 });
 
 
@@ -203,42 +197,42 @@ $(".showNotice").on("click",function(){
 //公告层
 function showNotice()
 {
-  layer.open({
-            type: 1,
-            skin: 'demo-class',
-            title: "系统公告", //不显示标题栏
-            closeBtn: false,
-            area: '330px',
-            btnAlign: 'c',
-            shade: 0.3,
-            id: 'LAY_layuipro', //设定一个id，防止重复弹出
-            btn: ['火速围观','残忍拒绝'],
-            moveType: 1, //拖拽模式，0或者1
-            content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;background-color: #393D49;" ><p style="color: floralwhite;font-size: 16px">\n'
-                +'小白四立级英语学习平台在2018年12月12日正式立项。项目成员主要有五人，组长：Aldrich，组员：；Bond、Alice、Jack、Mark，项目主要作用是为大学生提供学习四，六级的辅助。传统的课程功能不全面，只有较为单一的功能。我们项目的优势在于具用学习、练习以及提高自身英语素质的综合功能，可以为用户提供更舒适和全面的体验。'+
-                '</p></div>',
-            success: function(layero){
-                let btn = layero.find('.layui-layer-btn0');
-                btn.css('text-align', 'center');
+    layer.open({
+        type: 1,
+        skin: 'demo-class',
+        title: "系统公告", //不显示标题栏
+        closeBtn: false,
+        area: '330px',
+        btnAlign: 'c',
+        shade: 0.3,
+        id: 'LAY_layuipro', //设定一个id，防止重复弹出
+        btn: ['火速围观','残忍拒绝'],
+        moveType: 1, //拖拽模式，0或者1
+        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;background-color: #393D49;" ><p style="color: floralwhite;font-size: 16px">\n'
+            +'小白四立级英语学习平台在2018年12月12日正式立项。项目成员主要有五人，组长：Aldrich，组员：；Bond、Alice、Jack、Mark，项目主要作用是为大学生提供学习四，六级的辅助。传统的课程功能不全面，只有较为单一的功能。我们项目的优势在于具用学习、练习以及提高自身英语素质的综合功能，可以为用户提供更舒适和全面的体验。'+
+            '</p></div>',
+        success: function(layero){
+            let btn = layero.find('.layui-layer-btn0');
+            btn.css('text-align', 'center');
+            btn.on("click",function(){
+                window.sessionStorage.setItem("showNotice","true");
+            });
+
+            let btnRefuse = layero.find('.layui-layer-btn1');
+            btnRefuse.css('text-align', 'center');
+            btnRefuse.on('click',function () {
+                layer.msg("heart break");
+            });
+
+            if($(window).width() > 432){  //如果页面宽度不足以显示顶部“系统公告”按钮，则不提示
                 btn.on("click",function(){
-                    window.sessionStorage.setItem("showNotice","true");
-                });
-
-                let btnRefuse = layero.find('.layui-layer-btn1');
-                btnRefuse.css('text-align', 'center');
-                btnRefuse.on('click',function () {
-                    layer.msg("heart break");
-                });
-
-                if($(window).width() > 432){  //如果页面宽度不足以显示顶部“系统公告”按钮，则不提示
-                    btn.on("click",function(){
-                        layer.tips('系统公告躲在了这里', '#showNotice', {
-                            tips: 3
-                        });
-                    })
-                }
+                    layer.tips('系统公告躲在了这里', '#showNotice', {
+                        tips: 3
+                    });
+                })
             }
-        });
+        }
+    });
 }
 
 
