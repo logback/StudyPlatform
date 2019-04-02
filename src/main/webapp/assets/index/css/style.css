@@ -723,7 +723,7 @@ textarea {
   top: 0;
   width: 100%;
   z-index: 999;
-    transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
 }
 .header-sticky.sticky {
     background: rgba(255, 255, 255, 0.95);

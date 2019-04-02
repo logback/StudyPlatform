@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/word.css">
+    <link rel="stylesheet" href="<%=basePath%>assets/style/admin.css">
     <link rel="stylesheet" href="<%=basePath%>assets/font/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>assets/alone/css/nav.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>assets/alone/css/chongfu/iconfont.css">
@@ -34,19 +35,23 @@
     <script type="text/javascript" src="<%=basePath%>assets/alone/js/nav.js"></script>
     <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
     <script type="text/javascript" src="<%=basePath%>assets/index/js/main.js"></script>
+    <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 
     <style>
         html {
-            -ms-overflow-style:none;
-            overflow:-moz-scrollbars-none;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
         }
-        html::-webkit-scrollbar{width:0px}
+
+        html::-webkit-scrollbar {
+            width: 0px
+        }
 
         .right {
             top: 105px;
-            left: 225px;
-            width: 85.5%;
-            height: 700px;
+            left: 204px;
+            width: 86.5%;
+            height: 699px;
             position: absolute;
         }
     </style>
@@ -116,7 +121,39 @@
 <!-- Header Area End -->
 <div style="width: 100%;height: 700px;margin-top: 4px">
     <div class="nav" id="top">
-        <ul>
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+            <li data-name="home" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="CET4" lay-direction="2">
+                    <i class="layui-icon layui-icon-template"></i>
+                    <cite>CET4</cite>
+                    <span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="ID">Hearing</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Reading<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="cent">Reading</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="sent">Hearing</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+        <%--<ul>
             <li class="nav-item">
                 <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="ID">Hearing</span><i
                         class="my-icon "></i></a>
@@ -129,7 +166,7 @@
                 <a href="javascript:;"><i class="my-icon nav-icon "></i><span id="sent">translation</span><i
                         class="my-icon "></i></a>
             </li>
-        </ul>
+        </ul>--%>
     </div>
     <div class="right">
         <iframe id="ifrID" src="<%=basePath%>start/test/ListeningPage" frameBorder="0" width="100%" scrolling="yes"
@@ -199,3 +236,10 @@
 <!-- Footer End -->
 </body>
 </html>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
