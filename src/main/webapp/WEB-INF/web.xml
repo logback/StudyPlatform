@@ -10,6 +10,7 @@
   <display-name>ChatRobot</display-name>
   <description>ChatRobot_Alpha_0.0.1</description>
 
+
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring/spring-shiro.xml</param-value>
@@ -46,6 +47,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+
   <!-- 配置DispatcherServlet -->
   <servlet>
     <servlet-name>SpringMVC</servlet-name>
@@ -63,6 +65,7 @@
     <!-- 匹配所有请求，此处也可以配置成 *.do 形式 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
 
 
   <!-- 日志记录,要配置在ContextLoaderListener之前 -->

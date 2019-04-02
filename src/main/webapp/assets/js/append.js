@@ -1,24 +1,22 @@
 let path = (window.location+'').split('/');
 let basePath = path[0]+'//'+path[2]+'/'+path[3];
 
-let imaUrl=" http://localhost:8080/EnglishSystem/assets/images/2018/12/";
+let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
 
+layui.use(['layer','upload','form','laydate'], function() {
+    let layer   = layui.layer,
+        form    = layui.form,
+        upload  = layui.upload
+    laydate = layui.laydate ;
 
-layui.use(['layer','upload','form'], function() {
-    let layer = layui.layer,
-        form = layui.form,
-        upload = layui.upload,
-        laydate = layui.laydate;
-
-     /*
-     *修改-日历加载
-     * */
+    /*
+    *修改-日历加载
+    * */
     laydate.render({
         elem: '#time'
         ,theme: 'molv'
         ,type: 'datetime'
     });
-
 
 
     /**表单验证* */
@@ -45,9 +43,9 @@ layui.use(['layer','upload','form'], function() {
     });
 
 
-     /*
-     * 保存-上传照片
-     * */
+    /*
+    * 保存-上传照片
+    * */
     let uploadInst = upload.render({
         elem: '#upload1' //绑定元素
         ,url: basePath+'/admin/upload/img' //上传接口

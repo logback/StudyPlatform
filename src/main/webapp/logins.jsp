@@ -64,7 +64,7 @@
 </body>
 </html>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/login/js/login.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/login/js/jparticle.jquery.js"></script>
 <script>

@@ -13,7 +13,7 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-    String imagePath=basePath+"assets/images/2018/12/";
+    String imagePath=basePath+"assets/images/avatar/";
     String account  = (String) request.getAttribute("account");
 %>
 
@@ -259,12 +259,12 @@
 
 </body>
 </html>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 
     let url;
-    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
+    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
     let sign ="${sessionScope.sign}";
     let part;
     console.log(sign);
@@ -384,7 +384,7 @@
         }
 
 
-        layui.use(['layer','upload','form'], function(){
+        layui.use(['layer','upload','form','laydate','element'], function(){
             let layer = layui.layer,
                 form = layui.form,
                 upload = layui.upload,

@@ -179,6 +179,7 @@ public class AdminServiceImpl implements AdminService {
         String res = sdf.format(new Date());
 
         String   rootPath = "D:\\JetBrains\\idea-workspace\\StudyPlatform\\src\\main\\webapp\\assets\\images";
+
         //原始名称
         String originalFilename = file.getOriginalFilename();
         //新的文件名称
@@ -201,7 +202,7 @@ public class AdminServiceImpl implements AdminService {
         //将内存中的数据写入磁盘
         file.transferTo(newFile);
         //完整的url
-        String fileUrl = rootPath + date.get(Calendar.YEAR) + "/" + (date.get(Calendar.MONTH) + 1) + "/"+ (date.get(Calendar.DAY_OF_MONTH)) + "/"+ newFileName;
+        String fileUrl = rootPath +File.separator + "avatar"+File.separator+ newFileName;
         System.out.println("完整的url"+fileUrl);
 
 

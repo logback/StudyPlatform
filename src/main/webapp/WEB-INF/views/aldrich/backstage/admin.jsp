@@ -71,7 +71,7 @@
 
 </body>
 </html>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
 
 <!--加载头部工具栏-->
@@ -162,11 +162,11 @@
         });
 
         <!--日历加载-->
-        laydate.render({
+      /*  laydate.render({
             elem: '#time'
             ,theme: 'molv'
             ,type: 'datetime'
-        });
+        });*/
 
 
         <!--switch事件-->

@@ -157,7 +157,9 @@
 </html>
 
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
+<%--
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+--%>
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/nav.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/leftNavs.js"></script>
@@ -173,11 +175,15 @@
 
     $(document).ready(function () {
 
-        let tab;
+        let tab,form,element,layer,jquery;
         layui.config({
             base : "<%=basePath%>assets/js/"
         }).use(['bodyTab','form','element','layer','jquery'],function(){
-            tab = layui.bodyTab();
+            tab = layui.bodyTab(),
+            form = layui.form,
+            eleme63nt = layui.element,
+            layer = layui.layer,
+            jquery = layui.jquery;
             // 添加新窗口
             $(".layui-nav .layui-nav-item a").on("click",function(){
                 addTab($(this));

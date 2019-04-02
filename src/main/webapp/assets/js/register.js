@@ -66,7 +66,7 @@ function getAdmin()
 $(document).ready(function () {
 
 
-    layui.use(['layer','upload','form'], function(){
+    layui.use(['layer','upload','form','laydate','element'], function(){
         let layer = layui.layer,
             form = layui.form,
             upload = layui.upload,

@@ -19,6 +19,7 @@ $('#register').click(function () {
 * */
 layui.use(['layer','laydate','form'],function() {
     let layer = layui.layer,
+        laydate = layui.laydate,
         form = layui.form;
 
     /**
@@ -49,6 +50,7 @@ layui.use(['layer','laydate','form'],function() {
     * */
     layui.use(['layer','laydate','form'],function() {
         let layer = layui.layer,
+            laydate = layui.laydate,
             form = layui.form;
 
         /**

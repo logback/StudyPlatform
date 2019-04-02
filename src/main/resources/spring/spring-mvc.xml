@@ -66,13 +66,16 @@
         <property name="maxUploadSize" value="102400000"/>
     </bean>
 
+
     <!-- 配置启用Shiro的注解功能 cglib-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
+
 
     <!-- 启用shrio授权注解拦截方式 -->
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
          <property name="securityManager" ref="securityManager"/>
      </bean>
+
 
     <!--aop日志-->
     <aop:config >

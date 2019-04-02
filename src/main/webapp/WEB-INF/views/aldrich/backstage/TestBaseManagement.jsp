@@ -14,7 +14,7 @@
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
 
-    String imagePath=basePath+"assets/images/2018/12/";
+    String imagePath=basePath+"assets/images/avatar/";
 %>
 <html>
 <head>
@@ -63,7 +63,7 @@
 
 </body>
 </html>
-<script type="text/javascript" src="<%=basePath%>assets/layui/layui.all.js"></script>
+<script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
 
 <!--加载头部工具栏-->
