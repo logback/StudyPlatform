@@ -295,7 +295,7 @@
                     }
                     //var val = data.data[0].meaning;
                    // test为了传值
-                    $('#test').val(data.data[0].meaning);
+                    $('#test').val(data.data[0].meaning);//访问集合第一个元素对应的意思，即正确的意思
                 }
             });
         });
@@ -303,8 +303,8 @@
 
 
     $("#tijiao").click(function () {
-        var test = $('#test').val();
-        var v = $('input:radio[name="sex"]:checked').val();
+        var test = $('#test').val();//正确的意思
+        var v = $('input:radio[name="sex"]:checked').val();//你所选的
         layui.use('layer', function() {
             var layer = layui.layer;
             if(v!=null){

@@ -60,7 +60,6 @@ public class GameController {
             } else {
                 number = new Random().nextInt((wordCount - 2)) + 1;
 
-
             }
             istrue = false;
 
