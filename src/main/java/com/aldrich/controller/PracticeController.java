@@ -41,6 +41,13 @@ public class PracticeController {
         return ModelView.createView(mv);
     }
 
+    //总题目页面
+    @GetMapping("/test/AllQuestions")
+    public ModelAndView viewAllQuestions(){
+        String mv="Alone/test/AllQuestions";
+        return ModelView.createView(mv);
+    }
+
     //专项练习听力是选择页面
     @GetMapping("/test/ListeningPage")
     public ModelAndView viewListening(){

@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Alone1114qq
-  Date: 2019/1/2
-  Time: 8:52
+  Date: 2019/4/3
+  Time: 8:30
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -27,17 +27,31 @@
         }
 
         html::-webkit-scrollbar {
-            width: 0px
+            width: 0px;
         }
 
     </style>
     <script>
         function cs1() {
+            window.location.href = "<%=basePath%>start/test/ListeningPractice";
+        }
+        function cs2() {
+            window.location.href = "<%=basePath%>start/test/ReadPractice";
+        }
+        function cs3() {
             window.location.href = "<%=basePath%>start/test/Cloze";
         }
 
         $(function () {
-            $("#but").bind("click", function () {
+            $("#but1").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but2").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but3").bind("click", function () {
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
@@ -114,13 +128,22 @@
 <div id="part3" class="part">
 
     <div class="container">
-        <div id="item1" class="sHoverItem">
-            <a href="javascript:void(0)" onclick="cs1()" id="but">
-                <img id="img1" src="<%=basePath%>assets/alone/img/ting.jpg">
+        <div  class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs1()" id="but1">
+                <img  src="<%=basePath%>assets/alone/img/timg.jpg">
+            </a>
+        </div>
+        <div  class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs2()" id="but2">
+                <img  src="<%=basePath%>assets/alone/img/tung.jpg">
+            </a>
+        </div>
+        <div  class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs3()" id="but3">
+                <img  src="<%=basePath%>assets/alone/img/ting.jpg">
             </a>
         </div>
     </div>
 </div>
 </body>
 </html>
-
