@@ -127,4 +127,15 @@ public interface AdminService {
      * @return admin
      * */
     List<Admin> searchAdmin(String account,String name,String time);
+
+
+    /**
+     * 上传头像
+     * @param file
+     * @return string
+     * @exception IOException
+     * */
+    String imgUploads(MultipartFile file) throws IOException;
+
+
 }

@@ -15,10 +15,14 @@
     <link rel="stylesheet" href="<%=basePath%>assets/style/word.css">
     <link rel="stylesheet" href="<%=basePath%>assets/font/css/font-awesome.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/searchs.css">
+<%--
+
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+--%>
 
-
+<%--
     <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
+--%>
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
     <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -28,6 +32,9 @@
     <style>
         body{
             background: url(<%=basePath%>assets/images/bg2.jpg);
+        }
+        .mainMenu{
+            font-size: 20px;
         }
     </style>
 </head>
@@ -44,7 +51,7 @@
 
                     <div class="col-md-2 col-sm-2 col-xs-12">
                         <div class="logo">
-                            <a href="index.html"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
+                            <a href="<%=basePath%>start/index"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
                         </div>
                     </div>
 
@@ -54,10 +61,10 @@
                             <div class="main-menu text-right">
                                 <nav style="margin-left: 10%">
                                     <ul>
-                                        <li><a href="<%=basePath%>start/index">Home</a></li>
-                                        <li><a href="<%=basePath%>start/reception/search">Word query</a></li>
-                                        <li><a href="<%=basePath%>start/test/HomePage">Special practice</a></li>
-                                        <li><a href="<%=basePath%>game/gamestart">Word game</a></li>
+                                        <li><a style="font-size: 20px" href="<%=basePath%>start/index">Home</a></li>
+                                        <li><a class="mainMenu" href="<%=basePath%>start/reception/search">Word query</a></li>
+                                        <li><a class="mainMenu" href="<%=basePath%>start/test/HomePage">Special practice</a></li>
+                                        <li><a class="mainMenu" href="<%=basePath%>game/gamestart">Word game</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -92,7 +99,7 @@
 
             <!--搜索框-->
             <span class="second ">
-              <input type="text" name="word" id="word" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词">
+              <input type="text" name="word" id="word" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词" autocomplete="off">
 
               <select name="wordList" id="wordOptions" onchange="changeFocus(this)" size="10" style="display:none; ">
 

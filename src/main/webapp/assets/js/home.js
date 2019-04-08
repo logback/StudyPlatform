@@ -40,6 +40,7 @@ function getAdmin(){
         type:"get",
         dataType:"json",
         success:function (data) {
+            console.log(data);
             let info;
             let title;
             let path=data['image'];

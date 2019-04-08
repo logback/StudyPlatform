@@ -8,17 +8,19 @@ import com.aldrich.model.Role;
 import com.aldrich.model.User;
 import com.aldrich.service.StudentService;
 import com.aldrich.service.impl.*;
-import com.aldrich.utils.GetMD5;
-import com.aldrich.utils.PageUtil;
-import com.aldrich.utils.ResponseUtil;
-import com.aldrich.utils.TimeUtil;
+import com.aldrich.utils.*;
+import com.aliyun.oss.OSSClient;
 import org.hamcrest.Condition;
+import org.junit.Before;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,6 +34,8 @@ import java.util.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring/spring-mybatis.xml"})
 public class Test {
+
+
 
     @Resource
     private   Admin admin;
@@ -176,7 +180,8 @@ public class Test {
 
 
     @org.junit.Test
-    public void test11() throws ParseException {
+    public void test11() throws ParseException
+    {
        /* Admin user = adminService.searchByEmail("32434354@QQ.com") ;
         System.out.println(user);*/
         String pwd="232432434";
@@ -188,5 +193,6 @@ public class Test {
         String email="233276171@qq.com";
         System.out.println(adminService.saveAdmin(account,name,role,time,pwd,img,email));
     }
+
 
 }

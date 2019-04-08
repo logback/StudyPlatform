@@ -106,6 +106,7 @@ public class AdminController {
      * */
     @PostMapping(value = "/upload/img")
     public String uploadImg(HttpServletRequest req, @RequestParam("file") MultipartFile file, HttpServletResponse response) throws IOException {
+        System.out.println(file.getName());
         String string = adminService.imgUpload(file);
         ResponseUtil.writeResp(response,string);
         return null;

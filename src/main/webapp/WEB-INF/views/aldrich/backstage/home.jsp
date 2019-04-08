@@ -92,7 +92,7 @@
             <a class="img" title="我的头像" ><img id="photo" src="<%=basePath%>assets/images/face.jpg" alt=""></a>
             <div class="description">
                 <ul class="ul_sty" id="loop">
-                    <li class="li_sty">你好!请叫我信工马云, 欢迎登录!!!!</li>
+                    <li class="li_sty">你好!请叫我安信工马云, 欢迎登录!!!!</li>
                 </ul>
             </div>
         </div>
@@ -158,14 +158,15 @@
 
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
+<%--
 <script type="text/javascript" src="<%=basePath%>assets/js/nav.js"></script>
+--%>
 <script type="text/javascript" src="<%=basePath%>assets/js/leftNavs.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/home.js"></script>
 
 <!--初始化-->
 <script type="text/javascript">
 
-    //let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/2018/12/";
     $(".layui-circle").empty();
     $("#photo").empty();
 
@@ -209,6 +210,91 @@
             });
     }
 
+    let navs = [{
+        "title" : "后台首页",
+        "icon" : "icon-computer",
+        "href" : "<%=basePath%>/start/backstage/firstPage",
+        "spread" : false
+    },{
+        "title" : "角色管理",
+        "icon" : "&#xe61c;",
+        "href" : "https://www.layui.com/",
+        "spread" : false,
+        "children" : [
+            {
+                "title" : "小白用户",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/user/backstage/show",
+                "spread" : false
+            },
+            {
+                "title": "管理员",
+                "icon": "&#xe631;",
+                "href": "<%=basePath%>/admin/backstage/show",
+                "spread": false
+            }]
+    },{
+        "title" : "视频管理",
+        "icon" : "&#xe61c;",
+        "href" : "<%=basePath%>/start/videoManage",
+        "spread" : false
+
+    },{
+        "title" : "权限管理",
+        "icon" : "&#xe631;",
+        "href" : "<%=basePath%>/word/wordPage",
+        "spread" : false,
+        "children" : [
+            {
+                "title" : "角色列表",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/role/list",
+                "spread" : false
+            },
+            {
+                "title" : "角色分配",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/role/assign",
+                "spread" : false
+            },
+            {
+                "title" : "权限列表",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/role/permission",
+                "spread" : false
+            },
+            {
+                "title" : "权限分配",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/role/permissionAssign",
+                "spread" : false
+            }
+        ]
+    },{
+        "title" : "词库管理",
+        "icon" : "&#xe61c;",
+        "href" : "",
+        "spread" : false,
+        "children" : [
+            {
+                "title" : "词汇管理",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/word/wordPage",
+                "spread" : false
+            },
+            {
+                "title" : "句子管理",
+                "icon" : "&#xe631;",
+                "href" : "<%=basePath%>/word/sentencePage",
+                "spread" : false
+            }
+        ]
+    },{
+        "title" : "Druid监控",
+        "icon" : "&#xe61c;",
+        "href" : "<%=basePath%>/druid/datasource.html",
+        "spread" : false
+    }];
 </script>
 
 

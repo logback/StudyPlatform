@@ -20,11 +20,7 @@
     <link rel="stylesheet" href="<%=basePath%>assets/style/font_icon.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/word.css">
     <link rel="stylesheet" href="<%=basePath%>assets/font/css/font-awesome.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <title>单词展示</title>
-
-    <link rel="apple-touch-icon" href="<%=basePath%>assets/index/apple-touch-icon.png">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
     <script src="<%=basePath%>assets/index/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -41,7 +37,7 @@
 
                         <div class="col-md-2 col-sm-2 col-xs-12">
                             <div class="logo">
-                                <a href="index.html"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
+                                <a href="<%=basePath%>start/index"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
                             </div>
                         </div>
 
@@ -89,7 +85,7 @@
 
                 <!--搜索框-->
                 <span class="second ">
-                      <input type="text" name="word" id="word"  style="margin-top: 2.2%" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词">
+                      <input type="text" name="word" id="word"  style="margin-top: 2.2%" class="makeInput" onfocus="setFocus(this)" oninput="setInput(this);" placeholder="请输入单词" autocomplete="off">
 
                       <select name="wordList" id="wordOptions" onchange="changeFocus(this)" size="10" style="display:none; ">
                          <option value="">abandon</option>

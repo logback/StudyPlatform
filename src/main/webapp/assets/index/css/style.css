@@ -34,7 +34,9 @@
 /*----------------------------------------*/
 /*  1. Default CSS
 /*----------------------------------------*/
+/*
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600|Playfair+Display');
+*/
 body {
 	color: #666666;
 	font-size: 17px;
@@ -597,7 +599,7 @@ textarea {
     color: #191919;
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 101px;
     padding: 0 17px;

@@ -79,7 +79,7 @@
 
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="logo">
-                        <a href=""><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
+                        <a href="<%=basePath%>start/index"><img src="<%=basePath%>assets/index/img/logo/icon.png" alt="" /></a>
                     </div>
                 </div>
 

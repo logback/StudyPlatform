@@ -14,30 +14,30 @@
 	}); 
     
 /*  jQuery MeanMenu */
-	$('.main-menu nav').meanmenu({
+	/*$('.main-menu nav').meanmenu({
 		meanScreenWidth: "767",
 		meanMenuContainer: '.mobile-menu'
-	});  
+	});  */
     
 /* last  2 li child add class */
 $('ul.menu>li').slice(-2).addClass('last-elements');
        
 /* magnificPopup image popup */
-$('.img-popup').magnificPopup({
+/*$('.img-popup').magnificPopup({
 	type: 'image',
 	gallery:{
 		enabled:true
     }
-});
+});*/
     
 /* magnificPopup video popup */
-$('.video-popup').magnificPopup({
+/*$('.video-popup').magnificPopup({
 	type: 'iframe'
-});
+});*/
     
 /*  Isotope */
     
-	$('.grid').imagesLoaded( function() {
+	/*$('.grid').imagesLoaded( function() {
 		// filter items on button click
 		$('.portfolio-menu').on( 'click', 'button', function() {
 		  var filterValue = $(this).attr('data-filter');
@@ -53,7 +53,7 @@ $('.video-popup').magnificPopup({
 			columnWidth: '.grid-item'
 		  }
 		});
-	});
+	});*/
     
 /* counterUp */
 $('.counter').counterUp({
@@ -61,6 +61,7 @@ $('.counter').counterUp({
     time: 1000
 });
    
+
 $('.slider-owl').owlCarousel({
     loop:true,
     nav:true,
@@ -80,7 +81,8 @@ $('.slider-owl').owlCarousel({
         }
     }
 });
-    
+
+
 $('.partner-owl').owlCarousel({
     loop:true,
     nav:true,
@@ -96,7 +98,7 @@ $('.partner-owl').owlCarousel({
             items:5
         }
     }
-});  
+});
     
 $('.testimonial-owl').owlCarousel({
     loop:true,
@@ -116,11 +118,11 @@ $('.testimonial-owl').owlCarousel({
 });
   
 /* Video Player */
-    jQuery("#bgndVideo").YTPlayer({
+   /* jQuery("#bgndVideo").YTPlayer({
         showControls: false
-    }); 
+    }); */
    
 /* Wow js active */
-    new WOW().init();
+   /* new WOW().init();*/
 
 })(jQuery);	

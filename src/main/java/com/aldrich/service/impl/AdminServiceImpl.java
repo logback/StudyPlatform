@@ -300,4 +300,12 @@ public class AdminServiceImpl implements AdminService {
         return admins;
     }
 
+    @Override
+    public String imgUploads(MultipartFile file) throws IOException {
+
+
+
+        return null;
+    }
+
 }

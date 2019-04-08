@@ -6,8 +6,8 @@ let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
 layui.use(['layer','upload','form','laydate'], function() {
     let layer   = layui.layer,
         form    = layui.form,
-        upload  = layui.upload
-    laydate = layui.laydate ;
+        upload  = layui.upload,
+        laydate = layui.laydate ;
 
     /*
     *修改-日历加载
