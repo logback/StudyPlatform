@@ -14,7 +14,6 @@
             + path + "/";
 %>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,7 +25,7 @@
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=basePath%>assets/index/css/style.css">
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
-    <link rel="stylesheet" href="<%=basePath%>assets/style/word.css">
+    <link rel="stylesheet" href="<%=basePath%>assets/style/words.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/admin.css">
     <link rel="stylesheet" href="<%=basePath%>assets/font/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>assets/alone/css/nav.css">
@@ -121,11 +120,42 @@
 <!-- Header Area End -->
 <div style="width: 100%;height: 700px;margin-top: 4px">
     <div class="nav" id="top">
-        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
+            lay-filter="layadmin-system-side-menu">
             <li data-name="home" class="layui-nav-item">
                 <a href="javascript:;" lay-tips="CET4" lay-direction="2">
                     <i class="layui-icon layui-icon-template"></i>
                     <cite>CET4</cite>
+                    <span class="layui-nav-more"></span></a>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;">Hearing</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Reading<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;">Reading</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl class="layui-nav-child">
+                    <dd data-name="grid">
+                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;">Hearing</a></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li data-name="home" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="CET6" lay-direction="2">
+                    <i class="layui-icon layui-icon-template"></i>
+                    <cite>CET6</cite>
                     <span class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child">
                     <dd data-name="grid">
@@ -169,7 +199,7 @@
         </ul>--%>
     </div>
     <div class="right">
-        <iframe id="ifrID" src="<%=basePath%>start/test/ListeningPage" frameBorder="0" width="100%" scrolling="yes"
+        <iframe id="ifrID" src="<%=basePath%>start/test/AllQuestions" frameBorder="0" width="100%" scrolling="yes"
                 height="100%"></iframe>
     </div>
 </div>
@@ -238,7 +268,7 @@
 </html>
 <script>
     //JavaScript代码区域
-    layui.use('element', function(){
+    layui.use('element', function () {
         var element = layui.element;
 
     });

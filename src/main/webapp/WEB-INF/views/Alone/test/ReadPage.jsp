@@ -33,7 +33,7 @@
     </style>
     <script>
         function cs1() {
-            window.location.href = "<%=basePath%>start/test/ReadPractice";
+            window.location.href = "<%=basePath%>start/test/ShortReading";
         }
 
         $(function () {
@@ -115,7 +115,7 @@
 
     <div class="container">
         <div id="item1" class="sHoverItem">
-            <a href="javascript:void(0)" onclick="cs1()">
+            <a href="javascript:void(0)" onclick="cs1()" id="but">
                 <img id="img1" src="<%=basePath%>assets/alone/img/tung.jpg">
             </a>
         </div>
