@@ -54,7 +54,7 @@
 <script src="<%=basePath%>assets/alone/js/sHover.min.js"></script>
 <script>
     function cs1() {
-        window.location.href = "<%=basePath%>start/test/ListeningPractice";
+        window.location.href = "<%=basePath%>start/test/ListeningDialogue";
     }
 
     $(function () {

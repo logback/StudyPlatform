@@ -33,7 +33,7 @@
     </style>
     <script>
         function cs1() {
-            window.location.href = "<%=basePath%>start/test/ReadPractice";
+            window.location.href = "<%=basePath%>start/test/ShortReading";
         }
 
         $(function () {

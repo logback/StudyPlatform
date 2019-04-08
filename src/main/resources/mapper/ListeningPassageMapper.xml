@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aldrich.mapper.ListeningPassageMapper">
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache" flushInterval="60000" readOnly="true">
+        <property name="timeToIdleSeconds" value="3600"/>
+        <property name="timeToLiveSeconds" value="3600"/>
+        <property name="maxEntriesLocalHeap" value="1000"/>
+        <property name="maxEntriesLocalDisk" value="10000000"/>
+        <property name="memoryStoreEvictionPolicy" value="LRU"/>
+    </cache>
+    <resultMap id="ListeningPassage" type="com.aldrich.model.ListeningPassage">
+        <id column="id" property="id"/>
+        <result column="selectA" property="selectA"/>
+        <result column="selectB" property="selectB"/>
+        <result column="selectC" property="selectC"/>
+        <result column="selectD" property="selectD"/>
+        <result column="answer" property="answer"/>
+        <result column="parsing" property="parsing"/>
+    </resultMap>
+    <select id="getAllListeningPassage" resultType="ListeningPassage" parameterType="map">
+        select * from listeningpassage limit #{pi},#{ps}
+    </select>
+    <select id="getAllPage" resultType="integer">
+        select count(*) from listeningpassage
+    </select>
+
+</mapper>

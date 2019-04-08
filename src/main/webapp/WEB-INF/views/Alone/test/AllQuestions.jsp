@@ -33,13 +33,16 @@
     </style>
     <script>
         function cs1() {
-            window.location.href = "<%=basePath%>start/test/ListeningPractice";
+            window.location.href = "<%=basePath%>start/test/ListeningDialogue";
         }
         function cs2() {
-            window.location.href = "<%=basePath%>start/test/ReadPractice";
+            window.location.href = "<%=basePath%>start/test/ShortReading";
         }
         function cs3() {
             window.location.href = "<%=basePath%>start/test/Cloze";
+        }
+        function cs4() {
+            window.location.href = "<%=basePath%>start/test/ListeningPassage";
         }
 
         $(function () {
@@ -51,7 +54,7 @@
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
-            $("#but3").bind("click", function () {
+            $("#but4").bind("click", function () {
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
@@ -140,6 +143,11 @@
         </div>
         <div  class="sHoverItem">
             <a href="javascript:void(0)" onclick="cs3()" id="but3">
+                <img  src="<%=basePath%>assets/alone/img/ting.jpg">
+            </a>
+        </div>
+        <div  class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs4()" id="but4">
                 <img  src="<%=basePath%>assets/alone/img/ting.jpg">
             </a>
         </div>
