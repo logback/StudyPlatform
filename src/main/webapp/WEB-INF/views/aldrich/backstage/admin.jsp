@@ -13,7 +13,6 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-
     String imagePath=basePath+"assets/images/avatar/";
 %>
 <html>
@@ -22,7 +21,6 @@
     <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/adminStyle.css">
     <link rel="stylesheet" href="<%=basePath%>assets/style/font_icon.css">
-
 </head>
 <body>
 
