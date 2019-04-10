@@ -65,6 +65,12 @@
             $("#sent").bind("click", function () {
                 $("#ifrID").attr("src", "<%=basePath%>start/test/ClozePage");
             });
+            $("#ListeningPassage").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/ListeningPassagePage");
+            });
+            $("#LongtoRead").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/LongtoReadPage");
+            });
             /*$("#ifrID").center().find("#but").bind("click",function () {
                 $(".right").width("100%");
                 $("#top").hide();
@@ -131,7 +137,10 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;">Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="ID">ListeningDialogue</a></dd>
+                        </dl>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="ListeningPassage">ListeningPassage</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -139,15 +148,18 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Reading<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;">Reading</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="cent">ShortReading</a></dd>
+                        </dl>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="LongtoRead">LongtoRead</a></dd>
                         </dl>
                     </dd>
                 </dl>
                 <dl class="layui-nav-child">
                     <dd data-name="grid">
-                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <a href="javascript:;">Translation<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;">Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="sent">Translation</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -161,7 +173,7 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" id="ID">Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" >Hearing</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -169,7 +181,7 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Reading<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" id="cent">Reading</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" >Reading</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -177,7 +189,7 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" id="sent">Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" >Hearing</a></dd>
                         </dl>
                     </dd>
                 </dl>

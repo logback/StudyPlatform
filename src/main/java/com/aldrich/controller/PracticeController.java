@@ -2,11 +2,8 @@ package com.aldrich.controller;
 
 import com.aldrich.model.*;
 
-import com.aldrich.service.impl.ClozeServiceImpl;
+import com.aldrich.service.impl.*;
 
-import com.aldrich.service.impl.ListeningDialogueImpl;
-import com.aldrich.service.impl.ListeningPassageServiceImpl;
-import com.aldrich.service.impl.ShortReadingServiceImpl;
 import com.aldrich.utils.ModelView;
 
 
@@ -37,6 +34,9 @@ public class PracticeController {
     @Resource
     private ListeningPassageServiceImpl listeningPassageService;
 
+    @Resource
+    private LongtoReadServiceImpl longtoReadService;
+
     //专项练习首页
     @GetMapping("/test/HomePage")
     public ModelAndView viewHomePage() {
@@ -58,6 +58,20 @@ public class PracticeController {
         return ModelView.createView(mv);
     }
 
+    //专项练习听力短文是选择页面
+    @GetMapping("/test/ListeningPassagePage")
+    public ModelAndView viewListeningPassagePage() {
+        String mv = "Alone/test/ListeningPassagePage";
+        return ModelView.createView(mv);
+    }
+
+    //专项练习长阅读是选择页面
+    @GetMapping("/test/LongtoReadPage")
+    public ModelAndView viewLongtoReadPage() {
+        String mv = "Alone/test/LongtoReadPage";
+        return ModelView.createView(mv);
+    }
+
     //专项练习阅读理解是选择页面
     @GetMapping("/test/ReadPage")
     public ModelAndView viewRead() {
@@ -72,10 +86,17 @@ public class PracticeController {
         return ModelView.createView(mv);
     }
 
-    //专项阅读练习页面
+    //专项练习短阅读页面
     @GetMapping("/test/ShortReading")
-    public ModelAndView viewReadPractice() {
+    public ModelAndView viewShortReading() {
         String mv = "Alone/test/ShortReading";
+        return ModelView.createView(mv);
+    }
+
+    //专项练习长阅读页面
+    @GetMapping("/test/LongtoRead")
+    public ModelAndView viewLongtoRead() {
+        String mv = "Alone/test/LongtoRead";
         return ModelView.createView(mv);
     }
 
@@ -93,7 +114,7 @@ public class PracticeController {
         return ModelView.createView(mv);
     }
 
-    //专项练习完型填空页面
+    //专项练习选词填空页面
     @GetMapping("/test/Cloze")
     public ModelAndView viewCloze() {
         String mv = "Alone/test/Cloze";
@@ -161,6 +182,24 @@ public class PracticeController {
         List<ListeningPassage> listening = listeningPassageService.getAllListeningPassage(map);
         int page = listeningPassageService.getAllPage();
         Page<ListeningPassage> data = new Page<ListeningPassage>();
+        data.setTotal1(page);
+        data.setData1(listening);
+        JSONObject json = new JSONObject();
+        json.put("data", data);
+        ResponseUtil.writeResp(response, json.toJSONString());
+        return null;
+    }
+
+    @PostMapping(value = "/longtoread", produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public Page<LongtoRead> AllLongtoRead(int pageIndex, int pageSize, HttpServletResponse response) {
+        Map map = new HashMap();
+        map.put("pi", (pageIndex - 1) * pageSize);
+        map.put("ps", pageSize);
+        List<LongtoRead> listening = longtoReadService.getAllLongtoRead(map);
+        int page = longtoReadService.getAllPage();
+        Page<LongtoRead> data = new Page<LongtoRead>();
+        System.out.println(page);
         data.setTotal1(page);
         data.setData1(listening);
         JSONObject json = new JSONObject();

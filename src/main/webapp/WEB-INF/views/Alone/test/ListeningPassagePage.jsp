@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Alone1114qq
-  Date: 2018/12/13
-  Time: 9:16
+  Date: 2019/4/10
+  Time: 10:23
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ListeningPage</title>
+    <title>ListeningPassage</title>
     <link rel="stylesheet" href="<%=basePath%>assets/alone/css/jq22.css">
     <script src="<%=basePath%>assets/alone/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
@@ -35,9 +35,9 @@
 <ul class="grid">
     <li class="cs-style-3">
         <figure>
-            <div><img src="<%=basePath%>assets/alone/img/duan.jpg" alt="img02"></div>
+            <div><img src="<%=basePath%>assets/alone/img/duanwen.jpg" alt="img02"></div>
             <figcaption>
-                <h3>Dialogue</h3>
+                <h3>ListeningPassage</h3>
                 <span>Jacob Cummings</span>
                 <a href="javascript:void(0)" onclick="cs1()" id="but">Take a look</a>
             </figcaption>
@@ -49,7 +49,7 @@
 
 <script>
     function cs1() {
-        window.location.href = "<%=basePath%>start/test/ListeningDialogue";
+        window.location.href = "<%=basePath%>start/test/ListeningPassage";
     }
 
     $(function () {
