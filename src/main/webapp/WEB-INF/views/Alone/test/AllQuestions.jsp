@@ -16,9 +16,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="<%=basePath%>assets/alone/css/example.css">
-    <script src="<%=basePath%>assets/alone/js/sHover.min.js"></script>
+    <title>AllQuestions</title>
+    <link rel="stylesheet" href="<%=basePath%>assets/alone/css/jq22.css">
+    <script src="<%=basePath%>assets/alone/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
     <style>
         html {
@@ -35,14 +35,21 @@
         function cs1() {
             window.location.href = "<%=basePath%>start/test/ListeningDialogue";
         }
+
         function cs2() {
             window.location.href = "<%=basePath%>start/test/ShortReading";
         }
+
         function cs3() {
             window.location.href = "<%=basePath%>start/test/Cloze";
         }
+
         function cs4() {
             window.location.href = "<%=basePath%>start/test/ListeningPassage";
+        }
+
+        function cs5() {
+            window.location.href = "<%=basePath%>start/test/LongtoRead";
         }
 
         $(function () {
@@ -58,100 +65,90 @@
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
+            $("#but5").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
         });
-        window.onload = function () {
-            var downLoadBtn = document.getElementById('headBtn');
-            downLoadBtn.onclick = function () {
-                scrollToBottom(downLoadBtn);
-            }
-
-            var b = new sHover('head', 'headIntro');
-
-            var a = new sHover("sHoverItem", "sIntro");
-            a.set({
-                slideSpeed: 5,
-                opacityChange: true,
-                opacity: 80
-            });
-
-
-            var example1Btn = document.getElementById('example1Btn');
-            var part1arrow = document.getElementById('part1arrow');
-            var example1 = document.getElementById('example1');
-            example1Btn.onclick = function () {
-                part1arrow.style.display = 'block';
-                var example1 = new sHover("example1", "intro1");
-            }
-
-            var example2 = new sHover('example2', 'intro2');
-            example2.set({
-                slideSpeed: 7,
-                opacity: 80,
-                opacityChange: true
-            });
-            var example2prev = new sHover('example2prev', 'intro2prev');
-            example2prev.set({});
-
-        }
-
-        function scrollToBottom(a) {
-            if (windowHeight()) {
-                clearInterval(a.scrollTimer);
-                var scrollSpeed = 100;
-                a.scrollTimer = setInterval(function () {
-                    document.documentElement.scrollTop += scrollSpeed;
-                    document.body.scrollTop += scrollSpeed;
-                    if ((document.documentElement.scrollTop >= (document.documentElement.scrollHeight - windowHeight())) || (document.body.scrollTop >= (document.documentElement.scrollHeight - windowHeight()))) {
-                        clearInterval(a.scrollTimer);
-                    }
-                }, 13);
-            } else {
-
-            }
-        }
-
-        function windowHeight() {
-            if (document.documentElement) {
-                return document.documentElement.clientHeight;
-            } else {
-                return document.body.clientHeight;
-            }
-        }
     </script>
 </head>
-<body id="body">
-
-<div>
-
-      <span class="headIntro">
-			<a href="#" id="headBtn"></a>
-		</span>
-</div>
-
-<div id="part3" class="part">
-
-    <div class="container">
-        <div  class="sHoverItem">
+<body >
+        <ul class="grid">
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/duan.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>Dialogue</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs1()" id="but1">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/duanwen.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>ListeningPassage</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs4()" id="but4">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/duanyuedu.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>ShortReading</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs2()" id="but2">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/longread.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>LongtoRead</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs5()" id="but5">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/cloze.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>Cloze</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs3()" id="but3">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+        </ul>
+        <%--<div class="sHoverItem">
             <a href="javascript:void(0)" onclick="cs1()" id="but1">
-                <img  src="<%=basePath%>assets/alone/img/timg.jpg">
+                <img src="<%=basePath%>assets/alone/img/duan.jpg">
             </a>
         </div>
-        <div  class="sHoverItem">
-            <a href="javascript:void(0)" onclick="cs2()" id="but2">
-                <img  src="<%=basePath%>assets/alone/img/tung.jpg">
-            </a>
-        </div>
-        <div  class="sHoverItem">
-            <a href="javascript:void(0)" onclick="cs3()" id="but3">
-                <img  src="<%=basePath%>assets/alone/img/ting.jpg">
-            </a>
-        </div>
-        <div  class="sHoverItem">
+        <div class="sHoverItem">
             <a href="javascript:void(0)" onclick="cs4()" id="but4">
-                <img  src="<%=basePath%>assets/alone/img/ting.jpg">
+                <img src="<%=basePath%>assets/alone/img/duanwen.jpg">
             </a>
         </div>
-    </div>
-</div>
+        <div class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs2()" id="but2">
+                <img src="<%=basePath%>assets/alone/img/duanyuedu.jpg">
+            </a>
+        </div>
+        <div class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs5()" id="but5">
+                <img src="<%=basePath%>assets/alone/img/longread.jpg">
+            </a>
+        </div>
+        <div class="sHoverItem">
+            <a href="javascript:void(0)" onclick="cs3()" id="but3">
+                <img src="<%=basePath%>assets/alone/img/cloze.jpg">
+            </a>
+        </div>--%>
 </body>
 </html>

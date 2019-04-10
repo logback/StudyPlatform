@@ -1,7 +1,5 @@
 package com.aldrich.model;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
