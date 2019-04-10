@@ -37,7 +37,7 @@
         <!-- 监控数据库,密码加密-->
      <property name="filters" value="${druid.filters}" />
         <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJOkUu15hCjCXeGsZ8vWWXrl8hgTs/IaakAbH4q4TEkbIa/Oh0BCNegfWnJjxHvnC6HY/vBW95qyxQKAJP/XKmsCAwEAAQ=="/>
-      <!-- 初始化连接大小 -->
+        <!-- 初始化连接大小 -->
         <property name="initialSize" value="${druid.initialSize}" />
         <!-- 连接池最大使用连接数量 -->
         <property name="maxActive" value="${druid.maxActive}" />
@@ -46,9 +46,6 @@
         <!-- 获取连接最大等待时间 -->
         <property name="maxWait" value="${druid.maxWait}" />
 
-        <!-- 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。 -->
-       <!--  <property name="poolPreparedStatements" value="true" /> <property
-            name="maxPoolPreparedStatementPerConnectionSize" value="20" />-->
         <!-- 验证数据库连接有效性，要求查询语句 -->
         <property name="validationQuery" value="${druid.validationQuery}" />
         <!-- 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。 -->
@@ -162,31 +159,30 @@
     </aop:config>-->
 
 
-    <!-- 配置启用Shiro的注解功能 cglib-->
-   <!-- <aop:aspectj-autoproxy proxy-target-class="true"/>
-
+    <!-- 配置启用aop的注解功能 cglib-->
+    <aop:config proxy-target-class="true" />
     <aop:config >
-        &lt;!&ndash;定义切面&ndash;&gt;
-        <aop:aspect id="log" ref="logging" >
+         <!--定义切面-->
+         <aop:aspect id="log" ref="logging" >
 
-            &lt;!&ndash; 第3步：定义切入点,指定切入点表达式 &ndash;&gt;
-            <aop:pointcut id="allMethod"
-                          expression="execution(* com.aldrich.service.impl.*.*(..))"/>
+             <!-- 第3步：定义切入点,指定切入点表达式 -->
+             <aop:pointcut id="allMethod"
+                           expression="execution(* com.aldrich.service.impl.*.*(..))"/>
 
-            &lt;!&ndash; 第4步：应用前置通知 &ndash;&gt;
-            <aop:before method="before" pointcut-ref="allMethod" />
-            &lt;!&ndash; 第4步：应用后置通知 &ndash;&gt;
-            <aop:after-returning method="afterReturn" pointcut-ref="allMethod"/>
-            &lt;!&ndash; 第4步：应用最终通知 &ndash;&gt;
-            <aop:after method="after" pointcut-ref="allMethod"/>
-            &lt;!&ndash; 第4步：应用抛出异常后通知 &ndash;&gt;
-            <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod"/>
+             <!-- 第4步：应用前置通知 -->
+             <aop:before method="before" pointcut-ref="allMethod" />
+             <!-- 第4步：应用后置通知 -->
+             <aop:after-returning method="afterReturn" pointcut-ref="allMethod"/>
+             <!-- 第4步：应用最终通知 -->
+             <aop:after method="after" pointcut-ref="allMethod"/>
+             <!-- 第4步：应用抛出异常后通知 -->
+             <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod"/>
 
-            &lt;!&ndash; 第4步：应用环绕通知 &ndash;&gt;
-            &lt;!&ndash;
-                    <aop:around method="doAround" pointcut-ref="allMethod" />
-            &ndash;&gt;
-        </aop:aspect>
+             <!-- 第4步：应用环绕通知 -->
+             <!--
+                     <aop:around method="doAround" pointcut-ref="allMethod" />
+             -->
+         </aop:aspect>
 
-    </aop:config>-->
+     </aop:config>
 </beans>

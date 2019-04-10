@@ -21,7 +21,6 @@ class Logging {
      * @Pointcut("execution(* com.aldrich.service.impl.*.*(..))")
      *定义一个切入点方法
      * */
-
     private void allMethod(){}
 
     /**
@@ -50,6 +49,7 @@ class Logging {
         System.out.println("【后置通知】:方法正常结束了"+endTime+"耗时："+consuming);
     }
 
+
     /**
      *@After("allMethod()")
      *应用最终通知
@@ -72,7 +72,6 @@ class Logging {
      * @Around("allMethod()")
      *应用环绕通知
      * */
-
     public Object doAround(ProceedingJoinPoint call) throws Throwable{
         Object result = null;
         this.before(call);

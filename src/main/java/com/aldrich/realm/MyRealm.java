@@ -49,8 +49,8 @@ public class MyRealm extends AuthorizingRealm {
         Set<String> roleName = userMapper.findRole(account) ;
         Set<String> permissions = userMapper.findPermissions(account) ;
 
-        System.out.println(roleName);
-        System.out.println(permissions);
+        System.out.println("角色"+roleName);
+        System.out.println("权限"+permissions);
 
         info.setRoles(roleName);
         info.setStringPermissions(permissions);
@@ -97,7 +97,7 @@ public class MyRealm extends AuthorizingRealm {
 }
 
 
-   /* @Override
+    @Override
     public void clearCachedAuthorizationInfo(PrincipalCollection principals) {
         super.clearCachedAuthorizationInfo(principals);
     }
@@ -123,7 +123,7 @@ public class MyRealm extends AuthorizingRealm {
     public void clearAllCache() {
         clearAllCachedAuthenticationInfo();
         clearAllCachedAuthorizationInfo();
-    }*/
+    }
 
 
 }
