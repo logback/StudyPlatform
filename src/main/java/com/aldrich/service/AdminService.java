@@ -95,7 +95,7 @@ public interface AdminService {
      * @param account
      * @return admin
      * */
-    Admin searchById(String account);
+    Admin searchById(String account) throws Exception;
 
     /**
      * 依据昵称查找管理员
@@ -130,12 +130,13 @@ public interface AdminService {
 
 
     /**
-     * 上传头像
-     * @param file
-     * @return string
-     * @exception IOException
-     * */
-    String imgUploads(MultipartFile file) throws IOException;
+     * @Author aldrich
+     * @Description oss图片上传
+     * @Date 8:46 2019/4/15
+     * @Param [file]
+     * @return java.lang.String
+     */
+    String ossImgUpload(MultipartFile file) throws IOException, Exception;
 
 
 }

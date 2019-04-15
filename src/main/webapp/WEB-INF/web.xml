@@ -10,19 +10,28 @@
   <!--ssm在项目运行时,首先会加载web.xml-->
   <!--<context-param> > listener > filter > servlet>interceptor-->
   <!--加载上下文-->
-  <context-param>
+<!--  <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      classpath:spring/spring-shiro.xml,
-      classpath:logback.xml
+        classpath:spring/spring-shiro.xml
+    </param-value>
+  </context-param>-->
+
+
+  <context-param>
+    <param-name>logbackConfigLocation</param-name>
+    <param-value>
+        classpath:logback.xml
     </param-value>
   </context-param>
-
-
   <!--logback监听器-->
   <listener>
     <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
   </listener>
+<!--
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>-->
 
   <!--shiro过滤器-->
   <filter>
@@ -108,7 +117,7 @@
 
   <!--加载首页面-->
   <welcome-file-list>
-    <welcome-file>logins.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
 
 
@@ -117,5 +126,23 @@
     <session-timeout>15</session-timeout>
   </session-config>
 
+  <!--404页面-->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/views/error/404.jsp</location>
+  </error-page>
+
+  <!--500页面-->
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/views/error/500.jsp</location>
+  </error-page>
+
+
+  <!--异常页面-->
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/WEB-INF/views/error/thread.jsp</location>
+  </error-page>
 
 </web-app>

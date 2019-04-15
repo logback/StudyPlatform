@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8e027ef-cd0e-4e3b-bfe4-74c5ae701ae7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../error/2019/4/11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/com/aldrich/utils/CtrLogging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/com/aldrich/utils/CustomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/com/aldrich/utils/CustomExceptionResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../java/com/aldrich/utils/LogUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/500.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/20190401091620888.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/20190401144321482.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/20190408105937882.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/2019040811324102.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/20190408113338819.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/com/aldrich/controller/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/com/aldrich/controller/StartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/com/aldrich/junit/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/com/aldrich/junit/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java/com/aldrich/utils/Logging.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java/com/aldrich/utils/SrvLogging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resources/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resources/spring/spring-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resources/spring/spring-mybatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../resources/spring/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../resources/spring/spring-shiro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../WEB-INF/views/error/404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../WEB-INF/views/error/500.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Aldrich.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Alone.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WEB-INF/views/noPower.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../WEB-INF/views/error/thread.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WEB-INF/views/success.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WEB-INF/views/system.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214093759640.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214093759640.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214104956698.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214104956698.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214110233525.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214110233525.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214110524226.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214110524226.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214112311247.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214112311247.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214112620150.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214112620150.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214112647909.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214112647909.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2018121411385254.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2018121411385254.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214170951785.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214170951785.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214173707115.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214173707115.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214181758764.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214181758764.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2018121418245707.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2018121418245707.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214183104916.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214183104916.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214200721186.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214200721186.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181214214118596.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181214214118596.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181217011733414.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181217011733414.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2018121709203470.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2018121709203470.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181217092133835.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181217092133835.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181217102743279.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181217102743279.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2018121716555755.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2018121716555755.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2018121720561274.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2018121720561274.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181218103247798.png" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181218103247798.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181218180531803.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181218180531803.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181218185157547.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181218185157547.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181218185550865.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181218185550865.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20181219114126815.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/20181219114126815.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/2019010301352440.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/avatar/2019010301352440.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190103013624920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190103085617898.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190109170740584.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190110214925733.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190110215034331.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190110224002930.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190110231356163.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/12/20190110231808485.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bg1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/english.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/english.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/english2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/english2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userface1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userface2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userface3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userface4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../logins.jsp" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-5" />
+    <option name="y" value="6" />
+    <option name="width" value="1378" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8e027ef-cd0e-4e3b-bfe4-74c5ae701ae7" name="Default Changelist" comment="" />
+      <created>1555074482325</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555074482325</updated>
+      <workItem from="1555074486329" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="18000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="DB Browser" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" />
+      <window_info anchor="bottom" id="DB Execution Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="CheckStyle" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="RestServices" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Json Parser" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

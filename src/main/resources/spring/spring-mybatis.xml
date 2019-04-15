@@ -152,18 +152,47 @@
             </list>
         </property>
     </bean>
-
-  <!--  <aop:config>
+    <!-- 基于AspectJ的自动代理.使用AnnotationAwareAspectJAutoProxyCreator  -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <aop:config>
         <aop:advisor advice-ref="druid-stat-interceptor"
                      pointcut-ref="druid-stat-pointcut"/>
-    </aop:config>-->
+    </aop:config>
+
+
+    <!--配置启用aop对controller层所有方法进行监控-->
+    <aop:config >
+        <!--定义切面-->
+        <aop:aspect id="ctrLog" ref="ctrLogging" >
+
+            <!-- 第3步：定义切入点,指定切入点表达式 -->
+            <aop:pointcut id="allMethods"
+                          expression="execution(* com.aldrich.controller.*.*(..))"/>
+
+            <!-- 第4步：应用前置通知 -->
+            <aop:before method="before" pointcut-ref="allMethods" />
+            <!-- 第4步：应用后置通知 -->
+            <aop:after-returning method="afterReturn" pointcut-ref="allMethods"/>
+            <!-- 第4步：应用最终通知 -->
+            <aop:after method="after" pointcut-ref="allMethods"/>
+            <!-- 第4步：应用抛出异常后通知 -->
+            <aop:after-throwing method="afterThrowing" pointcut-ref="allMethods" throwing="exe"/>
+
+            <!-- 第4步：应用环绕通知 -->
+            <!--
+                    <aop:around method="doAround" pointcut-ref="allMethod" />
+            -->
+        </aop:aspect>
+
+    </aop:config>
 
 
     <!-- 配置启用aop的注解功能 cglib-->
-    <aop:config proxy-target-class="true" />
+    <!--<aop:config proxy-target-class="true" />-->
+    <!--配置启用aop对service层所有方法进行监控-->
     <aop:config >
          <!--定义切面-->
-         <aop:aspect id="log" ref="logging" >
+         <aop:aspect id="log" ref="srvLogging" >
 
              <!-- 第3步：定义切入点,指定切入点表达式 -->
              <aop:pointcut id="allMethod"
@@ -176,7 +205,7 @@
              <!-- 第4步：应用最终通知 -->
              <aop:after method="after" pointcut-ref="allMethod"/>
              <!-- 第4步：应用抛出异常后通知 -->
-             <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod"/>
+             <aop:after-throwing method="afterThrowing" pointcut-ref="allMethod" throwing="ex"/>
 
              <!-- 第4步：应用环绕通知 -->
              <!--
@@ -185,4 +214,6 @@
          </aop:aspect>
 
      </aop:config>
+
+
 </beans>

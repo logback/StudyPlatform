@@ -17,6 +17,7 @@ import java.util.Date;
 @Component("permission")
 public class Permission implements Serializable {
 
+    private static final long serialVersionUID = -2422153190481297059L;
     private int     id;
     private String  account;
     private String  name;

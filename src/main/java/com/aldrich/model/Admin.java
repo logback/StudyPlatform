@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Optional;
 
 
 /**
@@ -17,6 +18,7 @@ import java.util.Date;
 @Component("admin")
 public class Admin implements Serializable {
 
+    private static final long serialVersionUID = -4464522403116470196L;
     private int id;
     private String account;
     private String name;
@@ -115,5 +117,8 @@ public class Admin implements Serializable {
                 ", role='" + role + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
     }
 }

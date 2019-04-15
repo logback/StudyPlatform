@@ -17,6 +17,7 @@ import java.util.Date;
 @Component
 public class Role implements Serializable {
 
+    private static final long serialVersionUID = 7788060745436108946L;
     private int id;
     private String account;
     private String name;

@@ -3,10 +3,7 @@ package com.aldrich.service.impl;
 import com.aldrich.mapper.AdminMapper;
 import com.aldrich.model.Admin;
 import com.aldrich.service.AdminService;
-import com.aldrich.utils.GetMD5;
-import com.aldrich.utils.ResponseUtil;
-import com.aldrich.utils.StringUtil;
-import com.aldrich.utils.TimeUtil;
+import com.aldrich.utils.*;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,18 +22,21 @@ import java.util.*;
 @Service("adminService")
 public class AdminServiceImpl implements AdminService {
 
+
     @Resource
     private Admin admin;
 
-
     @Resource
     private AdminMapper adminMapper;
+
+   /* @Resource
+    private OssClientUtil ossClientUtil;
+*/
 
     /**
      * 获管理员登录判断
      * @return admin
      **/
-
     @Override
     public Admin decideLogin(Map map) {
         return this.adminMapper.login(map);
@@ -205,16 +205,15 @@ public class AdminServiceImpl implements AdminService {
         String fileUrl = rootPath +File.separator + "avatar"+File.separator+ newFileName;
         System.out.println("完整的url"+fileUrl);
 
-
-        Map<String, Object> map2 = new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
 
         JSONObject resObj = new JSONObject();
         resObj.put("code",0);
         resObj.put("msg","");
-        resObj.put("data",map2);
-        map2.put("src", fileUrl);
-        map2.put("title", newFileName);
-        System.out.println(map2.toString());
+        resObj.put("data",map);
+        map.put("src", fileUrl);
+        map.put("title", newFileName);
+        System.out.println(map.toString());
         return resObj.toJSONString();
     }
 
@@ -225,7 +224,7 @@ public class AdminServiceImpl implements AdminService {
      * @return admin
      * */
     @Override
-    public Admin searchById(String account) {
+    public Admin searchById(String account){
         return this.adminMapper.searchById(account);
     }
 
@@ -300,12 +299,40 @@ public class AdminServiceImpl implements AdminService {
         return admins;
     }
 
+    /**
+     * @Author aldrich
+     * @Description oss图片上传
+     * @Date 8:45 2019/4/15
+     * @Param [file]
+     * @return java.lang.String
+     */
     @Override
-    public String imgUploads(MultipartFile file) throws IOException {
+    public String ossImgUpload(MultipartFile file) throws Exception {
+        OssClientUtil ossClientUtil = new OssClientUtil();
+        Map<String, Object> map = new HashMap<String, Object>();
+        JSONObject resObj = new JSONObject();
+        String name    = ossClientUtil.uploadImgOss(file);
+        String imgUrl  = ossClientUtil.getImgUrl(name);
+        String[] split = imgUrl.split("\\?");
 
-
-
-        return null;
+        map.put("src", split[0]);
+        map.put("title", name);
+        resObj.put("code",0);
+        resObj.put("msg","上传成功");
+        resObj.put("data",map);
+        System.out.println(map.toString());
+        return resObj.toJSONString();
     }
 
+    /**
+     * @Author aldrich
+     * @Description service层异常方法测试
+     * @Date 8:51 2019/4/15
+     * @Param []
+     * @return void
+     */
+    public void test()
+    {
+        int s=10/0;
+    }
 }

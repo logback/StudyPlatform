@@ -4,26 +4,15 @@ import com.aldrich.mapper.PermissionMapper;
 import com.aldrich.mapper.UserMapper;
 import com.aldrich.model.Admin;
 import com.aldrich.model.Permission;
-import com.aldrich.model.Role;
-import com.aldrich.model.User;
 import com.aldrich.service.StudentService;
 import com.aldrich.service.impl.*;
 import com.aldrich.utils.*;
-import com.aliyun.oss.OSSClient;
-import org.hamcrest.Condition;
-import org.junit.Before;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
-import java.io.File;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -197,6 +186,10 @@ public class Test {
 
     @org.junit.Test
     public void test13(){
-        System.out.println(adminService.searchById("18756076151"));
+      int[] i = new int[]{1,2,3};
+      int[] s = {1,2,3};
+      int[] r = new int[2];
     }
+
+
 }

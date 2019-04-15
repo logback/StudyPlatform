@@ -60,15 +60,15 @@
         <!--shiro整个的处理，都由securityManger指定和决定 -->
         <property name="securityManager" ref="securityManager" />
 
-        <!-- 身份认证失败，则跳转到登录页面的配置 -->
+     <!--   &lt;!&ndash; 身份认证失败，则跳转到登录页面的配置 &ndash;&gt;
         <property name="loginUrl" value="noPower" />
 
-        <!-- 验证通过执行的请求或者跳转 -->
+        &lt;!&ndash; 验证通过执行的请求或者跳转 &ndash;&gt;
         <property name="successUrl" value="start/system" />
 
-        <!-- 验证不通过执行的请求或者跳转 -->
+        &lt;!&ndash; 验证不通过执行的请求或者跳转 &ndash;&gt;
         <property name="unauthorizedUrl" value="start/noPower" />
-
+-->
 
         <property name="filterChainDefinitions">
             <value>

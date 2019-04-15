@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Aldrich
-  Date: 2019/4/8
-  Time: 10:07
+  Date: 2019/4/15
+  Time: 8:34
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,8 +21,7 @@
 <body>
 
 <div style="width: 80%;height: 100%;position: absolute;overflow: hidden;margin-left: 10%">
-    <form class="layui-form layui-form-pane" action="">
-
+    <form class="layui-form layui-form-pane" enctype="multipart/form-data" >
 
         <!--头像-->
         <div class="layui-form-item">
@@ -31,7 +30,7 @@
                 <button type="button" class="layui-btn" id="upload">
                     <i class="layui-icon">&#xe67c;</i>上传图片
                 </button>
-                <input  id="img_url" name="img_url" type="file"/>
+                <input  id="img_url" name="img_url"/>
                 <div class="layui-upload-list" style="width: 100px;height:100px">
                     <img  class="layui-upload-img" width="100px" height="80px" id="demo1"/>
                     <p id="demoText"></p>
@@ -50,29 +49,19 @@
     </form>
 </div>
 
-<div>
-    
-    <img style="height: 100%;width: 100%" src="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/a3.jpg">
-    
-</div>
 </body>
 </html>
 <script type="text/javascript" src="<%=basePath%>assets/jquery/jquery-3.3.1.js"></script>
-
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript">
-
-
-        layui.use(['layer','upload','form','laydate'], function() {
+    layui.use(['layer','upload','form','laydate'], function() {
         let layer = layui.layer,
             form    = layui.form,
             upload = layui.upload;
-
-
         let uploadInst = upload.render({
             elem: '#upload' //绑定元素
             ,type:'post'
-            ,url: '${pageContext.request.contextPath}/admin/upload/img' //上传接口
+            ,url: '${pageContext.request.contextPath}/admin/oss/upload/img' //上传接口
             ,processData: false//上传必须
             ,contentType: false//上传必须
             ,before: function(obj){
@@ -99,8 +88,5 @@
                 });
             }
         });
-
-
     });
-
 </script>

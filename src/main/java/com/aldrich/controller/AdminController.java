@@ -112,6 +112,13 @@ public class AdminController {
         return null;
     }
 
+    @PostMapping(value = "/oss/upload/img")
+    public String uploadImgs(HttpServletRequest req, @RequestParam("file") MultipartFile file, HttpServletResponse response) throws Exception {
+        String info = adminService.ossImgUpload(file);
+        ResponseUtil.writeResp(response,info);
+        return null;
+    }
+
     /**
      * 保存管理员
      * */

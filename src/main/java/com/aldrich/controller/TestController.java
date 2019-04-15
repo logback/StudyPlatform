@@ -1,7 +1,6 @@
 package com.aldrich.controller;
 
 import com.aldrich.service.AdminService;
-import com.aldrich.utils.OSSUnit;
 import com.aldrich.utils.ResponseUtil;
 import com.alibaba.fastjson.JSONObject;
 
@@ -15,7 +14,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;

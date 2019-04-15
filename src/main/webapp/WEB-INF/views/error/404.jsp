@@ -5,7 +5,7 @@
   Time: 20:30
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isErrorPage="true"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
@@ -15,9 +15,9 @@
 %>
 <html>
 <head>
-    <title>400页面</title>
+    <title>404页面</title>
 </head>
 <body>
-
+    <img style="height: 100%;width: 100%" src="<%=basePath%>assets/images/404.jpg" alt="404">
 </body>
 </html>

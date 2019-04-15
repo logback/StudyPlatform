@@ -15,12 +15,13 @@ import java.io.Serializable;
 @Component("sentence")
 public class Sentence implements Serializable {
 
-      private int    id;
-      private String keyWord;
-      private int    typeId;
-      private String typeName;
-      private String content;
-      private String translate;
+    private static final long serialVersionUID = 6513017398665946450L;
+    private int    id;
+    private String keyWord;
+    private int    typeId;
+    private String typeName;
+    private String content;
+    private String translate;
 
     @Override
     public String toString() {

@@ -15,6 +15,7 @@ import java.io.Serializable;
 @Component("wordPojo")
 public class WordPojo implements Serializable {
 
+    private static final long serialVersionUID = -2423918414041893325L;
     private int    id;
     private String name;
     private String eSound;

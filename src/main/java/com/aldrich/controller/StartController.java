@@ -8,11 +8,14 @@ import com.aldrich.utils.ResponseUtil;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,12 +34,34 @@ public class StartController {
     @Resource
     private AdminServiceImpl adminService;
 
-    @RequestMapping("/noPower")
+
+    /**
+     * @Author aldrich
+     * @Description
+     * @Date 8:42 2019/4/15
+     * @Param []
+     * @return void
+     */
+    @RequestMapping("/error")
+    public void testError(){
+          int s=10/0;
+    }
+
+
+    @RequestMapping("/upload")
+    public ModelAndView testUploadImage(){
+        return new ModelAndView("aldrich/backstage/test");
+    }
+
+
+
+
+  /*  @RequestMapping("/noPower")
     public  ModelAndView viewPower()
     {
         ModelAndView mv = new ModelAndView("noPower");
         return mv;
-    }
+    }*/
 
 
     /**
@@ -53,6 +78,40 @@ public class StartController {
 
 
     /**
+     *500页面
+     * */
+    @GetMapping("/500")
+    public ModelAndView view500()
+    {
+        return new ModelAndView("error/500");
+    }
+
+
+    /**
+     *404页面
+     * */
+    @GetMapping("/404")
+    public ModelAndView view404()
+    {
+        return new ModelAndView("error/404");
+    }
+
+
+    /**
+     * @Author aldrich
+     * @Description 返回异常界面
+     * @Date 17:04 2019/4/12
+     * @Param []
+     * @return org.springframework.web.servlet.ModelAndView
+     */
+    @GetMapping("/thread")
+    public ModelAndView viewThread()
+    {
+        return new ModelAndView("error/thread");
+    }
+
+
+    /**
      *前台主页面
      * */
     @GetMapping("/index")
@@ -63,15 +122,6 @@ public class StartController {
     }
 
 
-    /**
-     *前台主页面
-     * */
-    @GetMapping("/system")
-    public ModelAndView viewSystem()
-    {
-        ModelAndView view = new ModelAndView("system");
-        return view;
-    }
 
     /**
      *后台主页面
@@ -98,8 +148,7 @@ public class StartController {
      *后台登录
      * */
     @GetMapping("/backstage/login")
-    public ModelAndView viewLogin()
-    {
+    public ModelAndView viewLogin() {
         String mv="aldrich/backstage/login";
         return ModelView.createView(mv);
     }
@@ -135,6 +184,15 @@ public class StartController {
                         @RequestParam("account") String account,
                         @RequestParam("pwd") String pwd, HttpServletResponse response)
     {
+        if(account!=null)
+        {
+            try {
+                throw  new Exception("酸护第三方的所发生的");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         Map<String,String> map=new HashMap<>();
         map.put("account",account.trim());
         map.put("pwd", GetMD5.getMD5(pwd.trim()));

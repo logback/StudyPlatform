@@ -15,6 +15,8 @@ import java.io.Serializable;
 @Component("Word")
 public class Word implements Serializable {
 
+
+    private static final long serialVersionUID = -584984524459878727L;
     private int    id;
     private String name;
     private String eSound;
