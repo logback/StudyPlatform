@@ -51,6 +51,25 @@
         function cs5() {
             window.location.href = "<%=basePath%>start/test/LongtoRead";
         }
+        function cs6() {
+            window.location.href = "<%=basePath%>start/test/CET6ListeningDialogue";
+        }
+
+        function cs7() {
+            window.location.href = "<%=basePath%>start/test/CET6ShortReading";
+        }
+
+        function cs8() {
+            window.location.href = "<%=basePath%>start/test/CET6Cloze";
+        }
+
+        function cs9() {
+            window.location.href = "<%=basePath%>start/test/CET6ListeningPassage";
+        }
+
+        function cs10() {
+            window.location.href = "<%=basePath%>start/test/CET6LongtoRead";
+        }
 
         $(function () {
             $("#but1").bind("click", function () {
@@ -58,6 +77,10 @@
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
             $("#but2").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but3").bind("click", function () {
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
@@ -69,6 +92,27 @@
                 parent.$(window.parent.document).find("#top").hide();
                 parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
             })
+            $("#but6").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but7").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but8").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but9").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+            $("#but10").bind("click", function () {
+                parent.$(window.parent.document).find("#top").hide();
+                parent.$(window.parent.document).find(".right").css({"width": "100%", "left": "0px"});
+            })
+
         });
     </script>
 </head>
@@ -121,6 +165,56 @@
                         <h3>Cloze</h3>
                         <span>Jacob Cummings</span>
                         <a href="javascript:void(0)" onclick="cs3()" id="but3">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/CET-6 listening dialogue.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>CET6Dialogue</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs6()" id="but6">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/CET-6 comprehension.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>CET6ListeningPassage</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs9()" id="but9">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/CET-6 short reading.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>CET6ShortReading</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs7()" id="but7">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/CET-6 long reading.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>CET6LongtoRead</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs10()" id="but10">Take a look</a>
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="cs-style-3">
+                <figure>
+                    <div><img src="<%=basePath%>assets/alone/img/CET-6 intheblanks.jpg" alt="img02"></div>
+                    <figcaption>
+                        <h3>CET6Cloze</h3>
+                        <span>Jacob Cummings</span>
+                        <a href="javascript:void(0)" onclick="cs8()" id="but8">Take a look</a>
                     </figcaption>
                 </figure>
             </li>

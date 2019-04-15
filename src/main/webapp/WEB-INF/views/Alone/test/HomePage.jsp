@@ -71,6 +71,21 @@
             $("#LongtoRead").bind("click", function () {
                 $("#ifrID").attr("src", "<%=basePath%>start/test/LongtoReadPage");
             });
+            $("#CET6ID").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/CET6ListeningPage");
+            });
+            $("#CET6cent").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/CET6ReadPage");
+            });
+            $("#CET6sent").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/CET6ClozePage");
+            });
+            $("#CET6ListeningPassage").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/CET6ListeningPassagePage");
+            });
+            $("#CET6LongtoRead").bind("click", function () {
+                $("#ifrID").attr("src", "<%=basePath%>start/test/CET6LongtoReadPage");
+            });
             /*$("#ifrID").center().find("#but").bind("click",function () {
                 $(".right").width("100%");
                 $("#top").hide();
@@ -157,9 +172,9 @@
                 </dl>
                 <dl class="layui-nav-child">
                     <dd data-name="grid">
-                        <a href="javascript:;">Translation<span class="layui-nav-more"></span></a>
+                        <a href="javascript:;">Gap Filling<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" id="sent">Translation</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="sent">Cloze</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -173,7 +188,10 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" >Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="CET6ID">CET6ListeningDialogue</a></dd>
+                        </dl>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="CET6ListeningPassage">CET6ListeningPassage</a></dd>
                         </dl>
                     </dd>
                 </dl>
@@ -181,15 +199,18 @@
                     <dd data-name="grid">
                         <a href="javascript:;">Reading<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" >Reading</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="CET6cent">CET6ShortReading</a></dd>
+                        </dl>
+                        <dl class="layui-nav-child">
+                            <dd data-name="list"><a lay-href="javascript:;" id="CET6LongtoRead">CET6LongtoRead</a></dd>
                         </dl>
                     </dd>
                 </dl>
                 <dl class="layui-nav-child">
                     <dd data-name="grid">
-                        <a href="javascript:;">Hearing<span class="layui-nav-more"></span></a>
+                        <a href="javascript:;">Gap Filling<span class="layui-nav-more"></span></a>
                         <dl class="layui-nav-child">
-                            <dd data-name="list"><a lay-href="javascript:;" >Hearing</a></dd>
+                            <dd data-name="list"><a lay-href="javascript:;" id="CET6sent">CET6Cloze</a></dd>
                         </dl>
                     </dd>
                 </dl>
