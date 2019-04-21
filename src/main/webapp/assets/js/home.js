@@ -4,7 +4,7 @@ let $ul = $("#loop");
 //获得ul长度
 let ulWidth = $("#loop").width();
 
-let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
+let imaUrl="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/avatar/";
 
 //给li定位 起始位置
 function positionLi()
@@ -15,7 +15,6 @@ function positionLi()
         $(this).css({left: left});
     });
 }
-
 
 //轮播
 function carousel()

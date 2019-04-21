@@ -29,7 +29,6 @@ import java.util.Map;
 @RequestMapping("admin")
 public class AdminController {
 
-
     @Resource
     private Admin admin;
 
@@ -89,7 +88,6 @@ public class AdminController {
         return null;
     }
 
-
     /**
      *单独删除
      **/
@@ -112,6 +110,13 @@ public class AdminController {
         return null;
     }
 
+    /**
+     * @Author aldrich
+     * @Description 通过oss上传照片到bucket
+     * @Date 9:47 2019/4/16
+     * @Param [req, file, response]
+     * @return java.lang.String
+     */
     @PostMapping(value = "/oss/upload/img")
     public String uploadImgs(HttpServletRequest req, @RequestParam("file") MultipartFile file, HttpServletResponse response) throws Exception {
         String info = adminService.ossImgUpload(file);
@@ -137,9 +142,6 @@ public class AdminController {
         ResponseUtil.writeResp(response,decide.toJSONString());
         return null;
     }
-
-
-
 
 
     /**

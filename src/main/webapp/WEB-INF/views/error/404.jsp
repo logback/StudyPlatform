@@ -16,8 +16,16 @@
 <html>
 <head>
     <title>404页面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css" media="all">
+
 </head>
 <body>
-    <img style="height: 100%;width: 100%" src="<%=basePath%>assets/images/404.jpg" alt="404">
+   <img src="<%=basePath%>assets/images/404.jpg">
 </body>
 </html>

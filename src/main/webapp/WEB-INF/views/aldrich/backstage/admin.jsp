@@ -13,7 +13,7 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-    String imagePath=basePath+"assets/images/avatar/";
+    String imagePath="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/avatar/";
 %>
 <html>
 <head>
@@ -184,7 +184,6 @@
                             if(result.code===1){
                                 setTimeout(function(){
                                     layer.close(change);layer.msg('操作成功！');},2000);
-
 
 
                             }else{

@@ -1,8 +1,6 @@
 let path = (window.location+'').split('/');
 let basePath = path[0]+'//'+path[2]+'/'+path[3];
 
-let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
-
 layui.use(['layer','upload','form','laydate'], function() {
     let layer   = layui.layer,
         form    = layui.form,
@@ -48,7 +46,7 @@ layui.use(['layer','upload','form','laydate'], function() {
     * */
     let uploadInst = upload.render({
         elem: '#upload1' //绑定元素
-        ,url: basePath+'/admin/upload/img' //上传接口
+        ,url: basePath+'/admin/oss/upload/img' //上传接口
         ,before: function(obj){
             //预读本地文件示例，不支持ie8
             obj.preview(function(index, file, result){

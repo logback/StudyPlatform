@@ -35,7 +35,7 @@ public class CtrLogging {
      * 针对指定的切入点表达式选择的切入点应用前置通知
      * */
     public void before(JoinPoint call) {
-        System.out.println(logUtil.beforeInform(call));
+        logUtil.beforeInform(call);
     }
 
 
@@ -44,7 +44,7 @@ public class CtrLogging {
      * 访问命名切入点来应用后置通知
      * */
     public void afterReturn(JoinPoint call) {
-        System.out.println(logUtil.afterInform(call));
+        logUtil.afterInform(call);
     }
 
 
@@ -52,14 +52,9 @@ public class CtrLogging {
      *@After("allMethods()")
      *应用最终通知
      * */
-    public void after(JoinPoint call){
-        String methodName = call.getSignature().getName();
-        StringBuilder info = new StringBuilder();
-        info.append("【最终通知】:");
-        info.append("StudyPlatform-->");
-        info.append("Controller").append("层").append("-->");
-        info.append(methodName).append("()方法").append("\n");
-        System.out.println(info);
+    public void after(JoinPoint call)
+    {
+        logUtil.finalInform(call,"Controller");
     }
 
 
@@ -67,10 +62,10 @@ public class CtrLogging {
      * @AfterThrowing("allMethods()")
      *应用异常抛出后通知
      * */
-    public void afterThrowing(JoinPoint call, Throwable exe) {
-        StringBuilder log = new StringBuilder();
-        log.append(logUtil.jpAnalysis(call)).append(logUtil.decideExceptionType(exe));
-        System.out.println(log);
+    public void afterThrowing(JoinPoint call, Throwable exe)
+    {
+        logUtil.jpAnalysis(call);
+        logUtil.recordThrowable(exe);
     }
 
 

@@ -17,7 +17,6 @@
     <context:annotation-config />
     <mvc:annotation-driven />
 
-
     <!-- 静态资源默认servlet配置 -->
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/assets/font/**"              location="/assets/font/"/>
@@ -28,8 +27,15 @@
     <mvc:resources mapping="/assets/images/**"             location="/assets/images/"/>
     <mvc:resources mapping="/assets/sound/**"             location="/assets/sound/"/>
 
+    <!--登录页面静态资源-->
     <mvc:resources mapping="/assets/login/css/**"             location="/assets/login/css/"/>
     <mvc:resources mapping="/assets/login/js/**"             location="/assets/login/js/"/>
+
+    <!--后台页面静态资源-->
+    <mvc:resources mapping="/assets/backstage/css/**"             location="/assets/backstage/css/"/>
+    <mvc:resources mapping="/assets/backstage/js/**"             location="/assets/backstage/js/"/>
+    <mvc:resources mapping="/assets/backstage/images/**"             location="/assets/backstage/images/"/>
+    <mvc:resources mapping="/assets/backstage/json/**"             location="/assets/backstage/json/"/>
 
 
     <mvc:resources mapping="/assets/alone/css/**" location="/assets/alone/css/"/>

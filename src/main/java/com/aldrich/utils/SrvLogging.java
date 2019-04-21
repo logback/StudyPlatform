@@ -27,8 +27,7 @@ class SrvLogging {
      * 针对指定的切入点表达式选择的切入点应用前置通知
      * */
     public void before(JoinPoint call) {
-
-        System.out.println(logUtil.beforeInform(call));
+        logUtil.beforeInform(call);
     }
 
     /**
@@ -36,7 +35,7 @@ class SrvLogging {
      * 访问命名切入点来应用后置通知
      * */
     public void afterReturn(JoinPoint call) {
-        System.out.println(logUtil.afterInform(call));
+        logUtil.afterInform(call);
     }
 
 
@@ -45,23 +44,16 @@ class SrvLogging {
      *应用最终通知
      * */
     public void after(JoinPoint call){
-        String methodName = call.getSignature().getName();
-        StringBuilder info = new StringBuilder();
-        info.append("【最终通知】:");
-        info.append("StudyPlatform-->");
-        info.append("Service").append("层").append("-->");
-        info.append(methodName).append("()方法").append("\n");
-        System.out.println(info);
+      logUtil.finalInform(call,"Service");
     }
 
     /**
      * @AfterThrowing("allMethod()")
      *应用异常抛出后通知
      * */
-    public void afterThrowing(JoinPoint call, Throwable ex) {
-        StringBuilder log = new StringBuilder();
-        log.append((logUtil.jpAnalysis(call)).append(logUtil.decideExceptionType(ex)));
-        System.out.println(log);
+    public void afterThrowing(JoinPoint call, Throwable ex)
+    {
+        logUtil.jpAnalysis(call);
         logUtil.recordThrowable(ex);
     }
 

@@ -48,11 +48,6 @@ public class StartController {
     }
 
 
-    @RequestMapping("/upload")
-    public ModelAndView testUploadImage(){
-        return new ModelAndView("aldrich/backstage/test");
-    }
-
 
 
 
@@ -121,6 +116,10 @@ public class StartController {
         return view;
     }
 
+    @RequestMapping("/backstage/aldrich")
+    public ModelAndView testUploadImage(){
+        return new ModelAndView("aldrich/backstage/index");
+    }
 
 
     /**
@@ -184,14 +183,6 @@ public class StartController {
                         @RequestParam("account") String account,
                         @RequestParam("pwd") String pwd, HttpServletResponse response)
     {
-        if(account!=null)
-        {
-            try {
-                throw  new Exception("酸护第三方的所发生的");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
 
         Map<String,String> map=new HashMap<>();
         map.put("account",account.trim());

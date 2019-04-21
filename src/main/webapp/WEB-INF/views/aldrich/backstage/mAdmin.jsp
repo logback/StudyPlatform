@@ -13,7 +13,7 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-    String imagePath=basePath+"assets/images/avatar/";
+    String imagePath="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/avatar/";
     String account  = (String) request.getAttribute("account");
 %>
 

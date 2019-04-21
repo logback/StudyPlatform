@@ -5,6 +5,8 @@ import com.aldrich.model.Admin;
 import com.aldrich.service.AdminService;
 import com.aldrich.utils.*;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,9 +31,11 @@ public class AdminServiceImpl implements AdminService {
     @Resource
     private AdminMapper adminMapper;
 
-   /* @Resource
-    private OssClientUtil ossClientUtil;
-*/
+    /**
+     *注册日志工厂
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(AdminServiceImpl.class);
+
 
     /**
      * 获管理员登录判断
@@ -315,12 +319,18 @@ public class AdminServiceImpl implements AdminService {
         String imgUrl  = ossClientUtil.getImgUrl(name);
         String[] split = imgUrl.split("\\?");
 
+        //图片外网的路径
         map.put("src", split[0]);
+        //图片新的文件名
         map.put("title", name);
         resObj.put("code",0);
         resObj.put("msg","上传成功");
         resObj.put("data",map);
-        System.out.println(map.toString());
+        //打印上传图片信息
+        LOG.info(map.toString());
+        //关闭OSSClient
+        ossClientUtil.destory();
+        LOG.info("OssClient被关闭");
         return resObj.toJSONString();
     }
 
@@ -331,8 +341,8 @@ public class AdminServiceImpl implements AdminService {
      * @Param []
      * @return void
      */
-    public void test()
+    public void test(int s,String string,int d)
     {
-        int s=10/0;
+        System.out.println("sdasdas");
     }
 }

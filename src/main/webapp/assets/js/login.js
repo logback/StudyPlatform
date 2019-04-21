@@ -93,7 +93,7 @@ layui.use(['layer','laydate','form'],function() {
                     {
                         layer.closeAll();
                         layer.msg("登录成功！",{icon:6,time:4000});
-                        window.location.href="main";
+                        window.location.href="aldrich";
                     }else if(result.code===1)
                     {
                         layer.closeAll();

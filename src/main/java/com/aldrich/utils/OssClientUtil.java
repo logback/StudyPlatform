@@ -13,7 +13,7 @@ import java.util.Random;
 
 /**
  * @ClassName OssClientUtil
- * @Description 阿里云对象存储oss工具类
+ * @Description 阿里云图片上传工具包
  * @Author Aldrich
  * @Date 2019/4/15 10:08
  * @Version 1.0
@@ -48,7 +48,7 @@ public class OssClientUtil {
     /**
      *阿里云OSS的bucketName下的对象等价于文件夹
      */
-    private String fileDir = "image/photo/";
+    private String fileDir = "image/StudyPlatform/avatar/";
 
     /**
      * 声明ossClient
@@ -64,6 +64,7 @@ public class OssClientUtil {
 
 
     public OssClientUtil() {
+        //OSSClient是OSS服务的Java客户端，它为调用者提供了一系列的方法，用于和OSS服务进行交互。
         ossClient = new OSSClient(ENDPOINT, ACCESS_KEY_ID, ACCESS_KEY_SECRET);
     }
 
@@ -94,7 +95,7 @@ public class OssClientUtil {
         try {
             fin = new FileInputStream(fileOnServer);
             String[] split = url.split("/");
-            this.uploadFile2OSS(fin, split[split.length - 1]);
+            this.uploadFileOSS(fin, split[split.length - 1]);
         } catch (FileNotFoundException e) {
             throw new Exception("图片上传失败");
         }
@@ -102,7 +103,7 @@ public class OssClientUtil {
 
     /**
      * @Author aldrich
-     * @Description 直接上传本地文件
+     * @Description 直接上传本地的文件
      * @Date 15:22 2019/4/15
      * @Param [file]
      * @return java.lang.String
@@ -117,7 +118,7 @@ public class OssClientUtil {
         String name = random.nextInt(10000) + System.currentTimeMillis() + substring;
         try {
             InputStream inputStream = file.getInputStream();
-            this.uploadFile2OSS(inputStream, name);
+            this.uploadFileOSS(inputStream, name);
             return name;
         } catch (Exception e) {
             throw new Exception("图片上传失败");
@@ -125,13 +126,16 @@ public class OssClientUtil {
     }
 
 
-    /**
-     * 获得图片路径
-     *
-     * @param fileUrl
-     * @return
-     */
+
+     /**
+      * @Author aldrich
+      * @Description 获得图片路径
+      * @Date 9:28 2019/4/16
+      * @Param [fileUrl]
+      * @return java.lang.String
+      */
     public String getImgUrl(String fileUrl) {
+        System.out.println("fileUrl:"+fileUrl);
         if (!StringUtils.isEmpty(fileUrl)) {
             String[] split = fileUrl.split("/");
             return this.getUrl(this.fileDir + split[split.length - 1]);
@@ -139,14 +143,15 @@ public class OssClientUtil {
         return null;
     }
 
+
     /**
-     * 上传到OSS服务器  如果同名文件会覆盖服务器上的
-     *
-     * @param instream 文件流
-     * @param fileName 文件名称 包括后缀名
+     * @Author aldrich
+     * @Description 上传到OSS服务器  如果同名文件会覆盖服务器上的
+     * @Date 9:42 2019/4/16
+     * @Param [instream 文件流, fileName 文件名称 包括后缀名 ]
      * @return 出错返回"" ,唯一MD5数字签名
      */
-    public String uploadFile2OSS(InputStream instream, String fileName) throws Exception {
+    public String uploadFileOSS(InputStream instream, String fileName) throws Exception {
         String ret = "";
         try {
             //创建上传Object的Metadata
@@ -173,11 +178,13 @@ public class OssClientUtil {
         return ret;
     }
 
+
     /**
-     * Description: 判断OSS服务文件上传时文件的contentType
-     *
-     * @param FilenameExtension 文件后缀
-     * @return String
+     * @Author aldrich
+     * @Description 判断OSS服务文件上传时文件的contentType
+     * @Date 9:41 2019/4/16
+     * @Param [FilenameExtension]文件后缀
+     * @return java.lang.String
      */
     public static String getcontentType(String FilenameExtension) {
         if (FilenameExtension.equalsIgnoreCase(".bmp")) {
@@ -214,17 +221,20 @@ public class OssClientUtil {
         return "image/jpeg";
     }
 
-    /**
-     * 获得url链接
-     *
-     * @param key
-     * @return
-     */
+
+     /**
+      * @Author aldrich
+      * @Description 获得url链接
+      * @Date 9:41 2019/4/16
+      * @Param [key]
+      * @return java.lang.String
+      */
     public String getUrl(String key) {
         // 设置URL过期时间为10年  3600l* 1000*24*365*10
         Date expiration = new Date(System.currentTimeMillis() + 3600l * 1000 * 24 * 365 * 10);
         // 生成URL
         URL url = ossClient.generatePresignedUrl(bucketName, key, expiration);
+        System.out.println("url"+url);
         if (url != null) {
             return url.toString();
         }

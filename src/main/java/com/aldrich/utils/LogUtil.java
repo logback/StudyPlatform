@@ -22,7 +22,7 @@ public class LogUtil {
 
     private static final Logger logs = (Logger) LoggerFactory.getLogger(LogUtil.class);
 
-    private long currentMillis = 0;
+    private static   long currentMillis = 0;
 
     /**
      * @Author aldrich
@@ -36,45 +36,31 @@ public class LogUtil {
         StringBuilder log = new StringBuilder();
         if (throwable instanceof  ArithmeticException)
         {
-            log=printThrowable(throwable,"算术异常类：ArithmeticExecption");
+            log.append("算术异常类：ArithmeticExecption");
         }
         else if (throwable instanceof  NullPointerException)
         {
-            log=printThrowable(throwable,"空指针异常类：NullPointerException");
+            log.append("空指针异常类：NullPointerException");
         }
         else if (throwable instanceof  ClassCastException)
         {
-            log=printThrowable(throwable,"类型强制转换异常：ClassCastException");
+            log.append("类型强制转换异常：ClassCastException");
         }
         else if (throwable instanceof  ArrayIndexOutOfBoundsException)
         {
-            log=printThrowable(throwable,"数组下标越界异常：ArrayIndexOutOfBoundsException");
+            log.append("数组下标越界异常：ArrayIndexOutOfBoundsException");
         }
         else if (throwable instanceof IOException)
         {
-            log=printThrowable(throwable,"输入输出异常：IOException");
+            log.append("输入输出异常：IOException");
         }
         else
         {
-            log=printThrowable(throwable,throwable.getClass().toString().substring(6));
+            log.append(throwable.getClass().toString().substring(6));
         }
         return log;
     }
 
-    /**
-     * @Author aldrich
-     * @Description 将异常的详细信息在控制台打印
-     * @Date 19:40 2019/4/13
-     * @Param [throwable, type]
-     * @return void
-     */
-    public StringBuilder printThrowable(Throwable throwable,String type)
-    {
-        StringBuilder log = new StringBuilder();
-        log.append("【异常产生类型】:").append(type).append("\n");
-        log.append("【异常产生原因】:").append(throwable.getMessage()).append("\n");
-        return log;
-    }
 
     /**
      * @Author aldrich
@@ -85,7 +71,9 @@ public class LogUtil {
      */
     public void recordThrowable(Throwable throwable)
     {
-        logs.error("来自Aldrich的提示：系统发生异常了！");
+        StringBuilder type=decideExceptionType(throwable);
+        logs.error("【异常产生类型】:{}",type);
+        logs.error("【异常产生原因】:{}",throwable.getMessage());
         logs.error("该异常的堆栈信息如下：");
         logs.error(printCallStack(throwable)+"");
     }
@@ -97,14 +85,15 @@ public class LogUtil {
      * @Param [joinPoint]
      * @return java.lang.StringBuilder
      */
-    public StringBuilder jpAnalysis(JoinPoint joinPoint)
+    public void jpAnalysis(JoinPoint joinPoint)
     {
         StringBuilder log = new StringBuilder();
+        String className = joinPoint.getTarget().getClass().getName();
+
         String methodName = joinPoint.getSignature().getName();
 
-        log.append("【异常抛出通知】:");
-        log.append(methodName).append("()-->");
-        log.append("该方法执行时出现异常了,异常详情如下:").append("\n");
+        logs.error("【异常抛出通知】:系统发生异常了,异常详情如下:");
+        logs.error("【异常方法位置】："+className+"-->"+methodName);
 
         //获取参数名
         Signature signature = joinPoint.getSignature();
@@ -118,7 +107,7 @@ public class LogUtil {
             j++;
             log.append("【异常方法参数").append(j).append("】:").append("参数名-->").append(paramNameArr[i]).append(",").append("参数值-->").append(paramValueArr[i]).append("\n");
         }
-        return log;
+        logs.error(log.toString());
     }
 
     /**
@@ -128,19 +117,16 @@ public class LogUtil {
      * @Param [joinPoint]
      * @return java.lang.StringBuilder
      */
-    public StringBuilder beforeInform(JoinPoint joinPoint)
+    public void beforeInform(JoinPoint joinPoint)
     {
         StringBuilder log = new StringBuilder();
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
-        currentMillis=System.currentTimeMillis();
-        String startTime = new SimpleDateFormat("HH:mm:ss:SSS").format(currentMillis);
         log.append("【前置通知】:");
-        log.append(startTime).append(" ");
         log.append(className).append("类的");
         log.append(methodName).append("()方法");
         log.append("开始执行");
-        return  log;
+        logs.info(log.toString());
     }
 
 
@@ -151,21 +137,38 @@ public class LogUtil {
      * @Param [joinPoint]
      * @return java.lang.StringBuilder
      */
-    public StringBuilder afterInform(JoinPoint joinPoint)
+    public void afterInform(JoinPoint joinPoint)
     {
         StringBuilder log = new StringBuilder();
         String consuming=(System.currentTimeMillis()-currentMillis)/1000f+"秒";
-        currentMillis=System.currentTimeMillis();
-        String endTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(currentMillis);
         String methodName = joinPoint.getSignature().getName();
         log.append("【后置通知】:");
         log.append(methodName);
-        log.append("方法正常结束了:").append(" ");
-        log.append(endTime).append(" ");
-        log.append("耗时：");
+        log.append("()方法正常结束了:").append(" ");
+        log.append("共耗时：");
         log.append(consuming);
-        return  log;
+        logs.info(log.toString());
     }
+
+    /**
+     * @Author aldrich
+     * @Description
+     * @Date 11:39 2019/4/16
+     * @Param
+     * @return
+     */
+    public void finalInform(JoinPoint joinPoint,String floor)
+    {
+        String methodName = joinPoint.getSignature().getName();
+        StringBuilder info = new StringBuilder();
+        info.append("【最终通知】:");
+        info.append("StudyPlatform-->");
+        info.append(floor).append("层").append("-->");
+        info.append(methodName).append("()方法执行结束了!").append("\n");
+        logs.info(info.toString());
+    }
+
+
 
     /**
      * @Author aldrich

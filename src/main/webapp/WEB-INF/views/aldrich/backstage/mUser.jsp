@@ -13,7 +13,7 @@
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-    String imagePath=basePath+"assets/images/avatar/";
+    String imagePath="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/avatar/";
 %>
 
 <html>
@@ -258,7 +258,7 @@
 <script type="text/javascript">
 
     let url="<%=basePath%>admin/getAdmin";
-    let imaUrl=" http://localhost:8080/StudyPlatform/assets/images/avatar/";
+    let imaUrl="https://aldrich.oss-cn-beijing.aliyuncs.com/image/StudyPlatform/avatar/";
     let sign ="${sessionScope.sign}";
     let part;
     console.log(sign);

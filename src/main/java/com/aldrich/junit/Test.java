@@ -186,10 +186,7 @@ public class Test {
 
     @org.junit.Test
     public void test13(){
-      int[] i = new int[]{1,2,3};
-      int[] s = {1,2,3};
-      int[] r = new int[2];
+       adminService.test(10,"eewrr",10);
     }
-
 
 }
