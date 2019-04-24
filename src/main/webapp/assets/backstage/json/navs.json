@@ -3,78 +3,14 @@
       {
         "title": "用户信息",
         "icon": "&#xe612;",
-        "href": "http://localhost:8080/StudyPlatform/admin/backstage/show",
-        "spread": false,
-        "children": [
-          {
-            "title": "首页",
-            "icon": "&#xe61c;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "添加客户",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "查询客户",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "修改客户",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "删除客户",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          }
-        ]
+        "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
+        "spread": false
       },
       {
         "title": "管理员信息",
         "icon": "&#xe612;",
         "href": "http://localhost:8080/StudyPlatform/admin/backstage/show",
-        "spread": false,
-        "children": [
-          {
-            "title": "首页",
-            "icon": "&#xe61c;",
-            "href": "http://localhost:8080/StudyPlatform/admin/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "查询管理员",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "添加管理员",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "修改管理员",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          },
-          {
-            "title": "删除管理员",
-            "icon": "&#xe609;",
-            "href": "http://localhost:8080/StudyPlatform/user/backstage/show",
-            "spread": false
-          }
-        ]
+        "spread": false
       }
     ],
 	"authorityManagement": [

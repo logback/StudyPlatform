@@ -17,41 +17,30 @@ import java.io.IOException;
  */
 public class CustomExceptionResolver implements HandlerExceptionResolver {
 
-    /*@Override
-    public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        // 解析出异常类型
-        CustomException customException = null;
-        // 若该异常类型是系统自定义的异常，直接取出异常信息在错误页面展示即可。
-        if(e instanceof CustomException){
-            customException = (CustomException)e;
-        }else{
-            // 如果不是系统自定义异常，构造一个系统自定义的异常类型，信息为“未知错误”
-            customException = new CustomException("未知错误");
-        }
-        //错误信息
-        String message = e.getMessage();
-        System.out.println(message);
-        ModelAndView modelAndView = new ModelAndView();
-        //将错误信息传到页面
-        modelAndView.addObject("message",message);
-        //指向错误页面
-        modelAndView.setViewName("error/thread");
-        return modelAndView;
-    }
-*/
-
     @Override
-    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+    {
         ex.printStackTrace();
-        System.out.println("============异常："+ex);
+        CustomException customException = null;
+        //如果抛出的是系统自定义异常则直接转换
+        if (ex instanceof CustomException) {
+            customException = (CustomException) ex;
+        } else {
+            //如果抛出的不是系统自定义异常则重新构造一个未知错误异常。
+            customException = new CustomException("未知错误，请与系统管理 员联系！");
+        }
+
         try {
-            request.getRequestDispatcher("/WEB-INF/views/error/thread.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/views/error/thread.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+       /* ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("message", customException.getMessage());
+        return new ModelAndView("error/thread");
+       */
         return null;
     }
-
 }

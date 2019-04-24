@@ -61,7 +61,6 @@ public class Test {
     }
 
 
-
     @org.junit.Test
     public void test2()
     {
@@ -73,8 +72,6 @@ public class Test {
         String admins = ResponseUtil.createJson(0,"成功",total,list);
         System.out.println(admins);
     }
-
-
 
     @org.junit.Test
     public void test3()
@@ -152,7 +149,6 @@ public class Test {
     @Resource
     private PermissionMapper permissionMapper;
 
-
     @org.junit.Test
     public void  test10()
     {
@@ -187,6 +183,7 @@ public class Test {
     @org.junit.Test
     public void test13(){
        adminService.test(10,"eewrr",10);
+     
     }
 
 }

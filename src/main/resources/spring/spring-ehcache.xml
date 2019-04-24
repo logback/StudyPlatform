@@ -9,7 +9,6 @@
 
     <description>ehcache缓存配置管理文件</description>
 
-
     <!--引入EHCache注解驱动：-->
     <cache:annotation-driven cache-manager ="ehcacheCacheManager" />
 
