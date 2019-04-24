@@ -100,6 +100,7 @@ public class PersonalController {
     public String selectNameByAccount(HttpServletResponse response){
         String account = (String) SecurityUtils.getSubject().getPrincipal();
          user=personalService.selectNameByAccount(account);
+        System.out.println(account+"==========================");
          System.out.println(user+"==========================");
         JSONObject json=new JSONObject();
         json.put("name",user);

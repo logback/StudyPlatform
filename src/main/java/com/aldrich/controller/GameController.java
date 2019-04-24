@@ -21,13 +21,13 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    //home
+  /*  //home
     @GetMapping("/gamehome")
     public ModelAndView videoListening() {
         String mv = "LiWei/gameHome";
         return ModelView.createView(mv);
     }
-
+*/
     //start
     @GetMapping("/gamestart")
     public ModelAndView playback() {
