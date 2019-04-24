@@ -268,6 +268,7 @@
                 type: 'post',
                 dataType: "json",
                 success: function (data) {
+              //      console.log(data);
                     $('#word').html(data.data[0].name);
                     $('#word').val(data.data[0].name);
 
@@ -289,7 +290,7 @@
                             ,btn: ['确定'] //按钮
                             ,icon: 6    // icon
                             ,yes:function(){
-                                window.location.href = "<%=basePath%>/game/gamehome";//需要跳转的地址
+                                window.location.href = "<%=basePath%>/game/gamestart";//需要跳转的地址
                             }
                         });
                     }

@@ -146,8 +146,8 @@
             url:'<%=basePath%>personal/selectName',
             dataType: "json",
             success:function (data) {
-                //   console.log(data);
-                $('#personalName').html(data.name.name);
+                  console.log(data);
+               // $('#personalName').html(data.name.name);
                 //  personalName
             }
         });

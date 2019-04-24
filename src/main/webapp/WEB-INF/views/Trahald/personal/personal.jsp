@@ -75,7 +75,6 @@
                     </div>
 
                     <div style="width: 10.66666667%" class="col-md-2 hidden-sm hidden-xs" >
-
                         <div class="header-social text-center">
                             <ul>
                                 <li><a style="font-weight: 600;font-size: 20px;margin-top: 4px;" href="">WELCOME!</a></li>
@@ -93,7 +92,7 @@
     <div class="container border1 nopadding margin10" style="margin-top: 75px;height: 600px">
                 <div class="col-lg-3 background831312 nopadding" style="height: 600px">
                     <div class="dead_pic"><img src="<%=basePath%>assets/Trahald/images/member_center/QQ.jpg"><br>
-                        <span class="username">用户名</span></div>
+                        <span id="memberName" class="username"></span></div>
                     <div class="usertype">用户<br>
                         会员等级：<img style="margin-right:0;" src="<%=basePath%>assets/Trahald/images/member_center/star.png">
                         <img style="margin-right:0;" src="<%=basePath%>assets/Trahald/images/member_center/xx2.png">
@@ -187,8 +186,6 @@
         </div>
     </footer>
     <!-- Footer End -->
-
-
 </body>
 </html>
 
@@ -206,8 +203,10 @@
             url:'<%=basePath%>personal/selectName',
             dataType: "json",
             success:function (data) {
-                //   console.log(data);
-                $('#memberName').html(data.name.name);
+                  console.log(data);
+                 $('#memberName').html("这里显示用户名");
+               // $('#memberName').html(123123);
+               // $('#memberName').html(data.name.name);
                 //  personalName
             }
         });

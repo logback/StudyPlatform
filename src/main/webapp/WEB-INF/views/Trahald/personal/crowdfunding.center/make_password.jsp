@@ -32,11 +32,7 @@
 </head>
 <body>
 <!-- 开始 -->
-<div class="my_info_title">修改密码<span>
-  <button type="button" class="but">签到</button>
-  <p>07月29日<br>
-    漏签1天</p>
-  </span></div>
+<div class="my_info_title">修改密码</div>
 <div class="my_info_title_3">
     <ul>
         <li id="listClick_1" onClick="listClick(1)">基本资料</li>
