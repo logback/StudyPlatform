@@ -20,7 +20,31 @@
     <select id="getAllShortReading" resultType="com.aldrich.model.ShortReading" parameterType="map">
         select * from  shortreading limit #{pi},#{ps}
     </select>
+    <select id="getAllShortReading" resultType="com.aldrich.model.ShortReading">
+        select * from  shortreading
+    </select>
+    <select id="getLimitShortReading" resultType="com.aldrich.model.ShortReading" parameterType="map">
+        select * from  shortreading limit #{pageIndex},#{pageSize}
+    </select>
     <select id="getAllPage" resultType="integer">
         select count(*) from shortreading
     </select>
+    <insert id="AddShortReading" parameterType="com.aldrich.model.ShortReading">
+        insert into shortreading (article, topic, selectA, selectB, selectC, selectD, answer, parsing)
+        value (#{article},#{topic},#{selectA},#{selectB},#{selectC},#{selectD},#{answer},#{parsing})
+    </insert>
+    <select id="getByIdShortReading" parameterType="java.lang.Integer" resultType="com.aldrich.model.ShortReading">
+          select * from shortreading where id=#{id}
+    </select>
+    <update id="UpdateAddShortReading" parameterType="com.aldrich.model.ShortReading">
+        update shortreading
+        set article=#{article},topic=#{topic},
+         selectA=#{selectA},selectB=#{selectB},
+         selectC=#{selectC},selectD=#{selectD},
+         answer=#{answer},parsing=#{parsing}
+        where id=#{id};
+    </update>
+    <delete id="deleteShortReadingById" parameterType="java.lang.Integer">
+        delete from shortreading where id=#{id}
+    </delete>
 </mapper>

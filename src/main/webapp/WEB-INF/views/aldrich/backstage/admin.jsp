@@ -184,8 +184,6 @@
                             if(result.code===1){
                                 setTimeout(function(){
                                     layer.close(change);layer.msg('操作成功！');},2000);
-
-
                             }else{
                                 layer.msg('数据异常，操作失败！');
                             }
