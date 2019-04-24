@@ -183,7 +183,7 @@ public class Test {
     @org.junit.Test
     public void test13(){
        adminService.test(10,"eewrr",10);
-     
+
     }
 
 }
